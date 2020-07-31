@@ -12,3 +12,6 @@ Bot do Discord com foco em:
 Comando p.js ("play") feito através do tutorial:
 "Tocando músicas - Bot com Discord.js" do canal "ReisDev"
 Link: "https://www.youtube.com/watch?v=-S1Z68T4h3U"
+
+Convide o Bot para o seu servidor: 
+https://discord.com/api/oauth2/authorize?client_id=730092279326441574&permissions=8&scope=bot
