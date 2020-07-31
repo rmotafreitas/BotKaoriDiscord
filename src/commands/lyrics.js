@@ -4,7 +4,7 @@ const Genius = new (require("genius-lyrics").Client)(process.env.GENIUS);
 const execute = async (bot, msg, args) => {
   let music = args.join(" ");
   Genius.tracks
-    .search(music)
+    .search(music, { limit: 1 })
     .then((results) => {
       const song = results[0];
       song.lyrics().then((lyrics) => {
