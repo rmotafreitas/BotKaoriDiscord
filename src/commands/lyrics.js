@@ -8,7 +8,7 @@ const execute = async (bot, msg, args) => {
     .then((results) => {
       const song = results[0];
       song.lyrics().then((lyrics) => {
-        let Embed = new MessageEmbed().setDescription(lyrics);
+        let Embed = new MessageEmbed().setDescription(lyrics).setTimestamp();
         msg.channel.send(Embed);
       });
     })
