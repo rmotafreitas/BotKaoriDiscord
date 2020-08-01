@@ -55,7 +55,7 @@ const execute = async (bot, msg, [target]) => {
     msg.mentions.members.last() ||
     msg.guild.members.cache.get(target) ||
     msg.member;
-  console.log(member);
+
   const roles = member.roles.cache
     .sort((a, b) => b.position - a.position)
     .map((role) => role.toString())
@@ -67,7 +67,6 @@ const execute = async (bot, msg, [target]) => {
     ) || "Nada";
   switch (member.user.presence.activities) {
     case "PLAYING":
-      console.log("Jogando!");
   }
   let estado;
   switch (member.user.presence.status) {

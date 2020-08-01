@@ -39,7 +39,7 @@ bot.on("message", (msg) => {
   const args = msg.content.slice(process.env.PREFIX.length).split(" ");
 
   const command = args.shift();
-  console.log(args);
+
   try {
     bot.commands.get(command).execute(bot, msg, args);
   } catch (e) {
