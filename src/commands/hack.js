@@ -137,7 +137,7 @@ const execute = async (bot, msg, [target]) => {
 };
 
 module.exports = {
-  name: "hack",
+  name: "info",
   help: "Ele mostra as info de um user",
   execute,
 };
