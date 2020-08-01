@@ -22,21 +22,21 @@ const execute = async (bot, msg, [target]) => {
     //info server!
     const level = ["None", "Low", "Medium", "High", "Max"];
     let description = [
-      "**Server**",
-      `**❯Nome: **` + msg.guild.name,
-      `**❯Fundador: **` + msg.guild.owner.user.tag,
-      `**❯ID: **` + msg.guild.id,
+      "** Server**",
+      `**❯ Name: **` + msg.guild.name,
+      `**❯ Owner: **` + msg.guild.owner.user.tag,
+      `**❯ ID: **` + msg.guild.id,
       `**❯ Avatar:** [Baixar](${msg.guild.iconURL({
         dynamic: true,
       })})`,
-      `**❯Membros: **` + msg.guild.memberCount,
-      `**❯Bots: **` +
+      `**❯ Members: **` + msg.guild.memberCount,
+      `**❯ Bots: **` +
         msg.guild.members.cache.filter((mem) => mem.user.bot === true).size,
-      `**❯Cargos: **` + msg.guild.roles.cache.size,
-      `**❯Nivel de segurança: **` + msg.guild.verificationLevel,
-      `**❯Criação: **` +
+      `**❯ Roles: **` + msg.guild.roles.cache.size,
+      `**❯ Sercurity level: **` + msg.guild.verificationLevel,
+      `**❯ Created at: **` +
         moment.utc(msg.guild.createdAt).format("dddd, MMMM, Do, YYYY"),
-      `**❯Online: **` +
+      `**❯ Online: **` +
         msg.guild.members.cache.filter(
           (mem) => mem.user.presence.status != "offline"
         ).size,
@@ -85,8 +85,8 @@ const execute = async (bot, msg, [target]) => {
   }
 
   let info = [
-    "**User**",
-    `**❯ Nome:** ${member.user.username}`,
+    "** User**",
+    `**❯ Name:** ${member.user.username}`,
     `**❯ Tag:** ${member.user.discriminator}`,
     `**❯ ID:** ${member.id}`,
     `**❯ Flags:** ${
@@ -94,35 +94,35 @@ const execute = async (bot, msg, [target]) => {
         ? userFlags.map((flag) => flags[flag]).join(", ")
         : "None"
     }`,
-    `**❯ Avatar:** [Baixar](${member.user.displayAvatarURL({
+    `**❯ Avatar:** [Download](${member.user.displayAvatarURL({
       dynamic: true,
     })})`,
-    `**❯ Criado:** ${moment(member.user.createdTimestamp).format(
+    `**❯ Created at:** ${moment(member.user.createdTimestamp).format(
       "LT"
     )} ${moment(member.user.createdTimestamp).format("LL")} ${moment(
       member.user.createdTimestamp
     ).fromNow()}`,
-    `**❯ Estado:** ${estado}`,
-    `**❯ Estado custom:** ${
+    `**❯ State:** ${estado}`,
+    `**❯ State custom:** ${
       !member.user.presence.activities[0]
-        ? "Nada"
+        ? "Nothing"
         : member.user.presence.activities[0].type == "CUSTOM_STATUS"
         ? member.user.presence.activities[0].state
-        : "Nada"
+        : "Nothing"
     }`,
-    `**❯ Atividade:** ${activity}`,
+    `**❯ Activty:** ${activity}`,
     "",
-    "**Membro**",
-    `**❯ Cargo maior:** ${
+    "** Member**",
+    `**❯ Higher role:** ${
       member.roles.highest.id === msg.guild.id
         ? "None"
         : member.roles.highest.name
     }`,
-    `**❯ Entrada:** ${moment(member.joinedAt).format("LL LTS")}`,
-    `**❯ Cargo com mais poder:** ${
+    `**❯ Entry:** ${moment(member.joinedAt).format("LL LTS")}`,
+    `**❯ Higher hoist role:** ${
       member.roles.hoist ? member.roles.hoist.name : "None"
     }`,
-    `**❯ Cargos:** ${member.roles.cache
+    `**❯ Roles:** ${member.roles.cache
       .map((role) => role.toString())
       .join(",")}`,
   ];
@@ -136,7 +136,7 @@ const execute = async (bot, msg, [target]) => {
 };
 
 module.exports = {
-  name: "infos",
+  name: "hack",
   help: "Ele mostra as info de um user",
   execute,
 };

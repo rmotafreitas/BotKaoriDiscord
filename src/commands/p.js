@@ -19,7 +19,7 @@ const execute = (bot, msg, args) => {
           const embed = new MessageEmbed()
             .setColor("#FF3832")
             .setAuthor(
-              "Adicionada ♪",
+              "Add ♪",
               "https://thumbs.gfycat.com/ImpeccableSickEstuarinecrocodile-small.gif"
             )
             .setTitle(song.title)
@@ -29,7 +29,7 @@ const execute = (bot, msg, args) => {
           msg.channel.send(embed);
         } else playSong(bot, msg, song);
       } else {
-        return msg.reply("desculpe, não encontrei o que você desejava!");
+        return msg.reply("Sorry, I didn't find what you wanted!");
       }
     });
   } catch (e) {
@@ -46,15 +46,13 @@ const playSong = async (bot, msg, song) => {
     }
   }
   if (!msg.member.voice.channel) {
-    return msg.reply(
-      "você precisa estar em um canal de voz para reproduzir uma música!"
-    );
+    return msg.reply("You need to be on a voice channel to play a song!");
   }
   //Manda emebed
   const embed = new MessageEmbed()
     .setColor("#FF3832")
     .setAuthor(
-      "A tocar ♪ ...",
+      "Playing ♪ ...",
       "https://media3.giphy.com/media/XGbfacwWVO9J34OSBL/giphy.gif"
     )
     .setTitle(song.title)

@@ -20,7 +20,7 @@ const execute = async (bot, msg, args) => {
       break;
 
     default:
-      msg.reply("Vc não é o meu criador para falar por mim!");
+      msg.reply("You are not my creator to speak for me!");
       break;
   }
 };

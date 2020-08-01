@@ -7,70 +7,70 @@ const execute = async (bot, msg, args) => {
   let autor = msg.author;
   msg.delete().catch((O_o) => {});
   let description = [
-    "** Comandos de Divertimento - 🥳 **",
-    "** Comandos de ajuda - 🔧 **",
-    "** Comandos de musica, beta - 🎵 **",
+    "** Fun Commands - 🥳 **",
+    "** Help Commands - 🔧 **",
+    "** Commands music, Beta - 🎵 **",
     "** Menu - ⬆️**",
   ];
 
   let diverts = [
-    "$8ball | Responde a suas perguntas!",
-    "$8ball sua pergunta",
+    "$8ball | Answer your questions!",
+    "$8ball your question",
     "-----------------------",
-    "$say | O Bot fala o q vc quiser!",
-    "$say frase",
+    "$say | Bot says whatever you want!",
+    "$say phrase",
     "-----------------------",
-    "$kiss | Beija alguêm",
+    "$kiss | Kiss someone",
     "$kiss @user",
     "-----------------------",
-    "$emoji | Emoji animado sem nitro",
+    "$emoji | Nitro animated emoji",
     "$emoji",
     "-----------------------",
-    "$avatar | Mostra avatar de mencionado ou o seu",
-    "$avatar @user OU $avatar",
+    "$avatar | Shows mentioned avatar or yours",
+    "$avatar @user OR $avatar",
   ];
 
   let musicas = [
-    "$p | O bot toca musica",
-    "$p nome da música",
+    "$p | Bot plays music from yt!",
+    "$p musica name",
     "-----------------------",
-    "$pause | O bot pausa a música",
+    "$pause | Pause",
     "$pause",
     "-----------------------",
-    "$skip | O bot passa a música",
+    "$skip | Skip",
     "$skip",
     "-----------------------",
-    "$resume| O bot continua a música",
+    "$resume| Resume",
     "$resume",
     "-----------------------",
-    "$stop | O bot para de tocar música",
+    "$stop | Stop",
     "$stop",
     "-----------------------",
-    "$queue | Mostra as música em fila",
+    "$queue | Queue songs",
     "$queue",
   ];
 
   let ajudas = [
-    "$vote | Inicia uma votaçào",
-    "$vote assunto",
+    "$vote | Start a vote",
+    "$vote subject matter",
     "-----------------------",
-    "$help | Mostra a lista de comandos",
+    "$help | Show this Xd!",
     "$help",
     "-----------------------",
-    "$info | Mostra as minhas info.",
+    "$info | Bot info",
     "$info",
     "-----------------------",
-    "$clear | Limpa mensagens",
+    "$clear | Clear message 1-99",
     "$clear 15",
     "-----------------------",
-    "$hack | Mostra as info de um user",
+    "$hack | Show",
     "$hack @ OU $hack",
   ];
 
   const embed = new MessageEmbed() //criar emebed
     .setColor(`RANDOM`)
     .setDescription(description)
-    .setTitle("Lista de comandos:");
+    .setTitle("List:");
   msg.channel.send(embed).then((msg) => {
     //enviando emebd e os objetos de pages //?(reactions await events?!) // ⏪  ⏩
     msg.react("🥳").then((r) => {
@@ -115,14 +115,14 @@ const execute = async (bot, msg, args) => {
             console.error("Failed to remove reactions.");
           }
         }
-        if (embed.title === "Comandos de Divertimento - 🥳") {
+        if (embed.title === "Fun Commands - 🥳") {
           msg.channel
-            .send(`${autor}, Vc já está no divertimento`)
+            .send(`${autor}, You are already in the fun`)
             .then((msg) => msg.delete({ timeout: 3500 }));
           remove();
           return;
         }
-        embed.setTitle("Comandos de Divertimento - 🥳");
+        embed.setTitle("Fun Commands - 🥳");
         embed.setDescription(diverts);
         msg.edit(embed);
 
@@ -142,14 +142,14 @@ const execute = async (bot, msg, args) => {
             console.error("Failed to remove reactions.");
           }
         }
-        if (embed.title === "Comandos de ajuda - 🔧") {
+        if (embed.title === "Help Commands - 🔧") {
           msg.channel
-            .send(`${autor}, Vc já está no ajuda`)
+            .send(`${autor}, You are already in help`)
             .then((msg) => msg.delete({ timeout: 3500 }));
           remove();
           return;
         }
-        embed.setTitle("Comandos de ajuda - 🔧");
+        embed.setTitle("Help Commands - 🔧");
         embed.setDescription(ajudas);
         msg.edit(embed);
 
@@ -169,14 +169,14 @@ const execute = async (bot, msg, args) => {
             console.error("Failed to remove reactions.");
           }
         }
-        if (embed.title === "Comandos de musica, beta - 🎵") {
+        if (embed.title === "Commands music, Beta - 🎵") {
           msg.channel
-            .send(`${autor}, Vc já está no musicas`)
+            .send(`${autor}, You are already in music`)
             .then((msg) => msg.delete({ timeout: 3500 }));
           remove();
           return;
         }
-        embed.setTitle("Comandos de musica, beta - 🎵");
+        embed.setTitle("Commands music, Beta - 🎵");
         embed.setDescription(musicas);
         msg.edit(embed);
 
@@ -196,9 +196,9 @@ const execute = async (bot, msg, args) => {
             console.error("Failed to remove reactions.");
           }
         }
-        if (embed.title === "Lista de comandos:") {
+        if (embed.title === "List:") {
           msg.channel
-            .send(`${autor}, Vc já está no menu`)
+            .send(`${autor}, You are already in menu`)
             .then((msg) => msg.delete({ timeout: 3500 }));
           remove();
           return;
@@ -206,7 +206,7 @@ const execute = async (bot, msg, args) => {
 
         embed.setColor(`RANDOM`);
         embed.setDescription(description);
-        embed.setTitle("Lista de comandos:");
+        embed.setTitle("List:");
 
         remove();
         msg.edit(embed);

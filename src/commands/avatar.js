@@ -14,7 +14,7 @@ const execute = async (bot, msg, args) => {
   let avatar = user.displayAvatarURL({ size: 4096, dynamic: true });
   let Embed = new MessageEmbed()
     .setImage(avatar)
-    .setTitle("Baixar")
+    .setTitle("Download")
     .setURL(avatar);
   msg.channel.send(Embed);
 };

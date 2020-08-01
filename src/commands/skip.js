@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const execute = async (bot, msg, args) => {
   const queue = bot.queues.get(msg.guild.id);
   if (!queue) {
-    return msg.reply("Não hà música tocando!");
+    return msg.reply("There is no music playing!");
   }
   queue.songs.shift();
   bot.queues.set(msg.guild.id, queue);

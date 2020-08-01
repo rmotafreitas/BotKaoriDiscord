@@ -231,12 +231,12 @@ const list = async (bot, msg, args) => {
     "<a:villager:731166483274530837> => **$emoji villager**",
     "<a:chibi_cola:731167866337886249> => **$emoji chibi_cola**",
     "-----------------------",
-    "$emoji say | Sua mensagem com emojis!",
-    "$emoji say Bom dia $putin",
+    "$emoji say | Your message with emojis!",
+    "$emoji say Good morning $putin",
   ];
 
   let Embed = new MessageEmbed()
-    .setTitle("<a:Nitro:718196422582861906> Vc n tem nitro? Use isto:")
+    .setTitle("<a:Nitro:718196422582861906> Don't you have nitro? Use this:")
     .setDescription(lista)
     .setColor(`RANDOM`);
   msg.delete().catch((O_o) => {});

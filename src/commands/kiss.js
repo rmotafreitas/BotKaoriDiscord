@@ -15,7 +15,7 @@ const execute = async (bot, msg, args) => {
     quemTag = msg.mentions.users.first().tag;
   } catch (e) {
     await msg.delete().catch((O_o) => {});
-    msg.channel.send(`${sender}, Depois do $kiss vc deve mencionar um usuer!`);
+    msg.channel.send(`${sender}, After the $ kiss you must mention a user!`);
     return;
   }
   let quemId = msg.mentions.users.first().id;
@@ -26,7 +26,7 @@ const execute = async (bot, msg, args) => {
 
   if (msg.author.id === quemId) {
     await msg.delete().catch((O_o) => {});
-    msg.channel.send(`${sender}, Espera, isso é possível!?`);
+    msg.channel.send(`${sender}, Wait, is that possible !?`);
     return;
   }
 
@@ -55,10 +55,10 @@ const execute = async (bot, msg, args) => {
   const Embed = new MessageEmbed()
     .setColor(`RANDOM`)
     .setAuthor(senderTag, senderPic)
-    .setTitle(" 😻 Beijou: ")
+    .setTitle(" 😻 Kissed: ")
     .setDescription(quem)
     .setImage(kiss)
-    .setFooter("💞 Clique pra retornar!");
+    .setFooter("💞 Click to return!");
   await msg.delete().catch((O_o) => {});
   let msgEmbed = await msg.channel.send(Embed);
   msgEmbed.react("💞");
@@ -81,7 +81,6 @@ const execute = async (bot, msg, args) => {
         if (quemTag === "Kaori Miyazono#5192") {
           return;
         }
-        console.log("RETORNAR");
         Retornar();
       } else {
       }
@@ -112,10 +111,10 @@ const execute = async (bot, msg, args) => {
     const Embed = new MessageEmbed()
       .setColor(`RANDOM`)
       .setAuthor(senderTag, senderPic)
-      .setTitle(" 😻 Beijou: ")
+      .setTitle(" 😻 Kissed: ")
       .setDescription(quem)
       .setImage(kiss)
-      .setFooter("💞 Clique pra retornar!");
+      .setFooter("💞 Click to return!");
     msgEmbed = await msg.channel.send(Embed);
     msgEmbed.react("💞");
     const filter = (reaction, user) => {
@@ -133,7 +132,7 @@ const execute = async (bot, msg, args) => {
             .catch((error) =>
               console.error("Failed to clear reactions: ", error)
             );
-          console.log("RETORNAR 2 !");
+
           Retornar();
         } else {
         }

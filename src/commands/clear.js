@@ -3,13 +3,13 @@ const Discord = require("discord.js");
 const execute = async (bot, msg, args) => {
   if (!msg.member.permissions.has("MANAGE_MESSAGES"))
     return msg.reply(
-      "você é fraco, lhe falta permissão de `Gerenciar Mensagens` para usar esse comando"
+      "you are weak, you do not have permission to `Manage Messages` to use this command"
     );
   const deleteCount = parseInt(args[0], 10);
 
   if (!deleteCount || deleteCount < 1 || deleteCount > 99)
     return msg.reply(
-      "forneça um número de até **99 mensagens** a serem excluídas"
+      "provide a number of up to ** 99 messages ** to be deleted"
     );
 
   const fetched = await msg.channel.messages.fetch({
@@ -18,7 +18,7 @@ const execute = async (bot, msg, args) => {
   msg.channel.bulkDelete(fetched);
   msg.delete().catch((O_o) => {});
   msg.channel
-    .send(`**${args[0]} mensagens limpas nesse chat!**`)
+    .send(`**${args[0]} clean messages in this chat! **`)
     .catch((error) =>
       console.log(`Não foi possível deletar mensagens devido a: ${error}`)
     );

@@ -4,15 +4,15 @@ const { MessageEmbed } = require("discord.js");
 
 const execute = async (bot, msg, args) => {
   let responses = [
-    "Sim",
-    "Não",
-    "Mas é claro",
-    "Absolutamente que sim!",
-    "Claro que não",
-    "Talvez",
+    "Yes",
+    "No",
+    "Of course",
+    "Absolutely yes!",
+    "Of course not",
+    "Maybe",
     "Não responderei isso agora",
-    "Esqueça isso",
-    "Vc é mal informado",
+    "Forget that",
+    "I don't know answer",
   ];
   let response = responses[Math.floor(Math.random() * responses.length)];
   let pergunta = args.join(" ");
@@ -22,9 +22,9 @@ const execute = async (bot, msg, args) => {
       msg.author.tag,
       msg.author.displayAvatarURL({ size: 4096, dynamic: true })
     )
-    .setTitle("Perguntou:")
+    .setTitle("Asked:")
     .setDescription(pergunta)
-    .addFields({ name: "Resposta:", value: response });
+    .addFields({ name: "Answer:", value: response });
   msg.delete().catch((O_o) => {});
   msg.channel.send(Embed);
 };

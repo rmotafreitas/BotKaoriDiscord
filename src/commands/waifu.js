@@ -55,8 +55,8 @@ const execute = async (bot, msg, args) => {
   const embed = new MessageEmbed()
     .setColor("RANDOM")
     .setAuthor(user.tag, avatar)
-    .setDescription(`Taxa de sucesso: ${taxa}%`)
-    .setTitle("Sua Waifu é:")
+    .setDescription(`Love rate: ${taxa}%`)
+    .setTitle("Your waifu is:")
     .setImage(waifu)
     .setTimestamp();
   msg.channel.send(embed);

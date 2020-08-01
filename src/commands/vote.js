@@ -13,10 +13,10 @@ const execute = async (bot, msg, args) => {
       msg.author.tag,
       msg.author.displayAvatarURL({ size: 4096, dynamic: true })
     )
-    .setTitle(`Iniciou uma votação:`)
+    .setTitle(`Started a vote:`)
     .setDescription(quest)
     .setColor(`RANDOM`)
-    .addFields({ name: "Como votar:", value: tutorial });
+    .addFields({ name: "How to vote:", value: tutorial });
   msg.delete().catch((O_o) => {});
   msg.channel.send(Embed).then((sentEmbed) => {
     sentEmbed.react("719710630881525881");
