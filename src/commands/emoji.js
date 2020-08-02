@@ -8,7 +8,7 @@ const execute = async (bot, msg, args) => {
 
   function linhas2() {
     msg.delete().catch((O_o) => {});
-    msg.channel.send("`" + `${autor}` + " Falou:`");
+    msg.channel.send("`" + `${autor}` + " Speak:`");
   }
 
   let emojis = [
@@ -191,7 +191,7 @@ const execute = async (bot, msg, args) => {
 
         message = message + " " + emoji[index];
       });
-      let mesg = ["`" + `${autor}` + " Falou:`", message];
+      let mesg = ["`" + `${autor}` + " Speak:`", message];
       //FIM
       msg.delete().catch((O_o) => {});
       msg.channel.send(mesg);

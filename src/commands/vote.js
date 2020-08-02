@@ -4,8 +4,8 @@ const execute = async (bot, msg, args) => {
   let quest = args.join(" ");
 
   let tutorial = [
-    "<a:Accept:719710630881525881> - Para votar sim!",
-    "<a:Denided:719710607405875321> - Para votar não!",
+    "<a:Accept:719710630881525881> - Vote yes!",
+    "<a:Denided:719710607405875321> - Vote no!",
   ];
 
   let Embed = new MessageEmbed()

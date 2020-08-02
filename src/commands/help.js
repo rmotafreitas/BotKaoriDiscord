@@ -28,6 +28,9 @@ const execute = async (bot, msg, args) => {
     "-----------------------",
     "$avatar | Shows mentioned avatar or yours",
     "$avatar @user OR $avatar",
+    "-----------------------",
+    "$waifu | Shows mentioned waifu or yours",
+    "$waifu @user OR $waifu",
   ];
 
   let musicas = [
