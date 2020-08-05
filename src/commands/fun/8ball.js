@@ -10,7 +10,7 @@ const execute = async (bot, msg, args) => {
     "Absolutely yes!",
     "Of course not",
     "Maybe",
-    "Não responderei isso agora",
+    "I will not answer that now!",
     "Forget that",
     "I don't know answer",
   ];

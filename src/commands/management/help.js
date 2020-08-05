@@ -68,6 +68,9 @@ const execute = async (bot, msg, args) => {
     "-----------------------",
     "$hack | Show",
     "$hack @ OU $hack",
+    "-----------------------",
+    "$report | report bugs for Dev.",
+    "$report your bug",
   ];
 
   const embed = new MessageEmbed() //criar emebed

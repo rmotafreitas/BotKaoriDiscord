@@ -7,15 +7,26 @@ dotenv.config();
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 bot.queues = new Map();
+//command handler
+const commandsFolder = fs.readdirSync(path.join(__dirname, "/commands"));
 
-const commandFiles = fs
+for (var folder of commandsFolder) {
+  const files = fs
+    .readdirSync(path.join(__dirname, "/commands", folder))
+    .filter((filename) => /^.*\.(t|j)s$/.test(filename));
+  for (var filename of files) {
+    const command = require(`./commands/${folder}/${filename}`);
+    bot.commands.set(command.name, command);
+  }
+}
+/*const commandFiles = fs
   .readdirSync(path.join(__dirname, "/commands"))
   .filter((filename) => filename.endsWith(".js"));
 
 for (var filename of commandFiles) {
   const command = require(`./commands/${filename}`);
   bot.commands.set(command.name, command);
-}
+}*/
 
 bot.login(process.env.TOKEN);
 

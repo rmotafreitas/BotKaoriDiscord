@@ -1,4 +1,4 @@
-const playSong = require("./p").playSong;
+const playSong = require("./play").playSong;
 const Discord = require("discord.js");
 const execute = async (bot, msg, args) => {
   const queue = bot.queues.get(msg.guild.id);
