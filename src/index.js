@@ -19,14 +19,6 @@ for (var folder of commandsFolder) {
     bot.commands.set(command.name, command);
   }
 }
-/*const commandFiles = fs
-  .readdirSync(path.join(__dirname, "/commands"))
-  .filter((filename) => filename.endsWith(".js"));
-
-for (var filename of commandFiles) {
-  const command = require(`./commands/${filename}`);
-  bot.commands.set(command.name, command);
-}*/
 
 bot.login(process.env.TOKEN);
 
@@ -36,6 +28,76 @@ bot.on("ready", function () {
   );
   bot.user.setActivity("$help", { type: 3 });
 });
+
+// Boas Vindas!
+
+bot.on("guildMemberAdd", async (member) => {
+  //guild
+  let guilds = [
+    bot.guilds.cache.get("730079290221396008"), //Kaoir Bot Server
+    bot.guilds.cache.get("729166259924762664"), //Animes Server
+  ]; //IDs SERVER
+
+  let channels = [
+    bot.channels.cache.get("730079290221396013"), //Kaoir Bot Server
+    bot.channels.cache.get("740921877970550795"), //Animes Server
+  ]; //IDs CANAL
+
+  let channel = ["0"]; //ID Canal
+  let guild = ["0"]; //ID Server
+  let emoji = ":hey:";
+
+  let welcomeGif = [
+    "https://i.pinimg.com/originals/04/dd/db/04dddb24a548c4ce1069513d5cdd4d7a.gif",
+    "https://68.media.tumblr.com/8b8a99492ffba7ec6b1e429d2891ee22/tumblr_ohgvn0QWcE1qkz08qo1_540.gif",
+    "https://i.pinimg.com/originals/50/eb/47/50eb47c78063d41c26ab6a8556fc3976.gif",
+    "https://data.whicdn.com/images/243960123/original.gif",
+    "https://data.whicdn.com/images/270710058/original.gif",
+  ];
+
+  let gif = welcomeGif[Math.floor(Math.random() * welcomeGif.length)];
+
+  let flag = false;
+
+  guilds.forEach(function (item, index, array) {
+    if (guilds[index] != member.guild) {
+      return;
+    } else {
+      console.log("BOAS VINDAS!");
+      flag = true;
+      channel = channels[index];
+      guild = guilds[index];
+    }
+  });
+
+  if (flag != true) {
+    return console.log("Server errado!");
+  } else {
+    const embed = new Discord.MessageEmbed()
+      .setColor("#DE3B72")
+      .setAuthor(
+        member.user.tag,
+        member.user.displayAvatarURL({ size: 4096, dynamic: true })
+      )
+      .setTitle(`${emoji} Boas-Vindas!`)
+      .setImage(gif)
+      .setDescription(
+        `${member.user}, Boas-Vindas ao ${guild.name}! Membro nº ${member.guild.memberCount}`
+      )
+      .setThumbnail(
+        member.user.displayAvatarURL({
+          dynamic: true,
+          format: "png",
+          size: 1024,
+        })
+      )
+      .setFooter("ID: " + member.user.id)
+      .setTimestamp();
+    await channel.send(embed);
+  }
+});
+
+//Fim de boas vindas
 
 bot.on("message", (msg) => {
   if (msg.author.bot) return;
