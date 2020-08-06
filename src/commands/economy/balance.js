@@ -1,10 +1,15 @@
 const Discord = require("discord.js");
 
-const { MessageEmbed } = require("discord.js");
+const mongoose = require("mongoose");
 
-const money = require("../../DataBase/economy/money.json");
+//CONNECT TO DATABASE
+mongoose.connect(process.env.mongoPass, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
-const fs = require("fs");
+// MODELS
+const Data = require("../../models/data.js");
 
 const execute = async (bot, msg, args) => {
   if (!args[0]) {
@@ -13,15 +18,31 @@ const execute = async (bot, msg, args) => {
     var user = msg.mentions.users.first() || bot.users.cache.get(args[0]);
   }
 
-  if (!money[user.id]) {
-    return msg.channel.send(
-      "You don't have an account, create one! Type: $create "
-    );
-  } else {
-    return msg.channel.send(
-      `${bot.users.cache.get(user.id).username} has $${money[user.id].money}`
-    );
-  }
+  Data.findOne(
+    {
+      userID: user.id,
+    },
+    (err, data) => {
+      if (err) console.log(err);
+      if (!data) {
+        const newData = new Data({
+          name: bot.users.cache.get(user.id).username,
+          userID: user.id,
+          lb: "all",
+          money: 0,
+          daily: 0,
+        });
+        newData.save().catch((err) => console.log(err));
+        return msg.channel.send(
+          `${bot.users.cache.get(user.id).username} has $0.`
+        );
+      } else {
+        return msg.channel.send(
+          `${bot.users.cache.get(user.id).username} has $${data.money}.`
+        );
+      }
+    }
+  );
 };
 
 module.exports = {
