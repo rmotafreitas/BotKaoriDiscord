@@ -45,7 +45,7 @@ bot.on("guildMemberAdd", async (member) => {
 
   let channel = ["0"]; //ID Canal
   let guild = ["0"]; //ID Server
-  let emoji = ":hey:";
+  let emoji = "<a:chibi_cola:731167866337886249>";
 
   let welcomeGif = [
     "https://i.pinimg.com/originals/04/dd/db/04dddb24a548c4ce1069513d5cdd4d7a.gif",
@@ -79,10 +79,10 @@ bot.on("guildMemberAdd", async (member) => {
         member.user.tag,
         member.user.displayAvatarURL({ size: 4096, dynamic: true })
       )
-      .setTitle(`${emoji} Boas-Vindas!`)
+      .setTitle(`${emoji} WELCOME!`)
       .setImage(gif)
       .setDescription(
-        `${member.user}, Boas-Vindas ao ${guild.name}! Membro nº ${member.guild.memberCount}`
+        `${member.user}, Welcome to ${guild.name}! member nº ${member.guild.memberCount}`
       )
       .setThumbnail(
         member.user.displayAvatarURL({
