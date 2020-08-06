@@ -16,43 +16,63 @@ const execute = async (bot, msg, args) => {
 
   if (!user) return msg.reply("Sorry, could't find that user.");
 
-  Data.findOne;
-
-  if (!args[1]) return msg.reply("Please specify an amount you want to pay.");
-
-  if (!money[msg.author.id])
-    return msg.reply("Sorry, you don't have money to pay.");
-
-  if (parseInt(args[1]) > money[msg.author.id].money)
-    return msg.reply("You don´t have that much to pay!");
-
-  if (parseInt(args[1]) < 1) return msg.reply("You can't pay less than 1$!");
-
-  if (!money[user.id])
-    return msg.reply(
-      "Hey, the user u want to pay dosen't have a money account"
-    );
-
-  if (!Number.isInteger(parseInt(args[1])))
-    return msg.reply("Hey, that's not a number >:(");
-
   if (user.id === msg.author.id)
     return msg.reply("Hey, u can't pay to yourself");
 
-  money[user.id].money += parseInt(args[1]);
-  money[msg.author.id].money -= parseInt(args[1]);
-  fs.writeFile(
-    "./src/DataBase/economy/money.json",
-    JSON.stringify(money),
-    (err) => {
+  Data.findOne(
+    {
+      userID: msg.author.id,
+    },
+    (err, authorData) => {
       if (err) console.log(err);
-    }
-  );
+      if (!authorData) {
+        return msg.reply("You don't have money to pay someone");
+      } else {
+        Data.findOne(
+          {
+            userID: user.id,
+          },
+          (err, userData) => {
+            if (err) console.log(err);
 
-  return msg.channel.send(
-    `${msg.author.username} payed $${args[1]} to ${
-      bot.users.cache.get(user.id).username
-    }`
+            if (!args[1])
+              return msg.reply("Please specify an amount you want to pay.");
+
+            if (!Number.isInteger(parseInt(args[1])))
+              return msg.reply("Hey, that's not a number >:(");
+
+            if (parseInt(args[1]) > authorData.money)
+              return msg.reply("You don´t have that much to pay!");
+
+            if (parseInt(args[1]) < 1)
+              return msg.reply("You can't pay less than 1$!");
+
+            if (!userData) {
+              const newData = new Data({
+                name: bot.users.cache.get(user.id).username,
+                userID: user.id,
+                lb: "all",
+                money: parseInt(args[1]),
+                daily: 0,
+              });
+              authorData.money -= parseInt(args[1]);
+              newData.save().catch((err) => console.log(err));
+              authorData.save().catch((err) => console.log(err));
+            } else {
+              userData.money += parseInt(args[1]);
+              authorData.money -= parseInt(args[1]);
+              userData.save().catch((err) => console.log(err));
+              authorData.save().catch((err) => console.log(err));
+            }
+            return msg.channel.send(
+              `${msg.author.username} payed $${args[1]} to ${
+                bot.users.cache.get(user.id).username
+              }`
+            );
+          }
+        );
+      }
+    }
   );
 };
 
