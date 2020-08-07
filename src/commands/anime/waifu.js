@@ -1,6 +1,44 @@
 const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
 const execute = async (bot, msg, args) => {
+  let names = [
+    "Sakurajima Mai | Bunny senpai",
+    "Futaba Rio | Bunny senpai", //erro no gif
+    "Modeus | Healthtaker",
+    "Satan | Healthtaker",
+    "Shiro | No game no life",
+    "Kaguya | Love is war",
+    "Chika | Love is war",
+    "Hayasaka | Love is war",
+    "Mikazuki | Boku wa tomodachi", //erro no gif
+    "Asuna | Sword art Online",
+    "Kaori Miyazono | Kimi no uso",
+    "Mizuhara | Rent a girlfriend",
+    "Zero Two | Darling in Franxx",
+    "Rem | Re:zero",
+    "Nezuko | Kimetsu no yaba",
+    "Shoko Makinohara | Bunny senpai",
+    "Kaede | Bunny senpai",
+    "Violet | Violet evergarden",
+    "Miku | Quintessential quintuplets",
+    "Itsuki Nakano | Quintessential quintuplets",
+    "Erina | Food Wars",
+    "Erina pendleton | Jojo",
+    "Serna | Pokémon Xy",
+    "Mai | Pokémon Oras",
+    "Mei Misaki | Another",
+    "Tomoyo Sakagami | Clannad",
+    "Nao Tomori | Charlotte",
+    "Saigiri | Eromanga sensei",
+    "Natsuki | DDLC",
+    "Saori | Saint Seiya",
+    "Kanna | Dragon Maid",
+    "Hideri Kanzaki | Blend S",
+    "Nico Yazawa | Love live",
+    "Yukimura Shinya | Rikei ga Koi",
+    "Aigis | Persona",
+  ];
+
   let waifus = [
     "https://media1.tenor.com/images/3a51c19e70a935b69a0772805147baf7/tenor.gif?itemid=13458968",
     "https://steamuserimages-a.akamaihd.net/ugc/965355694154297423/770B44AD3B8F232866833559C8309C5D58DFD783/",
@@ -40,7 +78,7 @@ const execute = async (bot, msg, args) => {
   ];
 
   console.log(`${waifus.length} Gifs de waifu!`);
-  let waifu = waifus[Math.floor(Math.random() * waifus.length)];
+  let n = Math.floor(Math.random() * waifus.length);
   let user;
   if (msg.mentions.users.first()) {
     user = msg.mentions.users.first();
@@ -56,8 +94,8 @@ const execute = async (bot, msg, args) => {
     .setColor("RANDOM")
     .setAuthor(user.tag, avatar)
     .setDescription(`Love rate: ${taxa}%`)
-    .setTitle("Your waifu is:")
-    .setImage(waifu)
+    .setTitle(`Your waifu is: ${name[n]}`)
+    .setImage(waifus[n])
     .setTimestamp();
   msg.channel.send(embed);
 };
