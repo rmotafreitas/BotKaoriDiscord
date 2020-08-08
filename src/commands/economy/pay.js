@@ -26,7 +26,7 @@ const execute = async (bot, msg, args) => {
     (err, authorData) => {
       if (err) console.log(err);
       if (!authorData) {
-        return msg.reply("You don't have money to pay someone");
+        msg.reply("Hey, create an account first type: $create");
       } else {
         Data.findOne(
           {

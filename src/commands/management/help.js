@@ -9,7 +9,8 @@ const execute = async (bot, msg, args) => {
   let description = [
     "** Fun Commands - 🥳 **",
     "** Help Commands - 🔧 **",
-    "** Commands music, Beta - 🎵 **",
+    "** Commands music - 🎵 **",
+    "** Commands econmy - 💸 **",
     "** Menu - ⬆️**",
   ];
 
@@ -73,6 +74,25 @@ const execute = async (bot, msg, args) => {
     "$report your bug",
   ];
 
+  let economy = [
+    "$create | create an account",
+    "$create",
+    "-----------------------",
+    "$bal | show an account",
+    "$bal OR $bal @user",
+    "-----------------------",
+    "$work | win 100$ everday",
+    "$work",
+    "-----------------------",
+    "$pay | pay money to an user",
+    "$pay @user <how much>",
+    "-----------------------",
+    "$gamble | bet money",
+    "$gamble <how much>",
+    "-----------------------",
+    "$lead | Show leaderboard",
+    "$lead",
+  ];
   const embed = new MessageEmbed() //criar emebed
     .setColor(`RANDOM`)
     .setDescription(description)
@@ -83,6 +103,7 @@ const execute = async (bot, msg, args) => {
       //colocando reactions para andar nas pages
       msg.react("🔧");
       msg.react("🎵");
+      msg.react("💸");
       msg.react("⬆️");
 
       //filtros
@@ -94,6 +115,8 @@ const execute = async (bot, msg, args) => {
         reaction.emoji.name === "🎵" && user.id === id;
       const menuF = (reaction, user) =>
         reaction.emoji.name === "⬆️" && user.id === id;
+      const economiaF = (reaction, user) =>
+        reaction.emoji.name === "💸" && user.id === id;
       const divertimento = msg.createReactionCollector(divertimentoF, {
         time: 60000,
       });
@@ -104,6 +127,9 @@ const execute = async (bot, msg, args) => {
         time: 60000,
       });
       const menu = msg.createReactionCollector(menuF, {
+        time: 60000,
+      });
+      const econmia = msg.createReactionCollector(economiaF, {
         time: 60000,
       });
 
@@ -213,6 +239,35 @@ const execute = async (bot, msg, args) => {
         embed.setColor(`RANDOM`);
         embed.setDescription(description);
         embed.setTitle("List:");
+
+        remove();
+        msg.edit(embed);
+      });
+
+      econmia.on("collect", (r) => {
+        async function remove() {
+          const userReactions = msg.reactions.cache.filter((reaction) =>
+            reaction.users.cache.has(id)
+          );
+          try {
+            for (const reaction of userReactions.values()) {
+              await reaction.users.remove(id);
+            }
+          } catch (error) {
+            console.error("Failed to remove reactions.");
+          }
+        }
+        if (embed.title === "Economy:") {
+          msg.channel
+            .send(`${autor}, You are already in menu`)
+            .then((msg) => msg.delete({ timeout: 3500 }));
+          remove();
+          return;
+        }
+
+        embed.setColor(`RANDOM`);
+        embed.setDescription(economy);
+        embed.setTitle("Economy:");
 
         remove();
         msg.edit(embed);

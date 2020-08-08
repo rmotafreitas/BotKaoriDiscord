@@ -19,17 +19,7 @@ const execute = async (bot, msg, args) => {
     (err, data) => {
       if (err) console.log(err);
       if (!data) {
-        const newData = new Data({
-          name: msg.author.username,
-          userID: msg.author.id,
-          lb: "all",
-          money: 0,
-          daily: 0,
-        });
-        newData.save().catch((err) => console.log(err));
-        return msg.reply(
-          "Sorry, you don't have any money to gamble, work first."
-        );
+        msg.reply("Hey, create an account first type: $create");
       } else {
         if (data.money <= 0) return msg.reply("You don´t have money");
 

@@ -1,5 +1,7 @@
+//"https://i.imgur.com/S8JDywj.jpg"
 const Discord = require("discord.js");
-
+const Canvas = require("canvas");
+const colors = require("../../colors.json");
 const mongoose = require("mongoose");
 
 //CONNECT TO DATABASE
@@ -10,7 +12,6 @@ mongoose.connect(process.env.mongoPass, {
 
 // MODELS
 const Data = require("../../models/data.js");
-
 const execute = async (bot, msg, args) => {
   if (!args[0]) {
     var user = msg.author;
@@ -22,24 +23,56 @@ const execute = async (bot, msg, args) => {
     {
       userID: user.id,
     },
-    (err, data) => {
+    async (err, data) => {
       if (err) console.log(err);
       if (!data) {
-        const newData = new Data({
-          name: bot.users.cache.get(user.id).username,
-          userID: user.id,
-          lb: "all",
-          money: 0,
-          daily: 0,
-        });
-        newData.save().catch((err) => console.log(err));
-        return msg.channel.send(
-          `${bot.users.cache.get(user.id).username} has $0.`
-        );
+        msg.reply("Hey, You don't have an account, type: $create ");
       } else {
-        return msg.channel.send(
-          `${bot.users.cache.get(user.id).username} has $${data.money}.`
+        const canvas = Canvas.createCanvas(500, 200);
+        const ctx = canvas.getContext("2d");
+        const background = await Canvas.loadImage(
+          "https://i.imgur.com/Dyv7xmE.png"
         );
+        ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+        ctx.strokeStyle = colors.white;
+        ctx.strokeRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = colors.white;
+        var size1 = 40;
+        var size2 = 30;
+        var size3 = 30;
+
+        var name = user.tag;
+        do {
+          ctx.font = `${(size1 -= 5)}px sans-serif`;
+        } while (ctx.measureText(name).width > canvas.width - 225);
+
+        ctx.fillText(name, 200, 65);
+        var balance = "Balance: $" + data.money;
+        do {
+          ctx.font = `${(size2 -= 5)}px sans-serif`;
+        } while (ctx.measureText(balance).width > canvas.width - 225);
+        ctx.fillText(balance, 200, 110);
+
+        ctx.beginPath();
+
+        ctx.arc(100, 100, 75, 0, Math.PI * 2, true);
+
+        ctx.closePath();
+
+        ctx.clip();
+
+        const avatar = await Canvas.loadImage(
+          user.displayAvatarURL({ format: "jpg" })
+        );
+
+        ctx.drawImage(avatar, 25, 25, 150, 150);
+
+        const final = new Discord.MessageAttachment(
+          canvas.toBuffer(),
+          "bal.png"
+        );
+
+        return msg.channel.send(final);
       }
     }
   );
@@ -47,6 +80,6 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "bal",
-  help: "Ele mostra a conta!",
+  help: "Show balance of an user, economy",
   execute,
 };

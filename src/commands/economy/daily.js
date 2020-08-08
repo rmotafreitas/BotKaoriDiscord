@@ -26,15 +26,7 @@ const execute = async (bot, msg, args) => {
     (err, data) => {
       if (err) console.log(err);
       if (!data) {
-        const newData = new Data({
-          name: msg.author.username,
-          userID: msg.author.id,
-          lb: "all",
-          money: reward,
-          daily: Date.now(),
-        });
-        newData.save().catch((err) => console.log(err));
-        return msg.channel.send(`${msg.author.username} has $${reward}.`);
+        msg.reply("Hey, create an account first type: $create");
       } else {
         if (timeout - (Date.now() - data.daily) > 0) {
           let time = ms(timeout - (Date.now() - data.daily));
