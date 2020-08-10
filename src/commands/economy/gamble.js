@@ -19,9 +19,9 @@ const execute = async (bot, msg, args) => {
     (err, data) => {
       if (err) console.log(err);
       if (!data) {
-        msg.reply("Hey, create an account first type: $create");
+        msg.reply("Hey, create an account first type: $create"); //
       } else {
-        if (data.money <= 0) return msg.reply("You don´t have money");
+        if (data.money <= 0) return msg.reply("You Don´t have money"); //
 
         if (!args[0]) return msg.reply("Please specify a bet.");
 
@@ -31,7 +31,7 @@ const execute = async (bot, msg, args) => {
         var bet = parseInt(args[0]);
 
         if (data.money < bet)
-          return msg.reply("You don't have that much to bet");
+          return msg.reply("You Don't have that much to bet"); //
 
         let chances = ["win", "lose"];
 
@@ -40,11 +40,37 @@ const execute = async (bot, msg, args) => {
         if (pick == "lose") {
           data.money -= bet;
           data.save().catch((err) => console.log(err));
-          return msg.reply(`You lost. New balance: $${data.money}`);
+          let embed = new Discord.MessageEmbed()
+            .setColor("RANDOM")
+            .setAuthor(msg.author.tag)
+            .setTitle("Bet!")
+            .setImage(
+              "https://mir-s3-cdn-cf.behance.net/project_modules/disp/3c3e4e73094115.5bfe66e5ca411.gif"
+            )
+            .setThumbnail(
+              msg.author.displayAvatarURL({ size: 4096, dynamic: true })
+            )
+            .setDescription(
+              `$${args[0]}, You lost. \nNew Balance: $${data.money}`
+            );
+          return msg.channel.send(embed);
         } else {
           data.money += bet;
           data.save().catch((err) => console.log(err));
-          return msg.reply(`You win. New balance: $${data.money}`);
+          let embed = new Discord.MessageEmbed()
+            .setColor("RANDOM")
+            .setAuthor(msg.author.tag)
+            .setTitle("Bet!")
+            .setImage(
+              "https://mir-s3-cdn-cf.behance.net/project_modules/disp/3c3e4e73094115.5bfe66e5ca411.gif"
+            )
+            .setThumbnail(
+              msg.author.displayAvatarURL({ size: 4096, dynamic: true })
+            )
+            .setDescription(
+              `$${args[0]}, You win. \nNew Balance: $${data.money}`
+            );
+          return msg.channel.send(embed);
         }
       }
     }

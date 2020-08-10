@@ -6,7 +6,7 @@ const execute = async (bot, msg, args) => {
     "**❯Dev: BestNessPT#4289**",
     `**❯Command list: $help**\n`,
     `**❯I am in: ${bot.guilds.cache.size} servers**`,
-    `**❯Like me? [Invite me to your server!](${"https://discord.com/api/oauth2/authorize?client_id=730092279326441574&permissions=8&scope=bot"})**`,
+    `**❯Do You like me? [Invite me to your server!](${"https://discord.com/api/oauth2/authorize?client_id=730092279326441574&permissions=8&scope=bot"})**`,
   ];
 
   let Embed = new MessageEmbed()

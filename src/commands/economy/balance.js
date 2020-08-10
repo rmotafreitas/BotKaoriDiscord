@@ -30,16 +30,21 @@ const execute = async (bot, msg, args) => {
       } else {
         const canvas = Canvas.createCanvas(500, 200);
         const ctx = canvas.getContext("2d");
-        const background = await Canvas.loadImage(
-          "https://i.imgur.com/Dyv7xmE.png"
-        );
+        if (data.skin === "normal") {
+          var background = await Canvas.loadImage(
+            "https://i.imgur.com/Dyv7xmE.png"
+          );
+        } else if (data.skin === "gold") {
+          var background = await Canvas.loadImage(
+            "https://i.imgur.com/CaLZg29.png"
+          );
+        }
         ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
         ctx.strokeStyle = colors.white;
         ctx.strokeRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = colors.white;
         var size1 = 40;
         var size2 = 30;
-        var size3 = 30;
 
         var name = user.tag;
         do {

@@ -25,6 +25,8 @@ const execute = async (bot, msg, args) => {
           lb: "all",
           money: 0,
           daily: 0,
+          say: false,
+          skin: 0,
         });
         newData.save().catch((err) => console.log(err));
         return msg.reply("Created, type: $bal");

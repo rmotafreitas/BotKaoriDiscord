@@ -1,4 +1,15 @@
 const Discord = require("discord.js");
+const mongoose = require("mongoose");
+
+//CONNECT TO DATABASE
+mongoose.connect(process.env.mongoPass, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+// MODELS
+const Data = require("../../models/data.js");
+
 const execute = async (bot, msg, args) => {
   function name() {
     const sayMessage = args.join(" ");
@@ -6,23 +17,20 @@ const execute = async (bot, msg, args) => {
     msg.channel.send(sayMessage);
   }
 
-  switch (msg.author.tag) {
-    case "BestNessPT#4289":
-      name();
-      break;
-
-    case "Sshadow#5224":
-      name();
-      break;
-
-    case "Heist✔#9198":
-      name();
-      break;
-
-    default:
-      msg.reply("You are not my creator to speak for me!");
-      break;
-  }
+  Data.findOne(
+    {
+      userID: msg.author.id,
+    },
+    (err, data) => {
+      if (err) console.log(err);
+      if (!data) return msg.reply("Hey, create an account first type: $create");
+      if (data.say === true) {
+        name();
+      } else {
+        msg.reply("You don't buy this command!");
+      }
+    }
+  );
 };
 
 module.exports = {

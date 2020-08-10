@@ -6,6 +6,8 @@ const dataSchema = mongoose.Schema({
   lb: String,
   money: Number,
   daily: Number,
+  say: Boolean,
+  skin: String,
 });
 
 module.exports = mongoose.model("Data", dataSchema);

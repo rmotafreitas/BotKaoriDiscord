@@ -36,7 +36,7 @@ const execute = async (bot, msg, args) => {
     "Hideri Kanzaki | Blend S",
     "Nico Yazawa | Love live",
     "Yukimura Shinya | Rikei ga Koi",
-    "Aigis | Persona",
+    "Mitsuru Kirijo | Persona",
   ];
 
   let waifus = [
