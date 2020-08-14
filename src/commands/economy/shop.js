@@ -13,7 +13,7 @@ mongoose.connect(process.env.mongoPass, {
 const Data = require("../../models/data.js");
 
 const execute = async (bot, msg, args) => {
-  return msg.reply("NOW WORKING RN");
+  //return msg.reply("NOW WORKING RN");
 
   id = msg.author.id;
 
@@ -61,48 +61,64 @@ const execute = async (bot, msg, args) => {
         time: 60000,
       });
 
-      flag = false;
-
       goldf.on("collect", (r) => {
-        if (!flag) {
-          flag = true;
-          Data.findOne(
-            {
-              userID: id,
-            },
-            (err, data) => {
-              if (err) console.log(err);
-              if (!data) {
-                msg.reply("Hey, create an account first type: $create"); //
-              } else {
-                if (data.money <= 0) return msg.reply("You Don´t have money"); //
+        flag = true;
+        return msg.reply("NOW WORKING RN, TALK WITH MY DEV. .");
+        Data.findOne(
+          {
+            userID: id,
+          },
+          (err, data) => {
+            if (err) console.log(err);
+            if (!data) {
+              msg.reply("Hey, create an account first type: $create"); //
+            } else {
+              if (data.money <= 0) return msg.reply("You Don´t have money"); //
 
-                if (data.money < 10000)
-                  return msg.reply("You Don't have that much to pay"); //
-                data.skin = "gold";
-                data.save().catch((err) => console.log(err));
-              }
+              if (data.money < 10000)
+                return msg.reply("You Don't have that much to pay"); //
+              data.skin = "gold";
+              data.save().catch((err) => console.log(err));
             }
-          );
-        }
+          }
+        );
       });
 
       silverf.on("collect", (r) => {
-        if (!flag) {
-          flag = true;
-        }
+        flag = true;
+        return msg.reply("NOW WORKING RN, TALK WITH MY DEV. .");
       });
 
       bronzef.on("collect", (r) => {
-        if (!flag) {
-          flag = true;
-        }
+        flag = true;
+        return msg.reply("NOW WORKING RN, TALK WITH MY DEV. .");
       });
 
       sayf.on("collect", (r) => {
-        if (!flag) {
-          flag = true;
-        }
+        flag = true;
+        Data.findOne(
+          {
+            userID: id,
+          },
+          (err, data) => {
+            if (err) console.log(err);
+            if (!data) {
+              msg.reply("Hey, create an account first type: $create"); //
+            } else {
+              if (data.say === true) {
+                return msg.channel.send("You already have purchased $say !");
+              }
+              if (data.money <= 0) return msg.reply("You Don´t have money"); //
+
+              if (data.money < 3500)
+                return msg.reply("You Don't have that much to pay"); //
+              data.money -= 3500;
+              data.say = true;
+              data.save().catch((err) => console.log(err));
+              msg.channel.send("Purchased!");
+            }
+          }
+        );
       });
     });
   });
