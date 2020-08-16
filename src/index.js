@@ -100,10 +100,6 @@ bot.on("guildMemberAdd", async (member) => {
 //Fim de boas vindas
 
 bot.on("message", (msg) => {
-  if (msg.content === "<@!730092279326441574>")
-    return msg.reply(
-      "Hey, dont ping me!\nInfo: $info\nDev: (っ◔◡◔)っ 🔥 BestNessPT#4289"
-    );
   if (msg.author.bot) return;
   if (msg.channel.type == "dm") return;
   if (!msg.content.toLowerCase().startsWith(process.env.PREFIX)) return;
