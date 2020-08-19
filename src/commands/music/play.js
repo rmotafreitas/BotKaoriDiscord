@@ -5,7 +5,7 @@ const ytdl = require("ytdl-core-discord");
 
 const execute = (bot, msg, args) => {
   const s = args.join(" ");
-  return msg.reply("Not working rw! ");
+  //return msg.reply("Not working rw! ");
   try {
     search(s, (err, result) => {
       if (err) {
