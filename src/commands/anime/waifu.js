@@ -24,7 +24,7 @@ const execute = async (bot, msg, args) => {
     "Itsuki Nakano | Quintessential quintuplets",
     "Erina | Food Wars",
     "Erina pendleton | Jojo",
-    "Serna | Pokémon Xy",
+    "Serena | Pokémon Xy",
     "Mai | Pokémon Oras",
     "Mei Misaki | Another",
     "Tomoyo Sakagami | Clannad",

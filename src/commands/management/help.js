@@ -9,8 +9,8 @@ const execute = async (bot, msg, args) => {
   let description = [
     "** Fun Commands - 🥳 **",
     "** Help Commands - 🔧 **",
-    "** Commands music - 🎵 **",
-    "** Commands econmy - 💸 **",
+    "** Music Commands - 🎵 **",
+    "** Economy Commands - 💸 **",
     "** Menu - ⬆️**",
   ];
 
