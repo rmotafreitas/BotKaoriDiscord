@@ -174,18 +174,11 @@ const execute = async (bot, msg, args) => {
       emoji[0] = "";
       emoji[1] = "";
       emoji.forEach(function (item, index, array) {
-        //console.log(emoji[index]);
         var i = 0;
         for (i = 0; i < 25; i++) {
-          //for Js.
-          //console.log(i)
-          //console.log(emojis[i]);
           if (emoji[index] != emojis[i]) {
-            //console.log('if');
           } else {
-            //console.log('else');
             emoji[index] = codes[i];
-            // message = message + codes[i];
           }
         }
 

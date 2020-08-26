@@ -32,6 +32,9 @@ const execute = async (bot, msg, args) => {
     "-----------------------",
     "$waifu | Shows mentioned waifu or yours",
     "$waifu @user OR $waifu",
+    "-----------------------",
+    "$pic | Shows picture from your shearch",
+    "$pic something you want",
   ];
 
   let musicas = [
@@ -67,8 +70,8 @@ const execute = async (bot, msg, args) => {
     "$clear | Clear message 1-99",
     "$clear 15",
     "-----------------------",
-    "$hack | Show",
-    "$hack @ OU $hack",
+    "$hack | Show userinfo oe svinfo",
+    "$hack @ OR $hack OR $hack server",
     "-----------------------",
     "$report | report bugs for Dev.",
     "$report your bug",
