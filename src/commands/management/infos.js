@@ -26,7 +26,7 @@ const execute = async (bot, msg, [target]) => {
       `**❯ Name: **` + msg.guild.name,
       `**❯ Owner: **` + msg.guild.owner.user.tag,
       `**❯ ID: **` + msg.guild.id,
-      `**❯ Avatar:** [Baixar](${msg.guild.iconURL({
+      `**❯ Avatar:** [Download](${msg.guild.iconURL({
         dynamic: true,
       })})`,
       `**❯ Members: **` + msg.guild.memberCount,
@@ -47,8 +47,29 @@ const execute = async (bot, msg, [target]) => {
       .setColor("RANDOM")
       .setDescription(description);
 
-    msg.channel.send(emebed);
-    return;
+    return msg.channel.send(emebed);
+  }
+
+  if (sv[1] === "bot") {
+    let sobre = [
+      "**❯Dev: (っ◔◡◔)っ 🔥 BestNessPT#4289**",
+      `**❯Command list: $help**\n`,
+      `**❯I am in: ${bot.guilds.cache.size} servers**`,
+      `**❯Do You like me? [Invite me to your server!](${"https://discord.com/api/oauth2/authorize?client_id=730092279326441574&permissions=8&scope=bot"})**`,
+    ];
+
+    let Embed = new MessageEmbed()
+      .setAuthor(
+        "Kaori Miyazono#5192",
+        "https://cdn.discordapp.com/avatars/730092279326441574/12b7f197efcfaee9b8740f80d40fe491.webp?size=256"
+      )
+      .setTitle("About me! ^^")
+      .setThumbnail(
+        "https://cdn.discordapp.com/avatars/730092279326441574/12b7f197efcfaee9b8740f80d40fe491.webp?size=256"
+      )
+      .setDescription(sobre)
+      .setColor(`RANDOM`);
+    return msg.channel.send(Embed);
   }
 
   const member =
@@ -64,7 +85,7 @@ const execute = async (bot, msg, [target]) => {
   let activity =
     member.user.presence.activities.find((s) =>
       ["PLAYING", "WATCHING", "LISTENING"].includes(s.type)
-    ) || "Nada";
+    ) || "Nothing";
   switch (member.user.presence.activities) {
     case "PLAYING":
   }
@@ -136,7 +157,7 @@ const execute = async (bot, msg, [target]) => {
 };
 
 module.exports = {
-  name: "hack",
+  name: "info",
   help: "Ele mostra as info de um user",
   execute,
 };
