@@ -18,7 +18,8 @@ const { DESTRUCTION } = require("dns");
 
 const execute = async (bot, msg, args) => {
   let timeout = 86400000;
-  let reward = 100;
+  let reward = [100, 200, 300, 400, 500];
+  reward = reward[Math.floor(Math.random() * reward.length)];
 
   Data.findOne(
     {
@@ -29,6 +30,7 @@ const execute = async (bot, msg, args) => {
       if (!data) {
         msg.reply("Hey, create an account first type: $create");
       } else {
+        if (data.money == -1) return msg.reply("You are blocked!");
         if (timeout - (Date.now() - data.daily) > 0) {
           let time = ms(timeout - (Date.now() - data.daily));
           let description = [

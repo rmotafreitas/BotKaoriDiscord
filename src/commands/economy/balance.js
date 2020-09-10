@@ -28,6 +28,7 @@ const execute = async (bot, msg, args) => {
       if (!data) {
         msg.reply("Hey, You don't have an account, type: $create ");
       } else {
+        if (data.money == -1) return msg.reply("Hey this account is Blocked!");
         const canvas = Canvas.createCanvas(500, 200);
         const ctx = canvas.getContext("2d");
         if (data.skin === "normal") {

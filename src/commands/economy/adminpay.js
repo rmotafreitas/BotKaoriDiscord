@@ -12,12 +12,12 @@ mongoose.connect(process.env.mongoPass, {
 const Data = require("../../models/data.js");
 
 const execute = async (bot, msg, args) => {
+  if (msg.author.id != "513113161126248469")
+    return msg.reply("Hey your are not my Dev! ");
+
   let user = msg.mentions.members.first() || bot.users.cache.get(args[0]);
 
   if (!user) return msg.reply("Sorry, could't find that user.");
-
-  if (user.id === msg.author.id)
-    return msg.reply("Hey, u can't pay to yourself");
 
   Data.findOne(
     {
@@ -28,7 +28,6 @@ const execute = async (bot, msg, args) => {
       if (!authorData) {
         msg.reply("Hey, create an account first type: $create");
       } else {
-        if (authorData.money == -1) return msg.reply("You are blocked!");
         Data.findOne(
           {
             userID: user.id,
@@ -43,12 +42,6 @@ const execute = async (bot, msg, args) => {
             if (!Number.isInteger(parseInt(args[1])))
               return msg.reply("Hey, that's not a number >:(");
 
-            if (parseInt(args[1]) > authorData.money)
-              return msg.reply("You don´t have that much to pay!");
-
-            if (parseInt(args[1]) < 1)
-              return msg.reply("You can't pay less than 1$!");
-
             if (!userData) {
               const newData = new Data({
                 name: bot.users.cache.get(user.id).username,
@@ -57,12 +50,10 @@ const execute = async (bot, msg, args) => {
                 money: parseInt(args[1]),
                 daily: 0,
               });
-              authorData.money -= parseInt(args[1]);
               newData.save().catch((err) => console.log(err));
               authorData.save().catch((err) => console.log(err));
             } else {
               userData.money += parseInt(args[1]);
-              authorData.money -= parseInt(args[1]);
               userData.save().catch((err) => console.log(err));
               authorData.save().catch((err) => console.log(err));
             }
@@ -79,7 +70,7 @@ const execute = async (bot, msg, args) => {
 };
 
 module.exports = {
-  name: "pay",
-  help: "Pay other users, economy system",
+  name: "adminpay",
+  help: "help",
   execute,
 };
