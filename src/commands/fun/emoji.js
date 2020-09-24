@@ -29,13 +29,7 @@ const execute = async (bot, msg, args) => {
     "$esqueletin",
     "$ban",
     "$burguei",
-    "$gg",
-    "$pew",
-    "$yayaya",
-    "$claps",
     "$happy_dance",
-    "$sadeboy",
-    "$villager",
     "$chibi_cola",
   ];
 
@@ -57,13 +51,7 @@ const execute = async (bot, msg, args) => {
     "<a:esqueletin:730895542552363019>",
     "<a:ban:730897367926308864>",
     "<a:burguei:730902876020408382>",
-    "<a:gg:730904387949560009>",
-    "<a:pew:730905496512495707>",
-    "<a:yayaya:730906388049690797>",
-    "<a:claps:730907838322573365>",
     "<a:happy_dance:731157405689315449>",
-    "<a:sadeboy:731165082007896116>",
-    "<a:villager:731166483274530837>",
     "<a:chibi_cola:731167866337886249>",
   ];
 
@@ -135,33 +123,9 @@ const execute = async (bot, msg, args) => {
       linhas2();
       msg.channel.send("<a:burguei:730902876020408382>");
       break;
-    case "gg":
-      linhas2();
-      msg.channel.send("<a:gg:730904387949560009>");
-      break;
-    case "pew":
-      linhas2();
-      msg.channel.send("<a:pew:730905496512495707>");
-      break;
-    case "yayaya":
-      linhas2();
-      msg.channel.send("<a:yayaya:730906388049690797>");
-      break;
-    case "claps":
-      linhas2();
-      msg.channel.send("<a:claps:730907838322573365>");
-      break;
     case "happy_dance":
       linhas2();
       msg.channel.send("<a:happy_dance:731157405689315449>");
-      break;
-    case "sadeboy":
-      linhas2();
-      msg.channel.send("<a:sadeboy:731165082007896116>");
-      break;
-    case "villager":
-      linhas2();
-      msg.channel.send("<a:villager:731166483274530837>");
       break;
     case "chibi_cola":
       linhas2();
@@ -215,13 +179,7 @@ const list = async (bot, msg, args) => {
     "<a:esqueletin:730895542552363019> => **$emoji esqueletin**",
     "<a:ban:730897367926308864> => **$emoji ban**",
     "<a:burguei:730902876020408382> => **$emoji burguei**",
-    "<a:gg:730904387949560009> => **$emoji gg**",
-    "<a:pew:730905496512495707> => **$emoji pew**",
-    "<a:yayaya:730906388049690797> => **$emoji yayaya**",
-    "<a:claps:730907838322573365> => **$emoji claps**",
     "<a:happy_dance:731157405689315449> => **$emoji happy_dance**",
-    "<a:sadeboy:731165082007896116> => **$emoji sadeboy**",
-    "<a:villager:731166483274530837> => **$emoji villager**",
     "<a:chibi_cola:731167866337886249> => **$emoji chibi_cola**",
     "-----------------------",
     "$emoji say | Your message with emojis!",
