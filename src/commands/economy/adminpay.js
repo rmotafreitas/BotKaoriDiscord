@@ -34,8 +34,7 @@ const execute = async (bot, msg, args) => {
           },
           (err, userData) => {
             if (err) console.log(err);
-            if (userData.money == -1)
-              return msg.reply("Hey this account is Blocked!");
+
             if (!args[1])
               return msg.reply("Please specify an amount you want to pay.");
 

@@ -51,24 +51,37 @@ const execute = async (bot, msg, [target]) => {
   }
 
   if (sv[1] === "bot") {
+    var dev = bot.users.cache.get("513113161126248469");
+    let devavatar = dev.displayAvatarURL({ size: 4096, dynamic: true });
+
+    var kaori = bot.users.cache.get("730092279326441574");
+    let kaoriavatar = kaori.displayAvatarURL({ size: 4096, dynamic: true });
+
     let sobre = [
-      "**❯Dev: (っ◔◡◔)っ 🔥 BestNessPT#4289**",
-      `**❯Command list: $help**\n`,
-      `**❯I am in: ${bot.guilds.cache.size} servers**`,
-      `**❯Do You like me? [Invite me to your server!](${"https://discord.com/api/oauth2/authorize?client_id=730092279326441574&permissions=8&scope=bot"})**`,
+      "**❯Command list:** `$help`\n",
+      "**Statics ↗️**",
+      `**❯Servers:** ${bot.guilds.cache.size}`,
+      `**❯Channels:** ${bot.channels.cache.size}`,
+      `**❯Users:** ${bot.users.cache.size}\n`,
+      "**Software ⚙️**",
+      `**❯Size:** 150 Mg`,
+      `**❯Library:** Discord.Js`,
+      `**❯Version Discord.Js:** 12.3.1`,
+      `**❯Version Node.Js:** 12.16.3\n`,
+      `**Support me 👇**`,
+      `<:github:760606165016117298> [Give me a star](${"https://github.com/BestNessPT/BotKaoriDiscord"})`,
+      `<:discord:760607139172712520> [Join my server](${"https://discord.gg/8dUbPv"})`,
+      `<:topggbot:760960068589060106> [Vote me on Top.gg](${"https://top.gg/bot/730092279326441574"})`,
+      `💌 [Invite me to your server!](${"https://discord.com/api/oauth2/authorize?client_id=730092279326441574&permissions=8&scope=bot"})`,
     ];
 
     let Embed = new MessageEmbed()
-      .setAuthor(
-        "Kaori Miyazono#5192",
-        "https://cdn.discordapp.com/avatars/730092279326441574/12b7f197efcfaee9b8740f80d40fe491.webp?size=256"
-      )
-      .setTitle("About me! ^^")
-      .setThumbnail(
-        "https://cdn.discordapp.com/avatars/730092279326441574/12b7f197efcfaee9b8740f80d40fe491.webp?size=256"
-      )
+      .setAuthor("Kaori Miyazono#5192", kaoriavatar)
+      .setTitle("About me!")
+      .setThumbnail(kaoriavatar)
       .setDescription(sobre)
-      .setColor(`RANDOM`);
+      .setColor(`RANDOM`)
+      .setFooter(`Dev: ${dev.username}#${dev.discriminator}`, devavatar);
     return msg.channel.send(Embed);
   }
 

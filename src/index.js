@@ -21,10 +21,10 @@ for (var folder of commandsFolder) {
 }
 
 bot.login(process.env.TOKEN);
-
+bot.options.fetchAllMembers = true;
 bot.on("ready", function () {
   console.log(
-    `Estou conectado como ${bot.user.username} em ${bot.guilds.cache.size} servidores`
+    `Estou conectado como ${bot.user.username} em ${bot.guilds.cache.size} servidores e users ${bot.users.cache.size}`
   );
   bot.user.setActivity("$help", { type: 3 });
 });
@@ -36,13 +36,11 @@ bot.on("guildMemberAdd", async (member) => {
   let guilds = [
     bot.guilds.cache.get("730079290221396008"), //Kaoir Bot Server
     bot.guilds.cache.get("729166259924762664"), //Animes Server
-    bot.guilds.cache.get("391361981061267456"), //danile 391361981061267456
   ]; //IDs SERVER
 
   let channels = [
     bot.channels.cache.get("730079290221396013"), //Kaoir Bot Server
     bot.channels.cache.get("740921877970550795"), //Animes Server
-    bot.channels.cache.get("391361981061267459"),
   ]; //IDs CANAL
 
   let channel = ["0"]; //ID Canal
@@ -65,16 +63,13 @@ bot.on("guildMemberAdd", async (member) => {
     if (guilds[index] != member.guild) {
       return;
     } else {
-      console.log("BOAS VINDAS!");
       flag = true;
       channel = channels[index];
       guild = guilds[index];
     }
   });
 
-  if (flag != true) {
-    return console.log("Server errado!");
-  } else {
+  if (flag == true) {
     const embed = new Discord.MessageEmbed()
       .setColor("#DE3B72")
       .setAuthor(
@@ -96,6 +91,13 @@ bot.on("guildMemberAdd", async (member) => {
       .setFooter("ID: " + member.user.id)
       .setTimestamp();
     await channel.send(embed);
+
+    //Kaori auto role
+    if (guild == "730079290221396008") {
+      const role = guild.roles.cache.find((role) => role.name === "Members");
+      member.roles.add(role);
+    }
+    //
   }
 });
 

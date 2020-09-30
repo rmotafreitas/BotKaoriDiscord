@@ -22,6 +22,7 @@ const execute = async (bot, msg, args) => {
         msg.reply("Hey, create an account first type: $create"); //
       } else {
         if (data.money == -1) return msg.reply("You are blocked!");
+
         if (data.money <= 0) return msg.reply("You Don´t have money"); //
 
         if (!args[0]) return msg.reply("Please specify a bet.");
@@ -30,6 +31,10 @@ const execute = async (bot, msg, args) => {
           return msg.reply("Hey, that's not a whole number >:(");
 
         var bet = parseInt(args[0]);
+
+        if (bet <= 0) {
+          return msg.reply("Hey, that's not a whole number >:(");
+        }
 
         if (data.money < bet)
           return msg.reply("You Don't have that much to bet"); //
