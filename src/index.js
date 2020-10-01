@@ -21,7 +21,6 @@ for (var folder of commandsFolder) {
 }
 
 bot.login(process.env.TOKEN);
-bot.options.fetchAllMembers = true;
 bot.on("ready", function () {
   console.log(
     `Estou conectado como ${bot.user.username} em ${bot.guilds.cache.size} servidores e users ${bot.users.cache.size}`
