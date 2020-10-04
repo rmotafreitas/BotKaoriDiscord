@@ -70,7 +70,7 @@ const execute = async (bot, msg, [target]) => {
       `**❯Version Node.Js:** 12.16.3\n`,
       `**Support me 👇**`,
       `<:github:760606165016117298> [Give me a star](${"https://github.com/BestNessPT/BotKaoriDiscord"})`,
-      `<:discord:760607139172712520> [Join my server](${"https://discord.gg/XXKJYb"})`,
+      `<:discord:760607139172712520> [Join my server](${"https://discord.gg/wD7T6Ty"})`,
       `<:topggbot:760960068589060106> [Vote me on Top.gg](${"https://top.gg/bot/730092279326441574"})`,
       `💌 [Invite me to your server!](${"https://discord.com/api/oauth2/authorize?client_id=730092279326441574&permissions=8&scope=bot"})`,
     ];
