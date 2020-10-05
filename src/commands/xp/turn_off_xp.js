@@ -3,6 +3,11 @@ const database = firebase.database();
 const { MessageEmbed } = require("discord.js");
 const colors = require("../../colors.json");
 const execute = async (bot, msg, args) => {
+  if (!msg.member.permissions.has("MANAGE_GUILD"))
+    return msg.reply(
+      "you are weak, you do not have permission to `MANAGE_GUILDs` to use this command"
+    );
+
   database.ref(`Servidores/Levels/${msg.guild.id}/Config`).update({
     systemXp: "off",
   });

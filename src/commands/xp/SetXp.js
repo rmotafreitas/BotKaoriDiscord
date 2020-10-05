@@ -4,6 +4,11 @@ const { MessageEmbed } = require("discord.js");
 const colors = require("../../colors.json");
 
 const execute = async (bot, msg, args) => {
+  if (!msg.member.permissions.has("MANAGE_GUILD"))
+    return msg.reply(
+      "you are weak, you do not have permission to `MANAGE_GUILDs` to use this command"
+    );
+
   msg.reply(
     "\n**So to turn On the Xp system you need to mention a channel to I send the lvl up msg**\n**Pls type: [Example: `#general`]**"
   );
