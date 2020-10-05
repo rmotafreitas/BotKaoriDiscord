@@ -11,6 +11,7 @@ const execute = async (bot, msg, args) => {
     "** Help Commands - 🔧 **",
     "** Music Commands - 🎵 **",
     "** Economy Commands - 💸 **",
+    "** Bot Config - ⚙️ **",
     "** Menu - ⬆️**",
   ];
 
@@ -32,6 +33,9 @@ const execute = async (bot, msg, args) => {
     "-----------------------",
     "$waifu | Shows mentioned waifu or yours",
     "$waifu @user OR $waifu",
+    "-----------------------",
+    "$profile | Shows mentioned Xp Level Card or yours, if the system is On",
+    "$profile @user OR $profile",
   ];
 
   let musicas = [
@@ -69,6 +73,9 @@ const execute = async (bot, msg, args) => {
     "-----------------------",
     "$report | report bugs for Dev.",
     "$report your bug",
+    "-----------------------",
+    "$invite | Show my invite.",
+    "$invite",
   ];
 
   let economy = [
@@ -90,6 +97,15 @@ const execute = async (bot, msg, args) => {
     "$lead | Show leaderboard",
     "$lead",
   ];
+
+  let configure = [
+    "$configXp | Turn On and setup xp system",
+    "$configXp",
+    "-----------------------",
+    "$turnOffXp | Turn Off Xp system",
+    "$turnOffXp",
+  ];
+
   const embed = new MessageEmbed() //criar emebed
     .setColor(`RANDOM`)
     .setDescription(description)
@@ -101,6 +117,7 @@ const execute = async (bot, msg, args) => {
       msg.react("🔧");
       msg.react("🎵");
       msg.react("💸");
+      msg.react("⚙️");
       msg.react("⬆️");
 
       //filtros
@@ -114,6 +131,8 @@ const execute = async (bot, msg, args) => {
         reaction.emoji.name === "⬆️" && user.id === id;
       const economiaF = (reaction, user) =>
         reaction.emoji.name === "💸" && user.id === id;
+      const configureF = (reaction, user) =>
+        reaction.emoji.name === "⚙️" && user.id === id;
       const divertimento = msg.createReactionCollector(divertimentoF, {
         time: 60000,
       });
@@ -129,7 +148,9 @@ const execute = async (bot, msg, args) => {
       const econmia = msg.createReactionCollector(economiaF, {
         time: 60000,
       });
-
+      const config = msg.createReactionCollector(configureF, {
+        time: 60000,
+      });
       divertimento.on("collect", (r) => {
         //🥳
         async function remove() {
@@ -268,6 +289,32 @@ const execute = async (bot, msg, args) => {
 
         remove();
         msg.edit(embed);
+      });
+      config.on("collect", (r) => {
+        async function remove() {
+          const userReactions = msg.reactions.cache.filter((reaction) =>
+            reaction.users.cache.has(id)
+          );
+          try {
+            for (const reaction of userReactions.values()) {
+              await reaction.users.remove(id);
+            }
+          } catch (error) {
+            console.error("Failed to remove reactions.");
+          }
+        }
+        if (embed.title === "Bot config - ⚙️") {
+          msg.channel
+            .send(`${autor}, You are already in config`)
+            .then((msg) => msg.delete({ timeout: 3500 }));
+          remove();
+          return;
+        }
+        embed.setTitle("Bot config - ⚙️");
+        embed.setDescription(configure);
+        msg.edit(embed);
+
+        remove();
       });
     });
   });
