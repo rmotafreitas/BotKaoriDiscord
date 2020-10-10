@@ -78,7 +78,7 @@ const execute = async (bot, msg, args) => {
 
             //avatar
             ctx.arc(170, 160, 120, 0, Math.PI * 2, true);
-            ctx, (lineWidth = 6);
+            ctx.lineWidth = 6;
             ctx.strokeStyle = colors.white;
             ctx.stroke();
             ctx.closePath();

@@ -38,6 +38,8 @@ const execute = async (bot, msg, args) => {
             `While you wait, add me to your server. [Invite me to your server!](${"https://discord.com/api/oauth2/authorize?client_id=730092279326441574&permissions=8&scope=bot"})`,
           ];
           let embed = new Discord.MessageEmbed()
+
+          
             .setColor("#00FFFF")
             .setAuthor(
               msg.author.tag,

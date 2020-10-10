@@ -13,6 +13,8 @@ var configF = {
   projectId: "kaori-xp-146b4",
   storageBucket: "kaori-xp-146b4.appspot.com",
   messagingSenderId: "43712754967",
+
+
   appId: "1:43712754967:web:f16b63b58523b5f1157352",
 };
 // Initialize Firebase

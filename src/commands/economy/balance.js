@@ -4,6 +4,7 @@ const Canvas = require("canvas");
 const colors = require("../../colors.json");
 const mongoose = require("mongoose");
 
+
 //CONNECT TO DATABASE
 mongoose.connect(process.env.mongoPass, {
   useNewUrlParser: true,
@@ -13,6 +14,7 @@ mongoose.connect(process.env.mongoPass, {
 // MODELS
 const Data = require("../../models/data.js");
 const execute = async (bot, msg, args) => {
+  var skinColors = JSON.parse(JSON.stringify(require("../../skins.json")));
   if (!args[0]) {
     var user = msg.author;
   } else {
@@ -31,15 +33,18 @@ const execute = async (bot, msg, args) => {
         if (data.money == -1) return msg.reply("Hey this account is Blocked!");
         const canvas = Canvas.createCanvas(500, 200);
         const ctx = canvas.getContext("2d");
-        if (data.skin === "normal") {
-          var background = await Canvas.loadImage(
-            "https://i.imgur.com/Dyv7xmE.png"
-          );
-        } else if (data.skin === "gold") {
-          var background = await Canvas.loadImage(
-            "https://i.imgur.com/CaLZg29.png"
-          );
+
+        //back
+
+        let skins = data.skin;
+        
+        if (skins != "normal") {
+          skins = skins.split("+");
+          
+          skins = skins[0];
         }
+
+        var background = await Canvas.loadImage(skinColors[skins].url);
         ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
         ctx.strokeStyle = colors.white;
         ctx.strokeRect(0, 0, canvas.width, canvas.height);
