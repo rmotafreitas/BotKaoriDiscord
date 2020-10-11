@@ -46,11 +46,14 @@ bot.on("ready", function () {
     `Estou conectado como ${bot.user.username} em ${bot.guilds.cache.size} servidores e users ${bot.users.cache.size}`
   );
   bot.user.setActivity("$help", { type: 3 });
+  bot.user.setStatus("idle");
 });
 
 bot.on("message", function (msg) {
+ 
   if (msg.channel.type == "DM") return;
   if (msg.author.bot) return;
+  if ((msg.mentions.has(bot.user)) &&	 (msg.content.split(' ').length === 1)) return msg.reply('HEY, \nMy prefix is `$`\nIf you want help use `$help`');
   database
     .ref(`Servidores/Levels/${msg.guild.id}/Config`)
     .once("value")
@@ -181,6 +184,14 @@ bot.on("guildMemberAdd", async (member) => {
     //
   }
 });
+
+//joined a server
+bot.on("guildCreate", guild => {
+  console.log("Joined a new guild: " + guild.name);
+  //Your other stuff like adding to guildArray, guild.owner.user.tag,
+  bot.users.cache.get(guild.owner.user.id).send("**Hey, thx for add me to your server!\nPls join my support server: https://discord.gg/wD7T6Ty\nRead my guidelines to avoid problems**");
+})
+
 
 //Fim de boas vindas
 
