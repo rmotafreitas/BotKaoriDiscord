@@ -120,11 +120,13 @@ bot.on("guildMemberAdd", async (member) => {
   let guilds = [
     bot.guilds.cache.get("730079290221396008"), //Kaoir Bot Server
     bot.guilds.cache.get("729166259924762664"), //Animes Server
+    bot.guilds.cache.get("730079290221396008"),
   ]; //IDs SERVER
 
   let channels = [
     bot.channels.cache.get("730079290221396013>"), //Kaoir Bot Server
     bot.channels.cache.get("740921877970550795"), //Animes Server
+    bot.channels.cache.get("730079290221396013"),
   ]; //IDs CANAL
 
   let channel = ["0"]; //ID Canal
