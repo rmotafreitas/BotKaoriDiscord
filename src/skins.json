@@ -27,12 +27,25 @@
     "emoji": "🌞",
     "active": false,
     "url": "https://i.imgur.com/Pvp3bL7.jpg",
-    "price": "7000"
+    "price": "2000"
   },
   "natsumi": {
     "emoji": "🧙‍♀️",
     "active": false,
     "url": "https://i.imgur.com/DaNZHHk.jpg",
-    "price": "3000"
+    "price": "2000"
+  },
+  "BeautifulPlace": {
+    "emoji": "🌻",
+    "active": false,
+    "url": "https://i.imgur.com/PQs6juL.jpg",
+    "price": "2000"
+  },
+  "eeve": {
+    "emoji": "🦊",
+    "active": false,
+    "url": "https://i.imgur.com/XmknjMQ.jpg",
+    "price": "2000"
   }
+
 }
