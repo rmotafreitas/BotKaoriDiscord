@@ -33,7 +33,7 @@ const execute = async (bot, msg, [target]) => {
       `**❯ Bots: **` +
         msg.guild.members.cache.filter((mem) => mem.user.bot === true).size,
       `**❯ Roles: **` + msg.guild.roles.cache.size,
-      `**❯ Sercurity level: **` + msg.guild.verificationLevel,
+      `**❯ Security level: **` + msg.guild.verificationLevel,
       `**❯ Created at: **` +
         moment.utc(msg.guild.createdAt).format("dddd, MMMM, Do, YYYY"),
       `**❯ Online: **` +
@@ -144,7 +144,7 @@ const execute = async (bot, msg, [target]) => {
         ? member.user.presence.activities[0].state
         : "Nothing"
     }`,
-    `**❯ Activty:** ${activity}`,
+    `**❯ Activity:** ${activity}`,
     "",
     "** Member**",
     `**❯ Higher role:** ${

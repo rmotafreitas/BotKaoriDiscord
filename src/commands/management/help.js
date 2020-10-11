@@ -40,7 +40,7 @@ const execute = async (bot, msg, args) => {
 
   let musicas = [
     "$p | Bot plays music from yt!",
-    "$p musica name",
+    "$p music name",
     "-----------------------",
     "$pause | Pause",
     "$pause",
@@ -85,7 +85,7 @@ const execute = async (bot, msg, args) => {
     "$bal | show an account",
     "$bal OR $bal @user",
     "-----------------------",
-    "$work | win 100$ everday",
+    "$work | win 100$ every day",
     "$work",
     "-----------------------",
     "$pay | pay money to an user",
@@ -96,6 +96,12 @@ const execute = async (bot, msg, args) => {
     "-----------------------",
     "$lead | Show leaderboard",
     "$lead",
+    "-----------------------",
+    "$shop | Buy some cool stuff",
+    "$shop",
+    "-----------------------",
+    "$account | Manage your economy account",
+    "$account",
   ];
 
   let configure = [
