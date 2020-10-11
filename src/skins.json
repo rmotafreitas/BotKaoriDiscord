@@ -46,6 +46,12 @@
     "active": false,
     "url": "https://i.imgur.com/XmknjMQ.jpg",
     "price": "2000"
+  }, 
+  "ChihiroTrain": {
+    "emoji": "👻",
+    "active": false,
+    "url": "https://i.imgur.com/jCZENp5.jpeg",
+    "price": "2000"
   }
 
 }
