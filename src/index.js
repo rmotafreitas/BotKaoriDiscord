@@ -45,8 +45,9 @@ bot.on("ready", function () {
   console.log(
     `Estou conectado como ${bot.user.username} em ${bot.guilds.cache.size} servidores e users ${bot.users.cache.size}`
   );
+  
   bot.user.setActivity("$help", { type: 3 });
-  bot.user.setStatus("idle");
+  //bot.user.setStatus("idle");
 });
 
 bot.on("message", function (msg) {
