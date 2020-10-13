@@ -47,14 +47,13 @@ bot.on("ready", function () {
   );
   
   bot.user.setActivity("$help", { type: 3 });
-  //bot.user.setStatus("idle");
 });
 
 bot.on("message", function (msg) {
  
   if (msg.channel.type == "DM") return;
   if (msg.author.bot) return;
-  if ((msg.mentions.has(bot.user)) &&	 (msg.content.split(' ').length === 1)) return msg.reply('HEY, \nMy prefix is `$`\nIf you want help use `$help`');
+  if ((msg.mentions.has(bot.user)) &&	 (msg.content.split(' ').length === 1) && (msg.content != "@everyone") && (msg.content != "@here")) return msg.reply('HEY, \nMy prefix is `$`\nIf you want help use `$help`');
   database
     .ref(`Servidores/Levels/${msg.guild.id}/Config`)
     .once("value")
