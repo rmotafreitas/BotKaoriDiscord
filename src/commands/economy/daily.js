@@ -17,7 +17,7 @@ const Data = require("../../models/data.js");
 const { DESTRUCTION } = require("dns");
 
 const execute = async (bot, msg, args) => {
-  let timeout = 86400000;
+  let timeout = 43200000;
   let reward = [100, 200, 300, 400, 500];
   reward = reward[Math.floor(Math.random() * reward.length)];
 
