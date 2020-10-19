@@ -11,12 +11,6 @@
     "url": "https://i.imgur.com/fL9nZYJ.jpg",
     "price": "5000"
   },
-  "bronze": {
-    "emoji": "🟤",
-    "active": false,
-    "url": "https://i.imgur.com/F5WLmz8.jpg",
-    "price": "3000"
-  },
   "normal": {
     "emoji": "⚫",
     "active": true,
