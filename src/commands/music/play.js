@@ -4,6 +4,7 @@ const search = require("yt-search");
 const ytdl = require("ytdl-core-discord");
 
 const execute = (bot, msg, args) => {
+  return msg.reply("Music system not working now, please be patient...")
   const s = args.join(" ");
   //return msg.reply("Not working rw! ");
   try {
