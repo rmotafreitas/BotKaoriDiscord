@@ -1,5 +1,5 @@
 const playSong = require("./play").playSong;
-const Discord = require("discord.js");
+
 const execute = async (bot, msg, args) => {
   const queue = bot.queues.get(msg.guild.id);
   if (!queue) {
@@ -12,6 +12,6 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "skip",
-  help: "Ele passa para a proxima música",
+  helpMusic: "Skip to the nest track",
   execute,
 };

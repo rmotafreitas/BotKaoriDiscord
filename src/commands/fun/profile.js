@@ -102,6 +102,6 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "profile",
-  help: "View xp profile of an user!",
+  helpFun: "Shows mentioned Xp Level Card or yours, if the system is On",
   execute,
 };

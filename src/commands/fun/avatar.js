@@ -11,6 +11,7 @@ const execute = async (bot, msg, args) => {
     user = msg.author;
   }
 
+  
   let avatar = user.displayAvatarURL({ size: 4096, dynamic: true });
   let Embed = new MessageEmbed()
     .setImage(avatar)
@@ -21,6 +22,6 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "avatar",
-  help: "Ele mostra o avatar!",
+  helpFun: "Shows mentioned avatar or yours",
   execute,
 };

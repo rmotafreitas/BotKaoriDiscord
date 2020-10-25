@@ -101,6 +101,6 @@ const execute = async (bot, msg, args) => {
 };
 module.exports = {
   name: "waifu",
-  help: "Ele mostra a sua waifu!",
+  helpAnime: "Shows mentioned waifu or yours",
   execute,
 };

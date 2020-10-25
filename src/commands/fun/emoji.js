@@ -196,6 +196,6 @@ const list = async (bot, msg, args) => {
 
 module.exports = {
   name: "emoji",
-  help: "Emojis sem nitro!",
+  helpFun: "Nitro animated emoji",
   execute,
 };

@@ -21,11 +21,13 @@
     "fluent-ffmpeg": "^2.1.2",
     "fs": "0.0.1-security",
     "genius-lyrics": "^3.0.0",
+    "https-proxy-agent": "^5.0.0",
     "moment": "^2.27.0",
     "mongodb": "^3.6.0",
     "mongoose": "^5.9.27",
     "parse-ms": "^2.1.0",
     "yt-search": "^2.1.9",
+    "ytdl-core": "^3.4.2",
     "ytdl-core-discord": "^1.2.1"
   },
   "devDependencies": {

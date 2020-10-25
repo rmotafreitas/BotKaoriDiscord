@@ -13,6 +13,6 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "report",
-  help: "Ele reporta os bugs para o Ness!",
+  helpManagement: "Report bugs!",
   execute,
 };

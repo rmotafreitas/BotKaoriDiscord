@@ -21,7 +21,7 @@ const execute = async (bot, msg, args) => {
 };
 
 module.exports = {
-  name: "turnOffXp",
-  help: "Set Xp System!",
+  name: "TurnOffXp",
+  helpConfig: "Turn Off Xp System",
   execute,
 };

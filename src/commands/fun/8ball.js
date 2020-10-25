@@ -27,10 +27,11 @@ const execute = async (bot, msg, args) => {
     .addFields({ name: "Answer:", value: response });
   msg.delete().catch((O_o) => {});
   msg.channel.send(Embed);
+  
 };
 
 module.exports = {
   name: "8ball",
-  help: "Responde uma pergunta?",
+  helpFun: "Answer your questions!",
   execute,
 };

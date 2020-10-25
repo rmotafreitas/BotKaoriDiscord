@@ -26,6 +26,6 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "clear",
-  help: "Ele limpa msg. 1-99!",
+  helpManagement: "Clear message 1-99",
   execute,
 };

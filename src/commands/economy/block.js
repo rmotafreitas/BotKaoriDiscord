@@ -40,6 +40,6 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "block",
-  help: "Block an economy account (admin)",
+  helpAdmin: "Block an economy account (admin)",
   execute,
 };

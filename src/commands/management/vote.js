@@ -26,6 +26,6 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "vote",
-  help: "Ele inicia uma votação!",
+  helpManagement: "Start a vote",
   execute,
 };

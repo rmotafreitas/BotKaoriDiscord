@@ -86,8 +86,8 @@ const playSong = async (bot, msg, song) => {
 };
 
 module.exports = {
-  name: "p",
-  help: "Reproduz a música desejada no canal atual do usuário",
+  name: "play",
+  helpMusic: "Bot plays music form yt",
   execute,
   playSong,
 };

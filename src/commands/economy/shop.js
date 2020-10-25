@@ -171,6 +171,6 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "shop",
-  help: "Shop system economy!",
+  helpEconomy: "Shop system economy!",
   execute,
 };

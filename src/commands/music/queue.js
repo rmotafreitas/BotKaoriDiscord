@@ -19,6 +19,6 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "queue",
-  help: "Ele mostra a queue!",
+  helpMusic: "Show the music queue",
   execute,
 };

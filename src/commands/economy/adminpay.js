@@ -70,6 +70,6 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "adminpay",
-  help: "help",
+  helpAdmin: "AdminPay",
   execute,
 };

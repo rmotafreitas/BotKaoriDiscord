@@ -5,6 +5,8 @@ const path = require("path");
 const firebase = require("firebase");
 const { MessageEmbed } = require("discord.js");
 
+
+
 // Your web app's Firebase configuration
 var configF = {
   apiKey: process.env.fire,
@@ -27,6 +29,9 @@ dotenv.config();
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 bot.queues = new Map();
+
+
+
 //command handler
 const commandsFolder = fs.readdirSync(path.join(__dirname, "/commands"));
 
@@ -41,8 +46,9 @@ for (var folder of commandsFolder) {
 }
 
 bot.login(process.env.TOKEN);
+
 bot.on("ready", function () {
-  console.log(
+    console.log(
     `Estou conectado como ${bot.user.username} em ${bot.guilds.cache.size} servidores e users ${bot.users.cache.size}`
   );
   

@@ -143,6 +143,6 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "kiss",
-  help: "Beija alguêm!",
+  helpAnime: "Kiss someone",
   execute,
 };

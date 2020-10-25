@@ -12,6 +12,6 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "pause",
-  help: "Ele pausa a música",
+  helpMusic: "Pause the music",
   execute,
 };

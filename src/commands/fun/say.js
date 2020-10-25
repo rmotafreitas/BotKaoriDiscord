@@ -35,6 +35,6 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "say",
-  help: "Ele fala uma frase",
+  helpFun: "Bot says whatever you want!",
   execute,
 };

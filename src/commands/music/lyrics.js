@@ -17,6 +17,6 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "lyrics",
-  help: "Ele mostra a letra da música",
+  helpMusic: "Show music lyrics, `$lyrics SongName`",
   execute,
 };
