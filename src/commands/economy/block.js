@@ -1,5 +1,3 @@
-const Discord = require("discord.js");
-
 const mongoose = require("mongoose");
 
 //CONNECT TO DATABASE
@@ -12,7 +10,10 @@ mongoose.connect(process.env.mongoPass, {
 const Data = require("../../models/data.js");
 
 const execute = async (bot, msg, args) => {
-  if (msg.author.id == "513113161126248469") {
+  if (
+    msg.author.id == "513113161126248469" ||
+    msg.author.id == "404383511156621312"
+  ) {
     if (!args[0]) {
       return msg.reply("Hey Ness u forgot to mention >:( ! ");
     } else {

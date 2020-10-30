@@ -59,6 +59,6 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "ConfigXp",
-  helpConfig: "Config the Xp system",
+  helpConfig: "Turn On and setup the Xp system",
   execute,
 };

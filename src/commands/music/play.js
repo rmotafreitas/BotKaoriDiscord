@@ -1,7 +1,6 @@
-const Discord = require("discord.js");
-const { MessageEmbed } = require("discord.js");
 const search = require("yt-search");
 const ytdl = require("ytdl-core-discord");
+const { MessageEmbed } = require("discord.js");
 
 const execute = (bot, msg, args) => {
   const s = args.join(" ");

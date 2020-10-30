@@ -4,7 +4,6 @@ const Canvas = require("canvas");
 const colors = require("../../colors.json");
 const mongoose = require("mongoose");
 
-
 //CONNECT TO DATABASE
 mongoose.connect(process.env.mongoPass, {
   useNewUrlParser: true,
@@ -37,10 +36,10 @@ const execute = async (bot, msg, args) => {
         //back
 
         let skins = data.skin;
-        
+
         if (skins != "normal") {
           skins = skins.split("+");
-          
+
           skins = skins[0];
         }
 

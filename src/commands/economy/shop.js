@@ -45,7 +45,7 @@ const execute = async (bot, msg, args) => {
         }
 
         desc.push("**COMMANDS**");
-        desc.push(" ❯ 📣 $say - 3500$");
+        desc.push(" ❯ 📣 $say - 15000$");
 
         let embed = new MessageEmbed()
           .setTitle("Shop")
@@ -155,9 +155,9 @@ const execute = async (bot, msg, args) => {
               }
               if (data.money <= 0) return msg.reply("You Don´t have money"); //
 
-              if (data.money < 3500)
+              if (data.money < 15000)
                 return msg.reply("You Don't have that much to pay"); //
-              data.money -= 3500;
+              data.money -= 15000;
               data.say = true;
               data.save().catch((err) => console.log(err));
               msg.channel.send("Purchased!");

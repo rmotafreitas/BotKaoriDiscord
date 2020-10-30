@@ -12,6 +12,7 @@ mongoose.connect(process.env.mongoPass, {
 const Data = require("../../models/data.js");
 
 const execute = async (bot, msg, args) => {
+  
   Data.find({
     lb: "all",
   })
@@ -19,7 +20,16 @@ const execute = async (bot, msg, args) => {
     .exec((err, res) => {
       if (err) console.log(err);
 
-      var page = Math.ceil(res.length / 10);
+
+
+      var users = 0;
+      for (i = 0; i < res.length; i++) {
+        if(res.money != -1) {
+          users++;
+        }
+      }
+
+      var page = Math.ceil(users / 10);
 
       let embed = new Discord.MessageEmbed();
       embed.setTitle("LEADERBOARD");
@@ -41,18 +51,24 @@ const execute = async (bot, msg, args) => {
         embed.setFooter(`page ${pg} of ${page}`);
 
         for (i = start; i < res.length; i++) {
-          embed.addField(
-            `${i + 1}. ${res[i].name}`,
-            `$${res[i].money.toLocaleString()}`
-          );
+          if (res[i].money == -1) {
+          } else {
+            embed.addField(
+              `${i + 1}. ${!bot.users.cache.get(res[i].id) ? res[i].name : bot.users.cache.get(res[i].id).username}`,
+              `$${res[i].money.toLocaleString()}`
+            );
+          }
         }
       } else {
         embed.setFooter(`page ${pg} of ${page}`);
         for (i = start; i < end; i++) {
-          embed.addField(
-            `${i + 1}. ${res[i].name}`,
-            `$${res[i].money.toLocaleString()}`
-          );
+          if (res[i].money == -1) {
+          } else {
+            embed.addField(
+              `${i + 1}. ${!bot.users.cache.get(res[i].id) ? res[i].name : bot.users.cache.get(res[i].id).username}`,
+              `$${res[i].money.toLocaleString()}`
+            );
+          }
         }
       }
 

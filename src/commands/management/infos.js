@@ -61,8 +61,7 @@ const execute = async (bot, msg, [target]) => {
       "**❯Command list:** `$help`\n",
       "**Statics ↗️**",
       `**❯Servers:** ${bot.guilds.cache.size}`,
-      `**❯Channels:** ${bot.channels.cache.size}`,
-      `**❯Users:** ${bot.users.cache.size}\n`,
+      `**❯Channels:** ${bot.channels.cache.size}\n`,
       "**Software ⚙️**",
       `**❯Size:** 150 Mg`,
       `**❯Library:** Discord.Js`,
@@ -150,11 +149,11 @@ const execute = async (bot, msg, [target]) => {
     `**❯ Higher role:** ${
       member.roles.highest.id === msg.guild.id
         ? "None"
-        : member.roles.highest.name
+        : member.roles.highest
     }`,
     `**❯ Entry:** ${moment(member.joinedAt).format("LL LTS")}`,
     `**❯ Higher hoist role:** ${
-      member.roles.hoist ? member.roles.hoist.name : "None"
+      member.roles.hoist ? member.roles.hoist : "None"
     }`,
     `**❯ Roles:** ${member.roles.cache
       .map((role) => role.toString())

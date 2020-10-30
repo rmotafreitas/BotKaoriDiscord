@@ -12,9 +12,9 @@ const Data = require("../../models/data.js");
 
 const execute = async (bot, msg, args) => {
   function name() {
+    const mention = msg.author;
     const sayMessage = args.join(" ");
-    msg.delete().catch((O_o) => {});
-    msg.channel.send(sayMessage);
+    msg.channel.send(`${sayMessage}\n\n💌 *Message sent by: ${mention}*`);
   }
 
   Data.findOne(
