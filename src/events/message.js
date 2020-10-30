@@ -33,6 +33,8 @@ const message = async (bot, msg) => {
   )
     return;
 
+  if (!msg.content.startsWith(process.env.PREFIX) || msg.author.bot) return;
+
   const args = msg.content.slice(process.env.PREFIX.length).split(" ");
 
   const command = args.shift();
