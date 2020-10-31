@@ -6,12 +6,14 @@ Made by: "Ness.js#3153" (513113161126248469)
 
 ![Preview](https://github.com/BestNessPT/BotKaoriDiscord/blob/master/readme.gif)
 
-Bot do Discord com foco em:
--Anime
--Música
--Gestão
--Informação
--Divertimento
+### Discord bot focusing on:
+ 
+ * Anime
+ * Music
+ * Management
+ * Information
+ * Fun
 
-Convide o Bot para o seu servidor:
-https://discord.com/api/oauth2/authorize?client_id=730092279326441574&permissions=8&scope=bot
+#### Invite the Bot:
+
+![Invite](https://discord.com/api/oauth2/authorize?client_id=730092279326441574&permissions=8&scope=bot)
