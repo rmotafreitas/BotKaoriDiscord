@@ -13,6 +13,7 @@ Made by: "Ness.js#3153" (513113161126248469)
  * Management
  * Information
  * Fun
+ * Economy
 
 #### Invite the Bot:
 
