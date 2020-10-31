@@ -4,6 +4,7 @@ const execute = async (bot, msg, args) => {
   var kaori = bot.users.cache.get("730092279326441574");
   let kaoriavatar = bot.users.cache.get("730092279326441574").displayAvatarURL({ size: 4096, dynamic: true });
   var dev = bot.users.cache.get("513113161126248469");
+  let devavatar = bot.users.cache.get("513113161126248469").displayAvatarURL({ size: 4096, dynamic: true });
   let Emebed = new MessageEmbed()
     .setAuthor("Kaori Miyazono#5192", kaoriavatar)
     .setColor("RANDOM")
