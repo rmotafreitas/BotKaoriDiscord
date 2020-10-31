@@ -4,7 +4,7 @@
 
 Made by: "Ness.js#3153" (513113161126248469)
 
-![Preview]()
+![Preview](https://github.com/BestNessPT/BotKaoriDiscord/blob/master/readme.gif)
 
 Bot do Discord com foco em:
 -Anime
