@@ -74,6 +74,6 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "work",
-  helpEconomy: "Daily commnad to economy",
+  helpEconomy: "Daily command to economy",
   execute,
 };

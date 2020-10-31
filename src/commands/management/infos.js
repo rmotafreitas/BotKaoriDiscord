@@ -170,6 +170,6 @@ const execute = async (bot, msg, [target]) => {
 
 module.exports = {
   name: "info",
-  helpManagement: "Infor",
+  helpManagement: "info/info server/info bot",
   execute,
 };

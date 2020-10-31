@@ -1,5 +1,8 @@
 const { MessageEmbed } = require("discord.js");
 const firebase = require("firebase");
+const Discord = require("discord.js");
+
+let cooldown = new Set();
 
 // Your web app's Firebase configuration
 var configF = {
@@ -17,6 +20,8 @@ firebase.initializeApp(configF);
 const database = firebase.database();
 
 const message = async (bot, msg) => {
+  let cdseconds = 2;
+
   if (msg.channel.type == "DM") return;
   if (msg.author.bot) return;
   if (
@@ -32,29 +37,6 @@ const message = async (bot, msg) => {
     msg.content.startsWith(`<@${bot.user.id}>`)
   )
     return;
-
-  if (!msg.content.startsWith(process.env.PREFIX) || msg.author.bot) return;
-
-  const args = msg.content.slice(process.env.PREFIX.length).split(" ");
-
-  const command = args.shift();
-
-  try {
-    bot.commands.get(command).execute(bot, msg, args);
-    //fazer embed
-    let arg = msg.content.split(" ");
-    var title = arg[0];
-
-    const embed = new Discord.MessageEmbed()
-      .setColor("#DE3B72")
-      .setAuthor(msg.author.tag)
-      .setTitle(arg[0])
-      .setDescription(`**Conteúdo:** ${msg.content}`);
-
-    bot.channels.cache.get("771007139598172191").send(embed);
-  } catch (e) {
-    //return msg.reply("Ops! Eu ainda não conheço esse comando!");
-  }
 
   database
     .ref(`Servidores/Levels/${msg.guild.id}/Config`)
@@ -114,6 +96,42 @@ const message = async (bot, msg) => {
           });
       }
     });
+
+  if (!msg.content.startsWith(process.env.PREFIX) || msg.author.bot) return;
+
+  const args = msg.content.slice(process.env.PREFIX.length).split(" ");
+
+  const command = args.shift().toLowerCase();
+
+  try {
+    if (!bot.commands.get(command)) return;
+    if (cooldown.has(msg.author.id)) {
+      msg.delete().catch((O_o) => {});
+      return msg.reply("You need to wait 2 seconds between commands.").then((msg) => msg.delete({ timeout: 1500 }));;
+    }
+    cooldown.add(msg.author.id);
+
+    bot.commands.get(command).execute(bot, msg, args);
+    
+  } catch (e) {
+    //return msg.reply("Ops! Eu ainda não conheço esse comando!");
+  }
+
+  setTimeout(() => {
+    cooldown.delete(msg.author.id);
+  }, cdseconds * 1000)
+
+  //fazer embed
+  let arg = msg.content.split(" ");
+  var title = arg[0];
+
+  const embed = new Discord.MessageEmbed()
+    .setColor("#DE3B72")
+    .setAuthor(msg.author.tag)
+    .setTitle(title)
+    .setDescription(`**Conteúdo:** ${msg.content}`);
+
+  bot.channels.cache.get("771007139598172191").send(embed);
 };
 
 module.exports = {

@@ -51,7 +51,7 @@ const execute = async (bot, msg, args) => {
             .setAuthor(msg.author.tag)
             .setTitle("Bet!")
             .setImage(
-              "https://mir-s3-cdn-cf.behance.net/project_modules/disp/3c3e4e73094115.5bfe66e5ca411.gif"
+              "https://25.media.tumblr.com/tumblr_mbyqs6R9z61rfjlumo1_500.gif"
             )
             .setThumbnail(
               msg.author.displayAvatarURL({ size: 4096, dynamic: true })
@@ -68,7 +68,7 @@ const execute = async (bot, msg, args) => {
             .setAuthor(msg.author.tag)
             .setTitle("Bet!")
             .setImage(
-              "https://mir-s3-cdn-cf.behance.net/project_modules/disp/3c3e4e73094115.5bfe66e5ca411.gif"
+              "https://25.media.tumblr.com/tumblr_mbyqs6R9z61rfjlumo1_500.gif"
             )
             .setThumbnail(
               msg.author.displayAvatarURL({ size: 4096, dynamic: true })

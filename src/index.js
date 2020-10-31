@@ -17,6 +17,8 @@ const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 bot.queues = new Map();
 
+
+
 //? Command handler
 const commandsFolder = fs.readdirSync(path.join(__dirname, "/commands"));
 

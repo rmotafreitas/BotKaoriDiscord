@@ -53,7 +53,7 @@ const execute = async (bot, msg, args) => {
           .setImage(
             "https://i.pinimg.com/originals/96/2f/f6/962ff6c2e535eebc9d762cf420b631c8.gif"
           )
-          .setFooter("Jsut click on the reactions!")
+          .setFooter("Just click on the reactions!")
           .setDescription(desc);
 
         msg.channel.send(embed).then((msg) => {
