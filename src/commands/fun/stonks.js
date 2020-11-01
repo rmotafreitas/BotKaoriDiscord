@@ -35,9 +35,12 @@ const execute = async (bot, msg, args) => {
   ctx.drawImage(avatar, 50, 25, 200, 200);
 
   //? Send
-  const final = (canvas.toBuffer(), "stonks.png");
+  const stonks = new Discord.MessageAttachment(
+    canvas.toBuffer(),
+    "stonks.png"
+  );
 
-  return msg.channel.send(final);
+  return msg.channel.send(stonks);
 };
 
 module.exports = {
