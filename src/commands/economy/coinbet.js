@@ -1,11 +1,3 @@
-const mongoose = require("mongoose");
-
-//CONNECT TO DATABASE
-mongoose.connect(process.env.mongoPass, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-
 // MODELS
 const Data = require("../../models/data.js");
 

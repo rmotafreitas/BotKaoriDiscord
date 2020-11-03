@@ -3,9 +3,9 @@ const dotenv = require("dotenv");
 const fs = require("fs");
 const path = require("path");
 const firebase = require("firebase");
+const mongoose = require("mongoose");
 
-
-//? Connect to dbs
+//? Connect to firebase
 // Your web app's Firebase configuration
 var configF = {
   apiKey: process.env.fire,
@@ -52,6 +52,16 @@ for (var folder of commandsFolder) {
 }
 
 bot.login(process.env.TOKEN);
+
+
+
+//? Connect to MongoDb
+mongoose.connect(process.env.mongoPass, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+console.log("MongoDb Ok!");
 
 bot.on("ready", function () {
   ready(bot);
