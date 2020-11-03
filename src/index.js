@@ -2,6 +2,25 @@ const Discord = require("discord.js");
 const dotenv = require("dotenv");
 const fs = require("fs");
 const path = require("path");
+const firebase = require("firebase");
+
+
+//? Connect to dbs
+// Your web app's Firebase configuration
+var configF = {
+  apiKey: process.env.fire,
+  authDomain: "kaori-xp-146b4.firebaseapp.com",
+  databaseURL: "https://kaori-xp-146b4.firebaseio.com",
+  projectId: "kaori-xp-146b4",
+  storageBucket: "kaori-xp-146b4.appspot.com",
+  messagingSenderId: "43712754967",
+  appId: "1:43712754967:web:f16b63b58523b5f1157352",
+};
+// Initialize Firebase
+firebase.initializeApp(configF);
+
+console.log("FireBase Ok!");
+
 
 //? Events
 const ready = require("../src/events/ready").ready;

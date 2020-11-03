@@ -1,23 +1,9 @@
+const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
 const firebase = require("firebase");
-const Discord = require("discord.js");
+const database = firebase.database();
 
 let cooldown = new Set();
-
-// Your web app's Firebase configuration
-var configF = {
-  apiKey: process.env.fire,
-  authDomain: "kaori-xp-146b4.firebaseapp.com",
-  databaseURL: "https://kaori-xp-146b4.firebaseio.com",
-  projectId: "kaori-xp-146b4",
-  storageBucket: "kaori-xp-146b4.appspot.com",
-  messagingSenderId: "43712754967",
-  appId: "1:43712754967:web:f16b63b58523b5f1157352",
-};
-// Initialize Firebase
-firebase.initializeApp(configF);
-
-const database = firebase.database();
 
 const message = async (bot, msg) => {
   let cdseconds = 2;
