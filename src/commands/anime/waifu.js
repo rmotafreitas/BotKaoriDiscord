@@ -77,7 +77,7 @@ const execute = async (bot, msg, args) => {
     "https://i.pinimg.com/originals/7b/d8/9c/7bd89c360645dda40e1b962e843ca331.gif",
   ];
 
-  console.log(`${waifus.length} Gifs de waifu!`);
+  //console.log(`${waifus.length} Gifs de waifu!`);
   let n = Math.floor(Math.random() * waifus.length);
   let user;
   if (msg.mentions.users.first()) {
