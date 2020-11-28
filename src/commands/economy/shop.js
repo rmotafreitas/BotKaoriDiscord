@@ -134,6 +134,8 @@ const execute = async (bot, msg, args) => {
               console.log(e);
             }
 
+
+            //? Coisas do say
             const sayfilter = (reaction, user) =>
               reaction.emoji.name === "📣" && user.id === id;
 

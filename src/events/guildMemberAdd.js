@@ -1,4 +1,5 @@
 const { MessageEmbed } = require("discord.js");
+const Discord = require("discord.js");
 
 const guildMemberAdd = async (bot, member) => {
   //guild
@@ -9,7 +10,7 @@ const guildMemberAdd = async (bot, member) => {
   ]; //IDs SERVER
 
   let channels = [
-    bot.channels.cache.get("730079290221396013>"), //Kaoir Bot Server
+    bot.channels.cache.get("730079290221396013"), //Kaoir Bot Server
     bot.channels.cache.get("740921877970550795"), //Animes Server
     bot.channels.cache.get("730079290221396013"),
   ]; //IDs CANAL

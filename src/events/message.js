@@ -6,10 +6,11 @@ const database = firebase.database();
 let cooldown = new Set();
 
 const message = async (bot, msg) => {
-  let cdseconds = 2;
+
+  //? Exceções
 
   if (msg.channel.type == "DM") return;
-  if (msg.author.bot) return;
+
   if (
     msg.mentions.has(bot.user) &&
     msg.content.split(" ").length === 1 &&
@@ -23,6 +24,8 @@ const message = async (bot, msg) => {
     msg.content.startsWith(`<@${bot.user.id}>`)
   )
     return;
+
+  //?Xp 
 
   database
     .ref(`Servidores/Levels/${msg.guild.id}/Config`)
@@ -85,6 +88,11 @@ const message = async (bot, msg) => {
 
   if (!msg.content.startsWith(process.env.PREFIX) || msg.author.bot) return;
 
+  //--------------------------------------------
+
+  //? Command execute and cooldown
+  let cdseconds = 2;
+
   const args = msg.content.slice(process.env.PREFIX.length).split(" ");
 
   const command = args.shift().toLowerCase();
@@ -93,21 +101,26 @@ const message = async (bot, msg) => {
     if (!bot.commands.get(command)) return;
     if (cooldown.has(msg.author.id)) {
       msg.delete().catch((O_o) => {});
-      return msg.reply("You need to wait 2 seconds between commands.").then((msg) => msg.delete({ timeout: 1500 }));;
+      return msg
+        .reply("You need to wait 2 seconds between commands.")
+        .then((msg) => msg.delete({ timeout: 1500 }));
     }
     cooldown.add(msg.author.id);
 
     bot.commands.get(command).execute(bot, msg, args);
-    
   } catch (e) {
     //return msg.reply("Ops! Eu ainda não conheço esse comando!");
   }
 
   setTimeout(() => {
     cooldown.delete(msg.author.id);
-  }, cdseconds * 1000)
+  }, cdseconds * 1000);
 
-  //fazer embed
+  //?
+
+  //--------------------------------------------
+
+  //? Logs de comandos
   let arg = msg.content.split(" ");
   var title = arg[0];
 
@@ -116,8 +129,8 @@ const message = async (bot, msg) => {
     .setAuthor(msg.author.tag)
     .setTitle(title)
     .setDescription(`**Conteúdo:** ${msg.content}`);
-
   bot.channels.cache.get("771007139598172191").send(embed);
+  //?
 };
 
 module.exports = {

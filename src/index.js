@@ -63,6 +63,8 @@ mongoose.connect(process.env.mongoPass, {
 
 console.log("MongoDb Ok!");
 
+//? Events
+
 bot.on("ready", function () {
   ready(bot);
 });
@@ -72,6 +74,7 @@ bot.on("message", function (msg) {
 });
 
 bot.on("guildMemberAdd", async (member) => {
+  console.log("Hello World!")
   guildMemberAdd(bot, member);
 });
 
