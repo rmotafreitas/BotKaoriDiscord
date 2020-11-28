@@ -10,6 +10,7 @@ const message = async (bot, msg) => {
   //? Exceções
 
   if (msg.channel.type == "DM") return;
+  if (msg.author.bot) return;
 
   if (
     msg.mentions.has(bot.user) &&
