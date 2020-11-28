@@ -74,7 +74,6 @@ bot.on("message", function (msg) {
 });
 
 bot.on("guildMemberAdd", async (member) => {
-  console.log("Hello World!")
   guildMemberAdd(bot, member);
 });
 
