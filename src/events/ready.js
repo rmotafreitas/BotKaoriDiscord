@@ -3,7 +3,7 @@ const ready = async (bot) => {
     `Estou conectado como ${bot.user.username} em ${bot.guilds.cache.size} servidores e users ${bot.users.cache.size}`
   );
 
-  bot.user.setActivity("My Dev Birthday!", { type: 3 });
+  bot.user.setActivity("$help", { type: 3 });
 };
 
 module.exports = {
