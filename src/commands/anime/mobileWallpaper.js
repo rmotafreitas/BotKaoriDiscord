@@ -7,7 +7,7 @@ const execute = async (bot, msg, args) => {
 
     const baguetteEmbed = new Discord.MessageEmbed()
         .setColor('#03A6ED')
-        .setTitle('Mobile wallpaper! 📱')
+        .setTitle(`Mobile wallpaper! 📱 [Download](${wallpaper})`)
         .setImage(wallpaper.url)
         .setFooter(msg.author.tag, msg.author.displayAvatarURL({ size: 4096, dynamic: true }))
         .setTimestamp();
