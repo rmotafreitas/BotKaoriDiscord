@@ -15,6 +15,8 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "report",
-  helpManagement: "Report bugs!",
+  section: "⚙️ Management",
+  help: "Report bugs directly to my developer!",
+  usage: "report your bug",
   execute,
 };

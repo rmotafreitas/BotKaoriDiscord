@@ -18,6 +18,8 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "invite",
-  helpManagement: "Show Bot invite",
+  section: "⚙️ Management",
+  help: "Show Bot invite",
+  usage: "invite",
   execute,
 };

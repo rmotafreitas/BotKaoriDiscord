@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const execute = async (bot, msg, args) => {
+  bot.member.voice.channel.leave();
   const queue = bot.queues.get(msg.guild.id);
   if (!queue) {
     return msg.reply("There is no music playing!");
@@ -12,6 +13,8 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "stop",
-  helpMusic: "Stop the music",
+  section: "🎵 Music",
+  help: "Stop the music",
+  usage: "stop",
   execute,
 };

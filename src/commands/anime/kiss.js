@@ -1,6 +1,6 @@
-const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
-
+const HMfull = require("hmfull");
+const getHelp = require("../../util/helpDoubt.js").helpDoubt;
 const execute = async (bot, msg, args) => {
   //sender info
   let sender = msg.author;
@@ -14,8 +14,8 @@ const execute = async (bot, msg, args) => {
   try {
     quemTag = msg.mentions.users.first().tag;
   } catch (e) {
-    await msg.delete().catch((O_o) => {});
-    msg.channel.send(`${sender}, After the $ kiss you must mention a user!`);
+    msg.channel.send(`${sender}, You must mention a user!`);
+    getHelp(msg, bot, "kiss");
     return;
   }
   let quemId = msg.mentions.users.first().id;
@@ -29,28 +29,8 @@ const execute = async (bot, msg, args) => {
     msg.channel.send(`${sender}, Wait, is that possible !?`);
     return;
   }
-
-  let kisses = [
-    "https://media1.tenor.com/images/78095c007974aceb72b91aeb7ee54a71/tenor.gif",
-    "https://i.imgur.com/OE7lSSY.gif",
-    "https://i.gifer.com/B82h.gif",
-    "https://i.gifer.com/B82h.gif",
-    "https://i.pinimg.com/originals/32/d4/f0/32d4f0642ebb373e3eb072b2b91e6064.gif",
-    "https://cutewallpaper.org/21/anime-girl-kiss-anime-girl/Girl-Anime-GIF-Girl-Anime-KissAnime-Discover-Share-GIFs.gif",
-    "https://66.media.tumblr.com/06e4ba7955ad8ee651952ad12dd47a67/39eb4a3335e0c136-8f/s540x810/976c57225a62a4ef6f7742f1937e8be2b75fae8d.gif",
-    "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/917ca7eb-672e-46fe-b0b2-253dbe3a41fc/dasbj5r-910436e0-aacd-430b-a58c-954240190ab2.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvOTE3Y2E3ZWItNjcyZS00NmZlLWIwYjItMjUzZGJlM2E0MWZjXC9kYXNiajVyLTkxMDQzNmUwLWFhY2QtNDMwYi1hNThjLTk1NDI0MDE5MGFiMi5naWYifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.dBRJVXEmQNWpQYHMSzbwPgBgGE-ipksliWz1SL8EMbg",
-    "https://i.imgur.com/Rvst3KQ.gif",
-    "https://media1.tenor.com/images/ea9a07318bd8400fbfbd658e9f5ecd5d/tenor.gif?itemid=12612515",
-    "https://i.imgur.com/i1PIph3.gif",
-    "https://pa1.narvii.com/6248/cae38662b21747d6247776d35b8d2db50944ef08_hq.gif",
-    "https://media.giphy.com/media/ONq87vZz4626k/giphy.gif",
-    "https://media1.giphy.com/media/nyGFcsP0kAobm/giphy.gif",
-    "https://cdn.lowgif.com/full/011acd5511e7c9fc-anime-kiss-gifs-tumblr.gif",
-    "https://33.media.tumblr.com/4c3d6dbd4a87caa9ba82c8a41b9d5109/tumblr_mx3osfo7uj1rlxmzgo1_500.gif",
-    "https://37.media.tumblr.com/70d58855d3d6dc8fcda71e68fe6889d0/tumblr_n5hm4rqX6O1skkm34o1_500.gif",
-  ];
-
-  let kiss = kisses[Math.floor(Math.random() * kisses.length)];
+  let kiss = await HMfull.Nekos.sfw.kiss();
+  kiss = kiss.url;
 
   const Embed = new MessageEmbed()
     .setColor(`RANDOM`)
@@ -106,7 +86,8 @@ const execute = async (bot, msg, args) => {
     senderPic = quemPic;
     quemPic = switcher;
 
-    let kiss = kisses[Math.floor(Math.random() * kisses.length)];
+    let kiss = await HMfull.Nekos.sfw.kiss();
+    kiss = kiss.url;
 
     const Embed = new MessageEmbed()
       .setColor(`RANDOM`)
@@ -143,6 +124,8 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "kiss",
-  helpAnime: "Kiss someone",
+  section: "<:yay:764881220773216297> Anime",
+  help: "Kiss someone",
+  usage: "kiss @mention",
   execute,
 };

@@ -21,13 +21,13 @@ firebase.initializeApp(configF);
 
 console.log("FireBase Ok!");
 
-
 //? Events
 const ready = require("../src/events/ready").ready;
 const message = require("../src/events/message").message;
 const guildMemberAdd = require("../src/events/guildMemberAdd").guildMemberAdd;
 const guildCreate = require("../src/events/guildCreate").guildCreate;
 const guildDelete = require("../src/events/guildDelete").guildDelete;
+const getPrefix = require("./util/prefix").getPrefix;
 
 //? Config
 dotenv.config();
@@ -35,8 +35,6 @@ dotenv.config();
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 bot.queues = new Map();
-
-
 
 //? Command handler
 const commandsFolder = fs.readdirSync(path.join(__dirname, "/commands"));
@@ -53,8 +51,6 @@ for (var folder of commandsFolder) {
 
 bot.login(process.env.TOKEN);
 
-
-
 //? Connect to MongoDb
 mongoose.connect(process.env.mongoPass, {
   useNewUrlParser: true,
@@ -69,8 +65,12 @@ bot.on("ready", function () {
   ready(bot);
 });
 
-bot.on("message", function (msg) {
-  message(bot, msg);
+bot.on("message", async function (msg) {
+  if (msg.channel.type == "DM") return;
+  if (msg.author.bot) return;
+  //? Prefix
+  const prefix = await getPrefix(msg.member.guild.id);
+  message(bot, msg, prefix);
 });
 
 bot.on("guildMemberAdd", async (member) => {

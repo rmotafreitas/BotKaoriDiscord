@@ -29,6 +29,8 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "create",
-  helpEconomy: "create an economy account",
+  section: "💸 Economy",
+  help: "Create an economy account for you",
+  usage: "create",
   execute,
 };

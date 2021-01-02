@@ -1,12 +1,16 @@
 
-
+const getHelp = require("../../util/helpDoubt.js").helpDoubt;
 // MODELS
 const Data = require("../../models/data.js");
 
 const execute = async (bot, msg, args) => {
   let user = msg.mentions.members.first() || bot.users.cache.get(args[0]);
 
-  if (!user) return msg.reply("Sorry, could't find that user.");
+  if (!user) {
+     msg.reply("Sorry, please mention an user.");
+     getHelp(msg, bot, "pay");
+     return;
+   }
 
   if (user.id === msg.author.id)
     return msg.reply("Hey, u can't pay to yourself");
@@ -31,8 +35,11 @@ const execute = async (bot, msg, args) => {
             if (err) console.log(err);
             if (userData.money == -1)
               return msg.reply("Hey this account is Blocked!");
-            if (!args[1])
-              return msg.reply("Please specify an amount you want to pay.");
+            if (!args[1]) {
+              msg.reply("Please specify an amount you want to pay.");
+              getHelp(msg, bot, "pay");
+              return;
+            }
 
             if (!Number.isInteger(parseInt(args[1])))
               return msg.reply("Hey, that's not a number >:(");
@@ -74,6 +81,8 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "pay",
-  helpEconomy: "Pay other users, economy system",
+  section: "💸 Economy",
+  help: "Pay other users from economy system",
+  usage: "pay @mention money",
   execute,
 };

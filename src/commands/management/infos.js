@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const getPrefix = require("../../util/prefix").getPrefix;
 const { MessageEmbed } = require("discord.js");
 const moment = require("moment");
 const flags = {
@@ -51,14 +52,16 @@ const execute = async (bot, msg, [target]) => {
   }
 
   if (sv[1] === "bot") {
-    var dev = bot.users.cache.get("513113161126248469");
-    let devavatar = dev.displayAvatarURL({ size: 4096, dynamic: true });
+    //? Prefix
+    const prefix = await getPrefix(msg.member.guild.id);
+    const dev = bot.users.cache.get("513113161126248469");
+    const devavatar = dev.displayAvatarURL({ size: 4096, dynamic: true });
 
-    var kaori = bot.users.cache.get("730092279326441574");
-    let kaoriavatar = kaori.displayAvatarURL({ size: 4096, dynamic: true });
+    const kaori = bot.users.cache.get(bot.user.id);
+    const kaoriavatar = kaori.displayAvatarURL({ size: 4096, dynamic: true });
 
-    let sobre = [
-      "**❯Command list:** `$help`\n",
+    const sobre = [
+      "**❯Command list:** `" + prefix + "help`\n",
       "**Statics ↗️**",
       `**❯Servers:** ${bot.guilds.cache.size}`,
       `**❯Channels:** ${bot.channels.cache.size}\n`,
@@ -74,13 +77,13 @@ const execute = async (bot, msg, [target]) => {
       `💌 [Invite me to your server!](${"https://discord.com/api/oauth2/authorize?client_id=730092279326441574&permissions=8&scope=bot"})`,
     ];
 
-    let Embed = new MessageEmbed()
+    const Embed = new MessageEmbed()
       .setAuthor("Kaori Miyazono#5192", kaoriavatar)
       .setTitle("About me!")
       .setThumbnail(kaoriavatar)
       .setDescription(sobre)
-      .setColor(`RANDOM`)
-      .setFooter(`Dev: ${dev.username}#${dev.discriminator}`, devavatar);
+      .setColor(`RANDOM`);
+      //.setFooter(`Dev: ${dev.username}#${dev.discriminator}`, devavatar);
     return msg.channel.send(Embed);
   }
 
@@ -170,6 +173,8 @@ const execute = async (bot, msg, [target]) => {
 
 module.exports = {
   name: "info",
-  helpManagement: "info/info server/info bot",
+  section: "⚙️ Management",
+  help: "Show user info or bot info or server info",
+  usage: "info user @mention OR info bot OR info server",
   execute,
 };

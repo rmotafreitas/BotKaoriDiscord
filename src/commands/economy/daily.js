@@ -66,6 +66,8 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "work",
-  helpEconomy: "Daily command to economy",
+  section: "💸 Economy",
+  help: "Daily command to win money in the economy system (12Hours cooldown)",
+  usage: "work",
   execute,
 };

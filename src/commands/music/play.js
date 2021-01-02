@@ -1,8 +1,13 @@
 const search = require("yt-search");
 const ytdl = require("ytdl-core-discord");
 const { MessageEmbed } = require("discord.js");
-
+const getHelp = require("../../util/helpDoubt.js").helpDoubt;
 const execute = (bot, msg, args) => {
+  if (!args[0]) {
+    msg.reply("Hey, you forgot to type a music!");
+    getHelp(msg, bot, "play");
+    return;
+  }
   const s = args.join(" ");
   try {
     search(s, (err, result) => {
@@ -85,7 +90,9 @@ const playSong = async (bot, msg, song) => {
 
 module.exports = {
   name: "play",
-  helpMusic: "Bot plays music form yt",
+  section: "🎵 Music",
+  help: "Bot plays music form yt",
+  usage: "play SongName",
   execute,
   playSong,
 };

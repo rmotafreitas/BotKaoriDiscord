@@ -5,12 +5,9 @@ const database = firebase.database();
 
 let cooldown = new Set();
 
-const message = async (bot, msg) => {
+const message = async (bot, msg, prefix) => {
 
   //? Exceções
-
-  if (msg.channel.type == "DM") return;
-  if (msg.author.bot) return;
 
   if (
     msg.mentions.has(bot.user) &&
@@ -18,7 +15,7 @@ const message = async (bot, msg) => {
     msg.content != "@everyone" &&
     msg.content != "@here"
   )
-    return msg.reply("HEY, \nMy prefix is `$`\nIf you want help use `$help`");
+    return msg.reply("HEY, \nMy prefix is `" + prefix + "`\nIf you want help use `" + prefix + "help`");
 
   if (
     msg.content.startsWith(`<@!${bot.user.id}>`) ||
@@ -26,7 +23,7 @@ const message = async (bot, msg) => {
   )
     return;
 
-  //?Xp 
+  //?Xp
 
   database
     .ref(`Servidores/Levels/${msg.guild.id}/Config`)
@@ -87,14 +84,16 @@ const message = async (bot, msg) => {
       }
     });
 
-  if (!msg.content.startsWith(process.env.PREFIX) || msg.author.bot) return;
+  if (!msg.content.startsWith(prefix) || msg.author.bot) return;
 
   //--------------------------------------------
 
   //? Command execute and cooldown
+
+
   let cdseconds = 2;
 
-  const args = msg.content.slice(process.env.PREFIX.length).split(" ");
+  const args = msg.content.slice(prefix.length).split(" ");
 
   const command = args.shift().toLowerCase();
 

@@ -1,21 +1,29 @@
 // MODELS
 const Data = require("../../models/data.js");
+const getHelp = require("../../util/helpDoubt.js").helpDoubt;
 
 const execute = async (bot, msg, args) => {
   var author = msg.author;
 
   var user = msg.mentions.members.first();
 
-  if (!user) return msg.reply("You need to mention someone!");
-
+  if (!user) {
+     msg.reply("You need to mention someone!");
+     getHelp(msg, bot, "coinflip");
+     return;
+  }
   if(user.id == author.id) return msg.reply("You can't bet with yourself");
 
-  if (!args[1]) return msg.reply("You need to bet some money!");
-  if (!args[2])
-    return msg.reply(
-      "You need to say what side of the coin you want `heads` or `tails`"
-    );
-  
+  if (!args[1]) {
+    msg.reply("You need to bet some money!");
+    getHelp(msg, bot, "coinflip");
+    return;
+  } 
+  if (!args[2]) {
+    msg.reply("You need to say what side of the coin you want `heads` or `tails`");
+    getHelp(msg, bot, "coinflip");
+    return;
+  }
   var flag = true;
 
   var bet = args[1];
@@ -25,9 +33,12 @@ const execute = async (bot, msg, args) => {
 
   var pick = sides[Math.floor(Math.random() * sides.length)];
 
-  if (side != "heads" && side != "tails")
-    return msg.reply("You need to pick up `heads` or `tails`");
-
+  if (side != "heads" && side != "tails") {
+    ("You need to pick up `heads` or `tails`");
+    getHelp(msg, bot, "coinflip");
+    return;
+  }
+  
   if (parseInt(bet) < 1) return msg.reply("You can't bet less than 1$!");
 
   if (!Number.isInteger(parseInt(bet)))
@@ -109,6 +120,8 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "coinflip",
-  helpEconomy: "Coinflip, $coinflip @mention money tails or heads",
+  section: "💸 Economy",
+  help: "Coinflip, with an user bet some money! If you win you keep the money that you bet and get the same money from the person that you gamble",
+  usage: "coinflip @mention money heads OR tails",
   execute,
 };

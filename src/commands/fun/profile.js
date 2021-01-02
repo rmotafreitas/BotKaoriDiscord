@@ -1,4 +1,3 @@
-//https://i.imgur.com/YiKsCrw.jpeg
 const Discord = require("discord.js");
 const firebase = require("firebase");
 const database = firebase.database();
@@ -102,6 +101,8 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "profile",
-  helpFun: "Shows mentioned Xp Level Card or yours, if the system is On",
+  section: "😆 Fun",
+  help: "Shows mentioned Xp Level Card or yours, if the system is On",
+  usage: "profile OR profile @mention",
   execute,
 };

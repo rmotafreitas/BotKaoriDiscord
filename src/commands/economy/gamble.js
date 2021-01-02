@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-
+const getHelp = require("../../util/helpDoubt.js").helpDoubt;
 // MODELS
 const Data = require("../../models/data.js");
 
@@ -17,7 +17,11 @@ const execute = async (bot, msg, args) => {
 
         if (data.money <= 0) return msg.reply("You Don´t have money"); //
 
-        if (!args[0]) return msg.reply("Please specify a bet.");
+        if (!args[0]) {
+          msg.reply("Please specify a bet.");
+          getHelp(msg, bot, "gamble");
+          return;
+        }
 
         if (!Number.isInteger(parseInt(args[0])))
           return msg.reply("Hey, that's not a whole number >:(");
@@ -77,6 +81,8 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "gamble",
-  helpEconomy: "gamble your money, economy system",
+  section: "💸 Economy",
+  help: "Gamble your money, economy system",
+  usage: "gamble money",
   execute,
 };

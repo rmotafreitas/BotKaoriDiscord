@@ -12,6 +12,8 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "skip",
-  helpMusic: "Skip to the next track",
+  section: "🎵 Music",
+  help: "Skip to the next track",
+  usage: "skip",
   execute,
 };

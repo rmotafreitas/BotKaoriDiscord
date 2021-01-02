@@ -85,6 +85,8 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "account",
-  helpEconomy: "Account settings on economy system :)",
+  section: "💸 Economy",
+  help: "Account settings on economy system",
+  usage: "account",
   execute,
 };

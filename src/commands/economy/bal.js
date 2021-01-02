@@ -88,6 +88,8 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "bal",
-  helpEconomy: "Show balance of an user, economy",
+  section: "💸 Economy",
+  help: "Show balance of an user, economy",
+  usage: "bal OR bal @mention",
   execute,
 };

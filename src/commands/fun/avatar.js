@@ -22,6 +22,8 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "avatar",
-  helpFun: "Shows mentioned avatar or yours",
+  section: "😆 Fun",
+  help: "Shows mentioned avatar or yours",
+  usage: "avatar OR avatar @mention",
   execute,
 };

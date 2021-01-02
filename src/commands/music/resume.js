@@ -13,6 +13,8 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "resume",
-  helpMusic: "Resume the music paused",
+  section: "🎵 Music",
+  help: "Resume the music paused",
+  usage: "resume",
   execute,
 };

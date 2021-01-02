@@ -1,20 +1,15 @@
 const Discord = require("discord.js");
-
+const HMfull = require("hmfull");
 const { MessageEmbed } = require("discord.js");
+const getHelp = require("../../util/helpDoubt.js").helpDoubt;
 
 const execute = async (bot, msg, args) => {
-  let responses = [
-    "Yes",
-    "No",
-    "Of course",
-    "Absolutely yes!",
-    "Of course not",
-    "Maybe",
-    "I will not answer that now!",
-    "Forget that",
-    "I don't know answer",
-  ];
-  let response = responses[Math.floor(Math.random() * responses.length)];
+  if (!args[0]) {
+    msg.reply("Hey, where is the question?")
+    getHelp(msg, bot, "8ball");
+    return;
+  }
+  let response = await HMfull.Nekos.ball8();
   let pergunta = args.join(" ");
   let Embed = new MessageEmbed()
     .setColor(`RANDOM`)
@@ -23,15 +18,16 @@ const execute = async (bot, msg, args) => {
       msg.author.displayAvatarURL({ size: 4096, dynamic: true })
     )
     .setTitle("Asked:")
-    .setDescription(pergunta)
-    .addFields({ name: "Answer:", value: response });
-  msg.delete().catch((O_o) => {});
+    .setDescription(`${pergunta}\n**Answer:**`)
+    .setImage(response.url);
   msg.channel.send(Embed);
   
 };
 
 module.exports = {
   name: "8ball",
-  helpFun: "Answer your questions!",
+  section: "😆 Fun",
+  help: "Answer your questions!",
+  usage: "8ball your question",
   execute,
 };

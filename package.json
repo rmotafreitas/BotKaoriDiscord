@@ -14,16 +14,18 @@
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
     "canvas": "^2.6.1",
-    "discord.js": "^12.4.1",
+    "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
     "firebase": "^7.24.0",
     "fs": "0.0.1-security",
     "genius-lyrics": "^3.0.0",
+    "hmfull": "^1.2.1",
+    "maljs": "^0.3.0",
     "moment": "^2.29.1",
-    "mongoose": "^5.10.11",
+    "mongoose": "^5.11.9",
     "parse-ms": "^2.1.0",
-    "yt-search": "^2.4.1",
-    "ytdl-core-discord": "^1.2.4"
+    "yt-search": "^2.5.1",
+    "ytdl-core-discord": "^1.2.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"

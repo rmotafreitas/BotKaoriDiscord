@@ -1,67 +1,55 @@
+const getPrefix = require("../../util/prefix").getPrefix;
 const { MessageEmbed } = require("discord.js");
+const getHelp = require("../../util/helpDoubt.js").helpDoubt;
 
 const execute = async (bot, msg, args) => {
-  let help = "";
+  if (args[0]) return getHelp(msg, bot, args[0]);  
 
-  help += "🌞 **Anime**\n";
-  bot.commands.forEach((command) => {
-    if (command.helpAnime) {
-      help += "> `" + process.env.PREFIX + command.name + "`" + ":" + " " + command.helpAnime + "\n";
+  //? Prefix
+  const prefix = await getPrefix(msg.member.guild.id);
+
+  var sections = [];
+  var commands = [];
+  const gen = bot.commands;
+  for (const num of gen) {
+    if (!sections.includes(num[1].section) && num[1].section != undefined)
+      sections.push(num[1].section);
+  }
+
+  for (const num of gen) {
+    if (!commands.includes(num[1].name) && num[1].section != undefined)
+      commands.push(num[1].name);
+  }
+
+  var help = "";
+  for (section = 0; section < sections.length; section++) {
+    help += `\n**${sections[section]}**\n`;
+    for (command = 0; command < commands.length; command++) {
+      const c = bot.commands.get(commands[command]);
+      if (c.section === sections[section])
+        help += "`" + prefix + c.name + "`, ";
     }
-  });
+  }
 
-  help += "💸 **Economy**\n";
-  bot.commands.forEach((command) => {
-    if (command.helpEconomy) {
-      help += "> `" + process.env.PREFIX + command.name + "`" + ":" + " " + command.helpEconomy + "\n";
-    }
-  });
-
-  help += "🔧 **Management**\n";
-  bot.commands.forEach((command) => {
-    if (command.helpManagement) {
-      help += "> `" + process.env.PREFIX + command.name + "`" + ":" + " " + command.helpManagement + "\n";
-    }
-  });
-
-  help += "🎵 **Music**\n";
-  bot.commands.forEach((command) => {
-    if (command.helpMusic) {
-      help += "> `" + process.env.PREFIX + command.name + "`" + ":" + " " + command.helpMusic + "\n";
-    }
-  });
-
-  help += "⚙️ **Config**\n";
-  bot.commands.forEach((command) => {
-    if (command.helpConfig) {
-      help += "> `" + process.env.PREFIX + command.name + "`" + ":" + " " + command.helpConfig + "\n";
-    }
-  });
-
-  help += "😆 **Fun**\n";
-  bot.commands.forEach((command) => {
-    if (command.helpFun) {
-      help += "> `" + process.env.PREFIX + command.name + "`" + ":" + " " + command.helpFun + "\n";
-    }
-  });
-
-  help += "⠀";
-
-  var kaori = bot.users.cache.get("730092279326441574");
-  let kaoriavatar = bot.users.cache.get("730092279326441574").displayAvatarURL({ size: 4096, dynamic: true });
+  var kaori = bot.users.cache.get(bot.user.id);
+  let kaoriavatar = kaori.displayAvatarURL({ size: 4096, dynamic: true });
   var dev = bot.users.cache.get("513113161126248469");
-  let devavatar = bot.users.cache.get("513113161126248469").displayAvatarURL({ size: 4096, dynamic: true });
+  let devavatar = dev.displayAvatarURL({ size: 4096, dynamic: true });
   let Emebed = new MessageEmbed()
-    .setAuthor("Kaori Miyazono#5192", kaoriavatar)
+    .setAuthor("Help", kaoriavatar)
     .setColor("RANDOM")
-    .setTitle("Help")
     .setDescription(help)
-    .setFooter(`Dev: ${dev.username}#${dev.discriminator}`, devavatar);
+    .setFooter(
+      `Dev: ${dev.username}#${dev.discriminator} | In doubt: ${prefix}help CommandName`,
+      devavatar
+    );
   return msg.channel.send(Emebed);
 };
 
 module.exports = {
   name: "help",
-  helpManagement: "Show help",
+  section: "⚙️ Management",
+  help: "Show help",
+  usage: "help",
   execute,
 };

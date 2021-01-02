@@ -101,6 +101,8 @@ const execute = async (bot, msg, args) => {
 };
 module.exports = {
   name: "waifu",
-  helpAnime: "Shows mentioned waifu or yours",
+  section: "<:yay:764881220773216297> Anime",
+  help: "Shows mentioned person waifu or yours",
+  usage: "waifu OR waifu @mention",
   execute,
 };
