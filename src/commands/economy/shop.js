@@ -11,7 +11,7 @@ const execute = async (bot, msg, args) => {
       userID: user.id,
     },
     async (err, data) => {
-      if (err) console.log(err);x
+      if (err) console.log(err);
       if (!data) {
         msg.reply("Hey, You don't have an account, type: $create ");
       } else {
