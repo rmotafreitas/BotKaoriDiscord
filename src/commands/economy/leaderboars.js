@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-
+const fs = require('fs');
 // MODELS
 const Data = require("../../models/data.js");
 
@@ -12,10 +12,9 @@ const execute = async (bot, msg, args) => {
     .exec((err, res) => {
       if (err) console.log(err);
 
-
-
       var users = 0;
       for (i = 0; i < res.length; i++) {
+
         if(res.money != -1) {
           users++;
         }
@@ -43,6 +42,7 @@ const execute = async (bot, msg, args) => {
         embed.setFooter(`page ${pg} of ${page}`);
 
         for (i = start; i < res.length; i++) {
+          
           if (res[i].money == -1) {
           } else {
             embed.addField(

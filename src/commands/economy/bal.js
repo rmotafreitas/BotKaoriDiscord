@@ -1,7 +1,8 @@
 const Discord = require("discord.js");
 const Canvas = require("canvas");
 const colors = require("../../colors.json");
-
+const waifulist = require("public-waifulist");
+const { MessageEmbed } = require("discord.js");
 // MODELS
 const Data = require("../../models/data.js");
 const execute = async (bot, msg, args) => {
@@ -29,11 +30,9 @@ const execute = async (bot, msg, args) => {
 
         let skins = data.skin;
 
-        if (skins != "normal") {
-          skins = skins.split("+");
+        skins = skins.split("+");
 
-          skins = skins[0];
-        }
+        skins = skins[0];
 
         //? Generate image
         var background = await Canvas.loadImage(skinColors[skins].url);
@@ -79,8 +78,42 @@ const execute = async (bot, msg, args) => {
           canvas.toBuffer(),
           "balance.png"
         );
+        skins = data.skin;
 
-        return msg.channel.send(final);
+        skins = skins.split("+");
+        var desc = "**Skins**\n";
+        skins.forEach(function (item, index, array) {
+          desc = desc + `❯ ${skinColors[skins[index]].emoji} ${skins[index]}\n`;
+
+          // What skins does the user have?
+          skinColors[skins[index]].active = true;
+        });
+
+        desc += "\n**Waifus**\n";
+        let client = new waifulist();
+        if (data.waifus == "") {
+          desc += "No waifus";
+        } else {
+          var waifus = data.waifus.substring(1).split("+");
+          for (i = 0; i < waifus.length; i++) {
+            const waifu = await client.getCharacter(waifus[i]);
+            desc += "**❯** " + waifu.data.name + "\n";
+          }
+        }
+
+        desc += '\n**Rings:** ' + "`" + 'x' + data.rings + " 💍`";
+
+        const embed = new MessageEmbed()
+          .setAuthor(
+            `${msg.author.username} Account`,
+            msg.author.displayAvatarURL({ size: 4096, dynamic: true })
+          )
+          .setDescription(desc)
+          .setColor("#FA5000")
+          .setImage("attachment://balance.png")
+          .setFooter("ProTip: Use the 'work' command to win money between 12H")
+          .attachFiles(final);
+        return msg.channel.send(embed);
       }
     }
   );

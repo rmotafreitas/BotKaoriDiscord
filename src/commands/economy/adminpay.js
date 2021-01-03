@@ -32,19 +32,10 @@ const execute = async (bot, msg, args) => {
               return msg.reply("Hey, that's not a number >:(");
 
             if (!userData) {
-              const newData = new Data({
-                name: bot.users.cache.get(user.id).username,
-                userID: user.id,
-                lb: "all",
-                money: parseInt(args[1]),
-                daily: 0,
-              });
-              newData.save().catch((err) => console.log(err));
-              authorData.save().catch((err) => console.log(err));
+              return msg.reply("That user dosen't have an account!");
             } else {
               userData.money += parseInt(args[1]);
               userData.save().catch((err) => console.log(err));
-              authorData.save().catch((err) => console.log(err));
             }
             return msg.channel.send(
               `${msg.author.username} payed $${args[1]} to ${

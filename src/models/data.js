@@ -8,6 +8,8 @@ const dataSchema = mongoose.Schema({
   daily: Number,
   say: Boolean,
   skin: String,
+  rings: Number,
+  waifus: String,
 });
 
 module.exports = mongoose.model("Data", dataSchema);

@@ -106,15 +106,15 @@ const message = async (bot, msg, prefix) => {
         .then((msg) => msg.delete({ timeout: 1500 }));
     }
     cooldown.add(msg.author.id);
-
+    setTimeout(() => {
+      cooldown.delete(msg.author.id);
+    }, cdseconds * 1000);
     bot.commands.get(command).execute(bot, msg, args);
   } catch (e) {
     //return msg.reply("Ops! Eu ainda não conheço esse comando!");
   }
 
-  setTimeout(() => {
-    cooldown.delete(msg.author.id);
-  }, cdseconds * 1000);
+
 
   //?
 
