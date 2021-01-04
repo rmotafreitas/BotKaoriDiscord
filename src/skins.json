@@ -71,9 +71,15 @@
   },
   "Ness": {
     "name": "Ness",
+<<<<<<< HEAD
     "emoji": "<a:Ness:795784471584309324>",
     "active": false,
     "url": "https://i.imgur.com/VUsmHxv.jpg",
+=======
+    "emoji": "<a:ndance:730823266171617290>",
+    "active": false,
+    "url": "https://i.imgur.com/2N6w9GF.png",
+>>>>>>> 3d12898fca3c0fd30c2cce7b8fc621efafd7706f
     "price": "2000"
   }
 }
