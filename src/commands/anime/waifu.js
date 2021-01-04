@@ -35,7 +35,7 @@ const execute = async (bot, msg, args) => {
           },
           async (err, data) => {
             if (data.rings == 0) return msg.channel.send("You don't have a ring, try buying one at shop");
-            data.waifus += "+" + waifu.data.id;
+            data.waifus += "+" + waifu.data.name;
             data.rings -= 1;
             data.save().catch((err) => console.log(err));
             msg.channel.send(`You are now married with ${waifu.data.name}`);

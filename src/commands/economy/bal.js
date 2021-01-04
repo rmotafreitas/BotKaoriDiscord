@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const Canvas = require("canvas");
 const colors = require("../../colors.json");
-const waifulist = require("public-waifulist");
 const { MessageEmbed } = require("discord.js");
 // MODELS
 const Data = require("../../models/data.js");
@@ -90,18 +89,16 @@ const execute = async (bot, msg, args) => {
         });
 
         desc += "\n**Waifus**\n";
-        let client = new waifulist();
         if (data.waifus == "") {
-          desc += "No waifus";
+          desc += "No waifus\n";
         } else {
           var waifus = data.waifus.substring(1).split("+");
           for (i = 0; i < waifus.length; i++) {
-            const waifu = await client.getCharacter(waifus[i]);
-            desc += "**❯** " + waifu.data.name + "\n";
+            desc += "**❯** " + waifus[i];
           }
         }
 
-        desc += '\n**Rings:** ' + "`" + 'x' + data.rings + " 💍`";
+        desc += '\n\n**Rings:** ' + "`" + 'x' + data.rings + " 💍`";
 
         const embed = new MessageEmbed()
           .setAuthor(
