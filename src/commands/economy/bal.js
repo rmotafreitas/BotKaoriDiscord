@@ -94,11 +94,11 @@ const execute = async (bot, msg, args) => {
         } else {
           var waifus = data.waifus.substring(1).split("+");
           for (i = 0; i < waifus.length; i++) {
-            desc += "**❯** " + waifus[i];
+            desc += "**❯** " + waifus[i] + "\n";
           }
         }
 
-        desc += '\n\n**Rings:** ' + "`" + 'x' + data.rings + " 💍`";
+        desc += '\n**Rings:** ' + "`" + 'x' + data.rings + " 💍`";
 
         const embed = new MessageEmbed()
           .setAuthor(
