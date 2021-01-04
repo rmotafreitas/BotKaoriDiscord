@@ -68,5 +68,12 @@
     "active": false,
     "url": "https://i.imgur.com/yIzn7CW.jpeg",
     "price": "10000"
+  },
+  "Ness": {
+    "name": "Ness",
+    "emoji": "<a:Ness:795784471584309324>",
+    "active": false,
+    "url": "https://i.imgur.com/VUsmHxv.jpg",
+    "price": "2000"
   }
 }

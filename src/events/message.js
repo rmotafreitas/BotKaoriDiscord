@@ -5,18 +5,11 @@ const database = firebase.database();
 
 let cooldown = new Set();
 
-const message = async (bot, msg, prefix) => {
-
+const message = async (bot, msg) => {
+  const getPrefix = require("./../util/prefix.js").getPrefix;
   //? Exceções
-
-  if (
-    msg.mentions.has(bot.user) &&
-    msg.content.split(" ").length === 1 &&
-    msg.content != "@everyone" &&
-    msg.content != "@here"
-  )
-    return msg.reply("HEY, \nMy prefix is `" + prefix + "`\nIf you want help use `" + prefix + "help`");
-
+  if (msg.channel.type == "DM") return;
+  if (msg.author.bot) return;
   if (
     msg.content.startsWith(`<@!${bot.user.id}>`) ||
     msg.content.startsWith(`<@${bot.user.id}>`)
@@ -84,7 +77,20 @@ const message = async (bot, msg, prefix) => {
       }
     });
 
-  if (!msg.content.startsWith(prefix) || msg.author.bot) return;
+  //? Prefix
+  const prefix = await getPrefix(msg.member.guild.id);
+
+
+
+    if (
+      msg.mentions.has(bot.user) &&
+      msg.content.split(" ").length === 1 &&
+      msg.content != "@everyone" &&
+      msg.content != "@here"
+    )
+      return msg.reply("HEY, \nMy prefix is `" + prefix + "`\nIf you want help use `" + prefix + "help`");
+
+  if (!msg.content.startsWith(prefix)) return;
 
   //--------------------------------------------
 

@@ -28,7 +28,7 @@ const message = require("../src/events/message").message;
 const guildMemberAdd = require("../src/events/guildMemberAdd").guildMemberAdd;
 const guildCreate = require("../src/events/guildCreate").guildCreate;
 const guildDelete = require("../src/events/guildDelete").guildDelete;
-const getPrefix = require("./util/prefix").getPrefix;
+
 
 //? Config
 dotenv.config();
@@ -77,11 +77,7 @@ bot.on("ready", function () {
 });
 
 bot.on("message", async function (msg) {
-  if (msg.channel.type == "DM") return;
-  if (msg.author.bot) return;
-  //? Prefix
-  const prefix = await getPrefix(msg.member.guild.id);
-  message(bot, msg, prefix);
+  message(bot, msg);
 });
 
 bot.on("guildMemberAdd", async (member) => {
