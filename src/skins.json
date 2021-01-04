@@ -69,4 +69,11 @@
     "url": "https://i.imgur.com/yIzn7CW.jpeg",
     "price": "10000"
   }
+  "Ness": {
+    "name": "Ness",
+    "emoji": "<a:ndance:730823266171617290>",
+    "active": false,
+    "url": "https://i.imgur.com/2N6w9GF.png",
+    "price": "2000"
+  }
 }
