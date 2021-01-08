@@ -6,7 +6,7 @@ const execute = async (bot, msg, args) => {
   let client = new waifulist();
   let waifu = undefined;
   while (waifu == undefined) {
-    waifu = await client.getRandom(3000);
+    waifu = await client.getRandom(5000);
   }
   var author = msg.author;
 
