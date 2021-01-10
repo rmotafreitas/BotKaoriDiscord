@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const firebase = require("firebase");
 const mongoose = require("mongoose");
-//const DBL = require("dblapi.js");
+const DBL = require("dblapi.js");
 
 //? Connect to firebase
 // Your web app's Firebase configuration
@@ -36,7 +36,7 @@ dotenv.config();
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 bot.queues = new Map();
-/*
+
 const dbl = new DBL(process.env.topggToken, bot);
 // Optional events
 dbl.on('posted', () => {
@@ -45,7 +45,7 @@ dbl.on('posted', () => {
 
 dbl.on('error', e => {
  console.log(`Oops! ${e}`);
-})*/
+})
 
 //? Command handler
 const commandsFolder = fs.readdirSync(path.join(__dirname, "/commands"));

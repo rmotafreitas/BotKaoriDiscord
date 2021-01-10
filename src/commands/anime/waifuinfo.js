@@ -52,7 +52,7 @@ const execute = async (bot, msg, args) => {
   const waifu = await client.getCharacter(id);
   const waifuEmbed = new Discord.MessageEmbed()
     .setColor("#BF23FE")
-    .setDescription(`**❯ Name:** ${waifu.name}\n`
+    .setDescription(`**❯ Name:** ${waifu.data.name}\n`
     + `**❯ Anime:** ${waifu.data.series.name}\n`)
     .setTitle(waifu.data.name)
     .setImage(waifu.data.display_picture)
