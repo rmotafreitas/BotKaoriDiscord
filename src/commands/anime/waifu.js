@@ -8,6 +8,7 @@ const execute = async (bot, msg, args) => {
   while (waifu == undefined) {
     waifu = await client.getRandom(3000);
   }
+  console.log(waifu);
   var author = msg.author;
 
   const embed = new MessageEmbed()
