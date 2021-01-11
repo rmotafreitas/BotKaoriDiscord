@@ -42,7 +42,7 @@ const execute = async (bot, msg, args) => {
         desc.push("**COMMANDS**");
         desc.push(" ❯ 📣 $say - 15000$");
         desc.push("**OTHERS**");
-        desc.push(" ❯ 💍 Ring - 3500$");
+        desc.push(" ❯ 💍 Ring - 1250$");
 
         let embed = new MessageEmbed()
           .setTitle("Shop")
