@@ -75,5 +75,12 @@
     "active": false,
     "url": "https://i.imgur.com/VUsmHxv.jpg",
     "price": "2000"
+  },
+  "LofiGirl": {
+    "name": "LofiGirl",
+    "emoji": "<:LofiGirl:798317874698518568>",
+    "active": false,
+    "url": "https://i.imgur.com/ndneB30.jpeg",
+    "price": "1500"
   }
 }
