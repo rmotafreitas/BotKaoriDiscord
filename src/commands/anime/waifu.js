@@ -3,12 +3,9 @@ const Data = require("../../models/data.js");
 const waifulist = require("public-waifulist");
 const { MessageEmbed } = require("discord.js");
 const execute = async (bot, msg, args) => {
+  
   let client = new waifulist();
-  let waifu = undefined;
-  while (waifu == undefined) {
-    waifu = await client.getRandom(5000);
-  }
-  console.log(waifu);
+  const waifu = await client.getCharacter(Math.floor(Math.random() * 20000) + 1);
   var author = msg.author;
 
   const embed = new MessageEmbed()
