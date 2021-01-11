@@ -88,7 +88,7 @@ const execute = async (bot, msg, args) => {
         }
 
         if (args[0] == "ring") {
-          if (data.money < 3500)
+          if (data.money < 1250)
             return msg.reply("You Don't have that much to pay"); //
           const embed = new MessageEmbed()
             .setTitle(`Shop`)
@@ -115,7 +115,7 @@ const execute = async (bot, msg, args) => {
               });
 
               yes.on("collect", (r) => {
-                data.money -= 3500;
+                data.money -= 1250;
                 data.rings += 1;
                 data.save().catch((err) => console.log(err));
                 return msg.channel.send(`${user}, Purchased!`);

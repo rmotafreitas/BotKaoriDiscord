@@ -13,7 +13,7 @@ const execute = async (bot, msg, args) => {
           name: msg.author.username,
           userID: msg.author.id,
           lb: "all",
-          money: 0,
+          money: 500,
           daily: 0,
           say: false,
           skin: "normal",
