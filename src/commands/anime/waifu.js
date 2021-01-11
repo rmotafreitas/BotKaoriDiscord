@@ -5,7 +5,11 @@ const { MessageEmbed } = require("discord.js");
 const execute = async (bot, msg, args) => {
   
   let client = new waifulist();
-  const waifu = await client.getCharacter(Math.floor(Math.random() * 20000) + 1);
+  var waifu = undefined;
+  do {
+     waifu = await client.getCharacter(Math.floor(Math.random() * 20000) + 1);
+  } while (waifu == undefined);
+
   var author = msg.author;
 
   const embed = new MessageEmbed()
