@@ -82,5 +82,12 @@
     "active": false,
     "url": "https://i.imgur.com/ndneB30.jpeg",
     "price": "1500"
+  },
+  "Miku": {
+    "name": "Miku",
+    "emoji": "<:Miku:798931258419576862>",
+    "active": false,
+    "url": "https://i.imgur.com/eYq01IJ.jpg",
+    "price": "1500"
   }
 }
