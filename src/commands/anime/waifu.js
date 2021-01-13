@@ -8,6 +8,7 @@ const execute = async (bot, msg, args) => {
   var waifu = undefined;
   do {
      waifu = await client.getCharacter(Math.floor(Math.random() * 20000) + 1);
+     waifu = 359
   } while (waifu == undefined);
 
   var author = msg.author;
