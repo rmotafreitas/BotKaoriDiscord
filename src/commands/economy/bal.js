@@ -40,7 +40,7 @@ const execute = async (bot, msg, args) => {
         ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
         //? Letras
-        ctx.font = "32px Impact";
+        ctx.font = "32px sans-serif";
         ctx.fillStyle = colors.white;
         ctx.shadowColor = "black";
         ctx.shadowBlur = 7;
@@ -50,7 +50,7 @@ const execute = async (bot, msg, args) => {
         ctx.fillStyle = colors.white;
         ctx.shadowBlur = 6;
         ctx.fillText(`${user.tag}`, canvas.width / 2.5, canvas.height / 1.9);
-        ctx.font = "33px Impact";
+        ctx.font = "33px sans-serif";
         ctx.fillStyle = colors.white;
         ctx.shadowBlur = 6;
         ctx.fillText(
