@@ -7,7 +7,7 @@ const execute = async (bot, msg, args) => {
   let client = new waifulist();
   var waifu = undefined;
   do {
-     waifu = await client.getCharacter(Math.floor(Math.random() * 450) + 350);
+     waifu = await client.getCharacter(Math.floor(Math.random() * 20000) + 1);
      
   } while (waifu == undefined);
 
