@@ -89,5 +89,12 @@
     "active": false,
     "url": "https://i.imgur.com/eYq01IJ.jpg",
     "price": "1500"
+  },
+  "Tanjiro": {
+    "name": "Tanjiro",
+    "emoji": "<:Tanjiro:799688487653736460>",
+    "active": false,
+    "url": "https://i.imgur.com/gQNNIi8.jpg",
+    "price": "2000"
   }
 }
