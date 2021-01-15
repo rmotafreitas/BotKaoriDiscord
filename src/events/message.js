@@ -10,6 +10,18 @@ const message = async (bot, msg) => {
   //? Exceções
   if (msg.channel.type == "DM") return;
   if (msg.author.bot) return;
+  
+  if (
+      msg.mentions.has(bot.user) &&
+      msg.content.split(" ").length === 1 &&
+      msg.content != "@everyone" &&
+      msg.content != "@here"
+   )
+      return msg.reply("HEY, \nMy prefix is `" + prefix + "`\nIf you want help use `" + prefix + "help`");
+  
+  
+  
+  
   if (
     msg.content.startsWith(`<@!${bot.user.id}>`) ||
     msg.content.startsWith(`<@${bot.user.id}>`)
@@ -82,13 +94,7 @@ const message = async (bot, msg) => {
 
 
 
-    if (
-      msg.mentions.has(bot.user) &&
-      msg.content.split(" ").length === 1 &&
-      msg.content != "@everyone" &&
-      msg.content != "@here"
-    )
-      return msg.reply("HEY, \nMy prefix is `" + prefix + "`\nIf you want help use `" + prefix + "help`");
+
 
   if (!msg.content.startsWith(prefix)) return;
 
