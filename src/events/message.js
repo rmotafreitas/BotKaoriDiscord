@@ -10,7 +10,8 @@ const message = async (bot, msg) => {
   //? Exceções
   if (msg.channel.type == "DM") return;
   if (msg.author.bot) return;
-  
+    //? Prefix
+  const prefix = await getPrefix(msg.member.guild.id);
   if (
       msg.mentions.has(bot.user) &&
       msg.content.split(" ").length === 1 &&
@@ -88,12 +89,6 @@ const message = async (bot, msg) => {
           });
       }
     });
-
-  //? Prefix
-  const prefix = await getPrefix(msg.member.guild.id);
-
-
-
 
 
   if (!msg.content.startsWith(prefix)) return;
