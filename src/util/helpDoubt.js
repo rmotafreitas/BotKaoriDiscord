@@ -11,6 +11,7 @@ const helpDoubt = async (msg , bot, command) => {
     .setColor("RANDOM")
     .setDescription(`**❯ Section:** ${command.section}\n` +
     `**❯ Name:** ${command.name}\n` +
+    `**❯ Help:** ${command.help}\n` +
     `**❯ Usage:** ${command.usage}`)
     .setFooter(`Dev: ${dev.username}#${dev.discriminator}`, devavatar)
     .setTimestamp();
