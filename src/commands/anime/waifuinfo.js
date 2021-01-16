@@ -5,12 +5,13 @@ const googleIt = require("google-it");
 const { MessageEmbed } = require("discord.js");
 const execute = async (bot, msg, args) => {
   //?Get my waifu list link of the character
-  var link;
+  /*var link;
   link = await googleIt({
-    query: `my waifu list ${args.slice(0).join(" ")}`,
+    query: `my waifu list asuna`,
     "only-urls": true,
   })
     .then((results) => {
+      console.log(results);
       for (i = 0; i < results.length; i++) {
         if (
           results[i].link.substring(0, 30) == "https://mywaifulist.moe/waifu/"
@@ -23,7 +24,7 @@ const execute = async (bot, msg, args) => {
     .catch((e) => {
       // any possible errors that might have occurred (like no Internet connection)
     });
-  console.log(link);
+  console.log(link);*/
   //?================================================================
 
     //!undefined
@@ -64,10 +65,10 @@ const execute = async (bot, msg, args) => {
   return msg.channel.send(waifuEmbed);
 };
 
-module.exports = {
+/*module.exports = {
   name: "waifuinfo",
   section: "<:yay:764881220773216297> Anime",
   help: "Shows a info about a waifu",
   usage: "waifuinfo Kaori Miyazono",
   execute,
-};
+};*/
