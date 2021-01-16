@@ -10,24 +10,6 @@ const message = async (bot, msg) => {
   //? Exceções
   if (msg.channel.type == "DM") return;
   if (msg.author.bot) return;
-    //? Prefix
-  const prefix = await getPrefix(msg.member.guild.id);
-  if (
-      msg.mentions.has(bot.user) &&
-      msg.content.split(" ").length === 1 &&
-      msg.content != "@everyone" &&
-      msg.content != "@here"
-   )
-      return msg.reply("HEY, \nMy prefix is `" + prefix + "`\nIf you want help use `" + prefix + "help`");
-  
-  
-  
-  
-  if (
-    msg.content.startsWith(`<@!${bot.user.id}>`) ||
-    msg.content.startsWith(`<@${bot.user.id}>`)
-  )
-    return;
 
   //?Xp
 
@@ -90,13 +72,33 @@ const message = async (bot, msg) => {
       }
     });
 
+  //? Prefix
+  const prefix = await getPrefix(msg.member.guild.id);
+  if (
+    msg.mentions.has(bot.user) &&
+    msg.content.split(" ").length === 1 &&
+    msg.content != "@everyone" &&
+    msg.content != "@here"
+  )
+    return msg.reply(
+      "HEY, \nMy prefix is `" +
+        prefix +
+        "`\nIf you want help use `" +
+        prefix +
+        "help`"
+    );
+
+  if (
+    msg.content.startsWith(`<@!${bot.user.id}>`) ||
+    msg.content.startsWith(`<@${bot.user.id}>`)
+  )
+    return;
 
   if (!msg.content.startsWith(prefix)) return;
 
   //--------------------------------------------
 
   //? Command execute and cooldown
-
 
   let cdseconds = 2;
 
@@ -120,8 +122,6 @@ const message = async (bot, msg) => {
   } catch (e) {
     //return msg.reply("Ops! Eu ainda não conheço esse comando!");
   }
-
-
 
   //?
 
