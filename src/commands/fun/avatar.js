@@ -2,22 +2,17 @@ const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
 
 const execute = async (bot, msg, args) => {
-  let user;
-  if (msg.mentions.users.first()) {
-    user = msg.mentions.users.first();
-  } else if (args[0]) {
-    user = msg.guild.members.cache.get(args[0]).user;
-  } else {
-    user = msg.author;
-  }
-
+  let user = msg.mentions.users.first() || bot.users.cache.get(args[0]) || msg.author;
   
-  let avatar = user.displayAvatarURL({ size: 4096, dynamic: true });
-  let Embed = new MessageEmbed()
-    .setImage(avatar)
-    .setTitle("Download")
-    .setURL(avatar);
-  msg.channel.send(Embed);
+  let avatar = user.avatarURL({ dynamic: true, format: "png", size: 1024 });
+  
+  let embed = new MessageEmbed() 
+    .setColor(`#3399ff`) 
+    .setTitle(`Avatar from: ${user.username}`) 
+    .setDescription(`[Download ⬇️](${avatar})`)
+    .setImage(avatar) 
+    .setFooter(`• Author: ${msg.author.tag}`, msg.author.displayAvatarURL({format: "png"}));
+ await msg.channel.send(embed); 
 };
 
 module.exports = {
