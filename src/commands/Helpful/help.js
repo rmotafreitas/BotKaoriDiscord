@@ -39,7 +39,7 @@ const execute = async (bot, msg, args) => {
     .setAuthor("Help", kaoriavatar)
     .setColor("RANDOM")
     .setDescription(help)
-    .setImage('https://giffiles.alphacoders.com/139/13993.gif')
+    .setImage('https://media1.tenor.com/images/744a03d70f948ffdffedb457455b8be3/tenor.gif')
     .setFooter(
       `Dev: ${dev.username}#${dev.discriminator} | In doubt: ${prefix}help CommandName`,
       devavatar
