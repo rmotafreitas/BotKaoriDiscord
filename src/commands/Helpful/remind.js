@@ -12,16 +12,15 @@ const execute = async (bot, msg, args) => {
   const remider = args.join(' ').slice(args[0].length);
 
   if (remider) {
-      if(!args[1]) {
-          msg.reply('You forgot to say what do you want to me remind you')
-          getHelp(msg, bot, "remind");
-          return;
-      }
       msg.reply(`Reminder set, I will remind you in ${time}`)
 
       setTimeout(function() {
-        msg.member.send(`${remider}`)
+        msg.member.send(`*Your ${time} reminder:* ${remider}`)
       }, ms(time))
+  } else {
+    msg.reply('You forgot to say what do you want to me remind you')
+    getHelp(msg, bot, "remind");
+    return;
   }
 
 };
