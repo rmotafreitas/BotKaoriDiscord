@@ -173,7 +173,7 @@ const execute = async (bot, msg, [target]) => {
 
 module.exports = {
   name: "info",
-  section: "⚙️ Management",
+  section: "⚙️ HelpFul",
   help: "Show user info or bot info or server info",
   usage: "info user @mention OR info bot OR info server",
   execute,
