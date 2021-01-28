@@ -14,7 +14,7 @@ const execute = async (bot, msg, args) => {
     .setDescription(
       "**Server**\n" +
         `**❯ Name: **${msg.guild.name}\n` +
-        `**❯ Owner: **${msg.guild.owner.user.tag}\n` +
+        //!`**❯ Owner: **${msg.guild.owner.user.tag}\n` +
         `**❯ ID: **${msg.guild.id}\n` +
         `**❯ Picture: **[Download](${msg.guild.iconURL({
           dynamic: true,
@@ -24,6 +24,7 @@ const execute = async (bot, msg, args) => {
         `**❯ Roles: **${msg.guild.roles.cache.size}\n`+
         `**❯ Created at: **${moment.utc(msg.guild.createdAt).format("dddd, MMMM, Do, YYYY")}\n`
     );
+    console.log(msg.guild);
   return msg.channel.send(emebed);
 };
 
