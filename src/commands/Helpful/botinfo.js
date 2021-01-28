@@ -50,5 +50,6 @@ module.exports = {
   section: "⚙️ HelpFul",
   usage: "botinfo",
   example: "botinfo",
+  aliases: ['bi'],
   execute,
 };

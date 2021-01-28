@@ -31,5 +31,6 @@ module.exports = {
   help: "Clear messages from the chat",
   usage: "clear [nº 1-99]",
   example: "clear 50",
+  aliases: ['cls'],
   execute,
 };

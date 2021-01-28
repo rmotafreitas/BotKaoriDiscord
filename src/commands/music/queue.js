@@ -23,5 +23,6 @@ module.exports = {
   help: "Show the music queue",
   usage: "queue",
   example: "queue",
+  aliases: ['q'],
   execute,
 };

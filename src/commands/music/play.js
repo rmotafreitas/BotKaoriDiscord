@@ -94,6 +94,7 @@ module.exports = {
   help: "Bot plays music form yt",
   usage: "play [Song Name]",
   example: "play Shape Of You",
+  aliases: ['p'],
   execute,
   playSong,
 };

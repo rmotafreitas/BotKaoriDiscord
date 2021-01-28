@@ -30,5 +30,6 @@ module.exports = {
   help: "Start a vote about a subject",
   usage: "vote [Subject to vote]",
   example: "vote Kaori is a good bot?",
+  aliases: ['vt'],
   execute,
 };

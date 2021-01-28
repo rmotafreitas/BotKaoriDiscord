@@ -105,5 +105,6 @@ module.exports = {
   help: "Shows mentioned Xp Level Card or yours, if the system is On",
   usage: "rank <@mention>",
   example: "rank",
+  aliases: ['profile'],
   execute,
 };

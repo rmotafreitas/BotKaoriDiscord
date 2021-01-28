@@ -85,5 +85,6 @@ module.exports = {
   help: "Gamble your money on your economy system balance",
   usage: "gamble [Money]",
   example: "gamble 500",
+  aliases: ['bet'],
   execute,
 };

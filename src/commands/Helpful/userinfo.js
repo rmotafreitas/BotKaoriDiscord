@@ -99,5 +99,6 @@ module.exports = {
   section: "⚙️ HelpFul",
   usage: "info <@mention>",
   example: "userinfo",
+  aliases: ['ui', 'uinfo'],
   execute,
 };

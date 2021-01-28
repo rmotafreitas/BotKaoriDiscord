@@ -53,5 +53,6 @@ module.exports = {
   help: "Show help",
   usage: "help",
   example: "help",
+  aliases: ['h'],
   execute,
 };

@@ -104,10 +104,14 @@ const message = async (bot, msg) => {
 
   const args = msg.content.slice(prefix.length).split(" ");
 
-  const command = args.shift().toLowerCase();
+  const cmdName = args.shift().toLowerCase();
+  
+  const cmd = bot.commands.get(cmdName)
+    || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(cmdName))
+
+  if(!cmd) return;
 
   try {
-    if (!bot.commands.get(command)) return;
     if (cooldown.has(msg.author.id)) {
       msg.delete().catch((O_o) => {});
       return msg
@@ -118,7 +122,7 @@ const message = async (bot, msg) => {
     setTimeout(() => {
       cooldown.delete(msg.author.id);
     }, cdseconds * 1000);
-    bot.commands.get(command).execute(bot, msg, args);
+    cmd.execute(bot, msg, args);
   } catch (e) {
     //return msg.reply("Ops! Eu ainda não conheço esse comando!");
   }

@@ -16,5 +16,6 @@ module.exports = {
   help: "Stop the music",
   usage: "stop",
   example: "stop",
+  aliases: ['stp'],
   execute,
 };

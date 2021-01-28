@@ -30,5 +30,6 @@ module.exports = {
   help: "Answer your questions!",
   usage: "8ball [Your Question]",
   example: "8ball I should do the homework?",
+  aliases: ['8b'],
   execute,
 };

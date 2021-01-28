@@ -17,5 +17,6 @@ module.exports = {
   help: "Resume the music paused",
   usage: "resume",
   example: "resume",
+  aliases: ['rs'],
   execute,
 };

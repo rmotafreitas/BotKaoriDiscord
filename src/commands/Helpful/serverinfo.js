@@ -34,5 +34,6 @@ module.exports = {
   section: "⚙️ HelpFul",
   usage: "serverinfo",
   example: "serverinfo",
+  aliases: ['svinfo', 'si'],
   execute,
 };

@@ -22,5 +22,6 @@ module.exports = {
   section: "<:yay:764881220773216297> Anime",
   usage: "mobileWallpaper",
   example: "mobilewallpaper",
+  aliases: ['mewallpaper'],
   execute,
 };

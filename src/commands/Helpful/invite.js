@@ -22,5 +22,6 @@ module.exports = {
   help: "Show Bot invite",
   usage: "invite",
   example: "invite",
+  aliases: ['i'],
   execute,
 };

@@ -69,10 +69,11 @@ const execute = async (bot, msg, args) => {
 };
 
 module.exports = {
-  name: "lead",
+  name: "leaderboard",
   section: "💸 Economy",
   help: "Show global ranking in the economy system",
-  usage: "lead",
-  example: "lead",
+  usage: "leaderboard",
+  example: "leaderboard",
+  aliases: ['lead', 'top'],
   execute,
 };

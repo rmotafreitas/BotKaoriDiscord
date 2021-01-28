@@ -19,5 +19,6 @@ module.exports = {
   help: "Report bugs directly to my developer!",
   usage: "report [Bug]",
   example: "report Kaori is not playing music",
+  aliases: ['rpt'],
   execute,
 };

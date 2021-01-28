@@ -31,5 +31,6 @@ module.exports = {
   section: "⚙️ HelpFul",
   usage: "remind [time (s/m/d)] [thing that you want to remember]",
   example: "remind 5m wash hands",
+  aliases: ['rmd'],
   execute,
 };

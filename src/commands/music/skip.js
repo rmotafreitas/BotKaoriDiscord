@@ -16,5 +16,6 @@ module.exports = {
   help: "Skip to the next track",
   usage: "skip",
   example: "skip",
+  aliases: ['s'],
   execute,
 };

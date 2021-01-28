@@ -53,5 +53,6 @@ module.exports = {
   help: "Shows a waifu, and you can marry with her if you have a ring",
   usage: "waifu",
   example: "waifu",
+  aliases: ['w'],
   execute,
 };

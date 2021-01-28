@@ -21,5 +21,6 @@ module.exports = {
   help: "Show music lyrics",
   usage: "lyrics [Song Name]",
   example: "lyrics Shape Of You",
+  aliases: ['ly'],
   execute,
 };

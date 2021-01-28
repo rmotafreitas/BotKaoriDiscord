@@ -117,10 +117,11 @@ const execute = async (bot, msg, args) => {
 };
 
 module.exports = {
-  name: "bal",
+  name: "balance",
   section: "💸 Economy",
   help: "Show balance of an user in the economy system",
-  usage: "bal @mention",
-  example: "bal",
+  usage: "balance @mention",
+  example: "balance",
+  aliases: ['account', 'bal'],
   execute,
 };

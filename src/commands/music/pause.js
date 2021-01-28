@@ -16,5 +16,6 @@ module.exports = {
   help: "Pause the music",
   usage: "pause",
   example: "pause",
+  aliases: ['ps'],
   execute,
 };
