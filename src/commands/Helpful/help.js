@@ -52,5 +52,6 @@ module.exports = {
   section: "⚙️ HelpFul",
   help: "Show help",
   usage: "help",
+  example: "help",
   execute,
 };

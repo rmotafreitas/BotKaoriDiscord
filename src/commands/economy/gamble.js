@@ -82,7 +82,8 @@ const execute = async (bot, msg, args) => {
 module.exports = {
   name: "gamble",
   section: "💸 Economy",
-  help: "Gamble your money, economy system",
-  usage: "gamble money",
+  help: "Gamble your money on your economy system balance",
+  usage: "gamble [Money]",
+  example: "gamble 500",
   execute,
 };

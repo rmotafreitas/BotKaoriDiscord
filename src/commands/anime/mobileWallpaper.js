@@ -18,8 +18,9 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "mobilewallpaper",
-  help: "Give a anime wallpaper to you use on your phone",
+  help: "Give a anime wallpaper to you use on your mobile phone",
   section: "<:yay:764881220773216297> Anime",
   usage: "mobileWallpaper",
+  example: "mobilewallpaper",
   execute,
 };

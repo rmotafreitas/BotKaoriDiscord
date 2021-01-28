@@ -27,8 +27,9 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "remind",
-  help: "Remind you in time! ()",
+  help: "Remind you in time!",
   section: "⚙️ HelpFul",
-  usage: "remind 5m 1s 3d Wash my hands",
+  usage: "remind [time (s/m/d)] [thing that you want to remember]",
+  example: "remind 5m wash hands",
   execute,
 };

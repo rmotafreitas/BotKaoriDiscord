@@ -62,14 +62,12 @@ for (var folder of commandsFolder) {
 
 bot.login(process.env.TOKEN);
 
-//? Connect to MongoDb
+//? Connect to MongoDb Economy
 mongoose.connect(process.env.mongoPass, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
-
-console.log("MongoDb Ok!");
-
+console.log("MongoDb Economy Ok!");
 //? Events
 
 bot.on("ready", function () {

@@ -69,5 +69,6 @@ module.exports = {
   section: "💸 Economy",
   help: "Daily command to win money in the economy system (12Hours cooldown)",
   usage: "work",
+  example: "work",
   execute,
 };

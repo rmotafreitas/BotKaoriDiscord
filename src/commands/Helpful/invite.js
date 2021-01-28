@@ -21,5 +21,6 @@ module.exports = {
   section: "⚙️ HelpFul",
   help: "Show Bot invite",
   usage: "invite",
+  example: "invite",
   execute,
 };

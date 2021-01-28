@@ -19,6 +19,7 @@ module.exports = {
   name: "lyrics",
   section: "🎵 Music",
   help: "Show music lyrics",
-  usage: "$lyrics SongName",
+  usage: "lyrics [Song Name]",
+  example: "lyrics Shape Of You",
   execute,
 };

@@ -87,7 +87,7 @@ const execute = async (bot, msg, args) => {
           });
         }
 
-        if (args[0] == "ring") {
+        if (args[0].toLowerCase() == "ring") {
           if (data.money < 1250)
             return msg.reply("You Don't have that much to pay"); //
           const embed = new MessageEmbed()
@@ -198,6 +198,7 @@ module.exports = {
   name: "buy",
   section: "💸 Economy",
   help: "To view an item use the command: buy NameOfTheItem | and if you have money and like it you can buy it!",
-  usage: "buy NameOfTheItem",
+  usage: "buy [Name Of The Item]",
+  example: "buy Ring",
   execute,
 };

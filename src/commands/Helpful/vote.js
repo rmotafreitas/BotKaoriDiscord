@@ -28,6 +28,7 @@ module.exports = {
   name: "vote",
   section: "⚙️ HelpFul",
   help: "Start a vote about a subject",
-  usage: "vote subject",
+  usage: "vote [Subject to vote]",
+  example: "vote Kaori is a good bot?",
   execute,
 };

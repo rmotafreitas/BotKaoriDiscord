@@ -71,7 +71,8 @@ const execute = async (bot, msg, args) => {
 module.exports = {
   name: "lead",
   section: "💸 Economy",
-  help: "Show global ranking in economy system",
+  help: "Show global ranking in the economy system",
   usage: "lead",
+  example: "lead",
   execute,
 };

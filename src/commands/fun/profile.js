@@ -100,9 +100,10 @@ const execute = async (bot, msg, args) => {
 };
 
 module.exports = {
-  name: "profile",
+  name: "rank",
   section: "😆 Fun",
   help: "Shows mentioned Xp Level Card or yours, if the system is On",
-  usage: "profile OR profile @mention",
+  usage: "rank <@mention>",
+  example: "rank",
   execute,
 };

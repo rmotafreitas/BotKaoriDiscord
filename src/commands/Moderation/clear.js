@@ -28,7 +28,8 @@ const execute = async (bot, msg, args) => {
 module.exports = {
   name: "clear",
   section: "<:catstaff:761530794744872980> Moderation",
-  help: "Clear messages",
-  usage: "clear nºmessage(1-99)",
+  help: "Clear messages from the chat",
+  usage: "clear [nº 1-99]",
+  example: "clear 50",
   execute,
 };

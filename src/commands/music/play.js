@@ -92,7 +92,8 @@ module.exports = {
   name: "play",
   section: "🎵 Music",
   help: "Bot plays music form yt",
-  usage: "play SongName",
+  usage: "play [Song Name]",
+  example: "play Shape Of You",
   execute,
   playSong,
 };

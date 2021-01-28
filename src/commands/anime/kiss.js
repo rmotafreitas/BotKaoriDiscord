@@ -125,7 +125,8 @@ const execute = async (bot, msg, args) => {
 module.exports = {
   name: "kiss",
   section: "<:yay:764881220773216297> Anime",
-  help: "Kiss someone",
-  usage: "kiss @mention",
+  help: "Kiss the person that you mention",
+  usage: "kiss [@mention]",
+  example: "kiss @mention",
   execute,
 };

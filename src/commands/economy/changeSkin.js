@@ -45,6 +45,7 @@ module.exports = {
   name: "changeskin",
   section: "💸 Economy",
   help: "Change your economy balance skin",
-  usage: "changeskin NameOfSkin",
+  usage: "changeskin [Name Of Skin]",
+  example: "changeskin Ness",
   execute,
 };

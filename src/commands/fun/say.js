@@ -37,6 +37,7 @@ module.exports = {
   name: "say",
   section: "😆 Fun",
   help: "Bot says whatever you want!",
-  usage: "say What you want to bot say",
+  usage: "say [What you want to bot say]",
+  example: "say I am cool",
   execute,
 };

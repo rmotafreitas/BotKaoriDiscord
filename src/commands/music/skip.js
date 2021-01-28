@@ -15,5 +15,6 @@ module.exports = {
   section: "🎵 Music",
   help: "Skip to the next track",
   usage: "skip",
+  example: "skip",
   execute,
 };

@@ -30,7 +30,8 @@ const execute = async (bot, msg, args) => {
 module.exports = {
   name: "prefix",
   section: "🔧 Bot Config",
-  help: "Change Bot Prefix",
-  usage: "prefix New Prefix",
+  help: "Change the Bot Prefix",
+  usage: "prefix [New Prefix]",
+  example: "prefix !",
   execute,
 };

@@ -25,5 +25,6 @@ module.exports = {
   section: "🔧 Bot Config",
   help: "Turn Off Xp System",
   usage: "turnoffxp",
+  example: "turnoffxp",
   execute,
 };

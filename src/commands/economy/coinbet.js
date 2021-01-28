@@ -122,6 +122,7 @@ module.exports = {
   name: "coinflip",
   section: "💸 Economy",
   help: "Coinflip, with an user bet some money! If you win you keep the money that you bet and get the same money from the person that you gamble",
-  usage: "coinflip @mention money heads OR tails",
+  usage: "coinflip [@metion] [money] [heads OR tails]",
+  example: `coinflip @mention 100 heads`,
   execute,
 };

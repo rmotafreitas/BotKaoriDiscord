@@ -47,6 +47,7 @@ module.exports = {
   name: "stonks",
   section: "😆 Fun",
   help: "Show an image very STONKS",
-  usage: "stonks OR stonks @mention",
+  usage: "stonks <@mention>",
+  example: `stonks`,
   execute,
 };

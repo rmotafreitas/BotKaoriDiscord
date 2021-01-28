@@ -83,6 +83,7 @@ module.exports = {
   name: "pay",
   section: "💸 Economy",
   help: "Pay other users from economy system",
-  usage: "pay @mention money",
+  usage: "pay [@mention] [money]",
+  example: "pay @mention 500",
   execute,
 };

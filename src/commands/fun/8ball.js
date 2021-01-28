@@ -28,6 +28,7 @@ module.exports = {
   name: "8ball",
   section: "😆 Fun",
   help: "Answer your questions!",
-  usage: "8ball your question",
+  usage: "8ball [Your Question]",
+  example: "8ball I should do the homework?",
   execute,
 };

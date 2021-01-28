@@ -119,7 +119,8 @@ const execute = async (bot, msg, args) => {
 module.exports = {
   name: "bal",
   section: "💸 Economy",
-  help: "Show balance of an user, economy",
-  usage: "bal OR bal @mention",
+  help: "Show balance of an user in the economy system",
+  usage: "bal @mention",
+  example: "bal",
   execute,
 };

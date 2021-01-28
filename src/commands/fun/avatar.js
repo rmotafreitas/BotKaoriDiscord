@@ -19,6 +19,7 @@ module.exports = {
   name: "avatar",
   section: "😆 Fun",
   help: "Shows mentioned avatar or yours",
-  usage: "avatar OR avatar @mention",
+  usage: "avatar <@mention>",
+  example: "avatar",
   execute,
 };

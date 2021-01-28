@@ -65,10 +65,10 @@ const execute = async (bot, msg, args) => {
   return msg.channel.send(waifuEmbed);
 };
 
-/*module.exports = {
+module.exports = {
   name: "waifuinfo",
-  section: "<:yay:764881220773216297> Anime",
+  //section: "<:yay:764881220773216297> Anime",
   help: "Shows a info about a waifu",
   usage: "waifuinfo Kaori Miyazono",
   execute,
-};*/
+};

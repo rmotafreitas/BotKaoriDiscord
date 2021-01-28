@@ -12,7 +12,8 @@ const helpDoubt = async (msg , bot, command) => {
     .setDescription(`**❯ Section:** ${command.section}\n` +
     `**❯ Name:** ${command.name}\n` +
     `**❯ Help:** ${command.help}\n` +
-    `**❯ Usage:** ${command.usage}`)
+    `**❯ Usage:** ${command.usage}\n` +
+    `**❯ Example:** ${command.example}`)
     .setFooter(`Dev: ${dev.username}#${dev.discriminator}`, devavatar)
     .setTimestamp();
   return msg.channel.send(Emebed);

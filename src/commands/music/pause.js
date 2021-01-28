@@ -15,5 +15,6 @@ module.exports = {
   section: "🎵 Music",
   help: "Pause the music",
   usage: "pause",
+  example: "pause",
   execute,
 };

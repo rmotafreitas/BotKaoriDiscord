@@ -17,6 +17,7 @@ module.exports = {
   name: "report",
   section: "⚙️ HelpFul",
   help: "Report bugs directly to my developer!",
-  usage: "report your bug",
+  usage: "report [Bug]",
+  example: "report Kaori is not playing music",
   execute,
 };
