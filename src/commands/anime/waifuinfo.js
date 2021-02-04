@@ -67,7 +67,7 @@ const execute = async (bot, msg, args) => {
 
 module.exports = {
   name: "waifuinfo",
-  //section: "<:yay:764881220773216297> Anime",
+  //section: "🉐 Anime",
   help: "Shows a info about a waifu",
   usage: "waifuinfo Kaori Miyazono",
   execute,

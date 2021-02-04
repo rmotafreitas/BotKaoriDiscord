@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html long="en">
+  <head>
+    <title>Kaori Miyazono Cmd's</title>
+  </head>
+  <body>
+    <a href="/"
+      ><img
+        class="avatar"
+        src="https://cdn.discordapp.com/avatars/730092279326441574/a9a2ffb6dd321bbe775a097d8803c033.png?size=128"
+        alt="Kaori's avatar!"
+    /></a>
+    <section class="main-content">
+      <p>
+        To get a look of the commands in discord, use [prefix]help to view the
+        commands!
+      </p>
+      <% commands.forEach(({ name, value }) =>{ %>
+      <table style="width: 100%">
+        <h1 style="text-align: center"><%=name %></h1>
+        <tr>
+          <th>Command Name</th>
+          <th>Description</th>
+          <th>Usage</th>
+          <th>Example</th>
+          <th>Aliases</th>
+        </tr>
+        <% value.forEach(({ name, help, usage, example, aliases}) => { %>
+        <tr>
+          <td><%= name%></td>
+          <td><%= help%></td>
+          <td><%= usage%></td>
+          <td><%= example%></td>
+          <td><%= aliases ? aliases.join(', ') : "No aliases"%></td>
+        </tr>
+        <% }) %>
+      </table>
+      <% }) %>
+    </section>
+  </body>
+  <style>
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      padding: 0;
+      margin: 0;
+      font-family: "Open Sans";
+      font-size: 16px;
+      color: cornflowerblue;
+    }
+
+    .main-content {
+      word-wrap: break-word;
+    }
+
+    @media screen and (min-width: 64em) {
+      .main-content {
+        max-width: 64rem;
+        padding: 2rem 6rem;
+        margin: 0 auto;
+        font-size: 1.1rem;
+      }
+    }
+
+    @media screen and (min-width: 42em) and (min-width: 64em) {
+      .main-content {
+        padding: 2rem 4rem;
+        font-size: 1.1rem;
+      }
+    }
+
+    @media screen and (min-width: 42em) {
+      .main-content {
+        padding: 2rem 1rem;
+        font-size: 1rem;
+      }
+    }
+
+    .main-content h1,
+    .main-content h2,
+    .main-content h3,
+    .main-content h4,
+    .main-content h5,
+    .main-content h6 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-weight: normal;
+      color: cornflowerblue;
+    }
+
+    .main-content table th,
+    .main-content table td {
+      padding: 0.5rem 1rem;
+      border: 1px solid gray;
+    }
+
+    .avatar {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border: 4px solid cornflowerblue;
+      border-radius: 100%;
+      -webkit-transform: -webkit-transform 0.8s ease-in-out;
+      transition: transform 0.8s ease-in-out;
+    }
+
+    .avatar:hover {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  </style>
+</html>

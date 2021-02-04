@@ -49,7 +49,7 @@ const execute = async (bot, msg, args) => {
 };
 module.exports = {
   name: "waifu",
-  section: "<:yay:764881220773216297> Anime",
+  section: "🉐 Anime",
   help: "Shows a waifu, and you can marry with her if you have a ring",
   usage: "waifu",
   example: "waifu",

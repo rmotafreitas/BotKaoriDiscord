@@ -52,7 +52,7 @@ if(data) {
 module.exports = {
   name: "warn",
   help: "Warns an user about something he did",
-  section: "<:catstaff:761530794744872980> Moderation",
+  section: "👮‍♀️ Moderation",
   usage: "warn [@mention] [What they did wrong]",
   example: `warn @mention You send nsfw content to general!`,
   execute,

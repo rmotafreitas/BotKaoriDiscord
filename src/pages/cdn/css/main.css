@@ -1,0 +1,45 @@
+.info {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 650px) {
+  .hideme {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1225px) {
+  .info {
+    width: 100%;
+  }
+}
+
+form button {
+  color: black;
+  background: black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background: white;
+  color: white;
+}
+
+.btn {
+  align-self: center;
+  padding: 0.5em 0.625em;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  font-size: 1em;
+}
+
+.btn:hover {
+  color: black;
+}

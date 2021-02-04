@@ -61,6 +61,7 @@ module.exports = {
   name: "configxp",
   section: "🔧 Bot Config",
   help: "Turn On and setup the Xp system",
+  example: "configxp",
   usage: "configxp",
   execute,
 };
