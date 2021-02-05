@@ -10,7 +10,7 @@ const execute = async (bot, msg, args) => {
     return msg.reply("You are not allowed to warn members!")
 }
 
-//?if(msg.author.id === userToWarn.id) return msg.reply("You can't warn yourself");
+if(msg.author.id === userToWarn.id) return msg.reply("You can't warn yourself");
 
 let reason = args.slice(1).join(" ")
 
@@ -24,7 +24,8 @@ let data = await punishments.findOne({
 if(data) {
     data.Punishments.unshift({
         PunishType: 'Warn',
-        Moderator: msg.author.id,
+        ModeratorId: msg.author.id,
+        ModeratorName: msg.author.username,
         Reason: reason,
     });
     data.save();
@@ -36,7 +37,9 @@ if(data) {
         userID: userToWarn.id,
         Punishments: [{
             PunishType: 'Warn',
-            Moderator: msg.author.id,
+            ModeratorId: msg.author.id,
+            ModeratorName: msg.author.username,
+            Date: Date.now(),
             Reason: reason,
         }, ],
     });

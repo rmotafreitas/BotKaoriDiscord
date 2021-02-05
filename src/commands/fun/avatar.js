@@ -11,7 +11,7 @@ const execute = async (bot, msg, args) => {
     .setTitle(`Avatar from: ${user.username}`) 
     .setDescription(`[Download ⬇️](${avatar})`)
     .setImage(avatar) 
-    .setFooter(`• Author: ${msg.author.tag}`, msg.author.displayAvatarURL({dynamic: true, size: 1024}));
+    .setFooter(`• Author: ${msg.author.tag}`, msg.author.displayAvatarURL({dynamic: false, size: 1024}));
  await msg.channel.send(embed); 
 };
 
