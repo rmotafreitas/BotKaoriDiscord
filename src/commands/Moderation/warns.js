@@ -4,10 +4,11 @@ const moment = require("moment");
 const Discord = require("discord.js");
 const colors = require("../../colors.json");
 const execute = async (bot, msg, args) => {
-  const user =
-    msg.mentions.members.first() ||
-    msg.guild.members.cache.get(args[0]) ||
-    msg.author;
+  if (!args[0]) {
+    var user = msg.author;
+  } else {
+    var user = msg.mentions.users.first() || bot.users.cache.get(args[0]);
+  }
   let data = await punishments.findOne({
     guildID: msg.guild.id,
     userID: user.id,
@@ -18,11 +19,10 @@ const execute = async (bot, msg, args) => {
     data = data.Punishments;
     for (const i in data) {
       warnsEmbed.addField(
-        `Warn #${parseInt(i + 1).toString()}`,
+        `Warn #${(parseInt(i) + 1).toString()}`,
         `**❯ Reason:** ${data[i].Reason}\n` +
           `**❯ Date:** ${moment(data.Date).format("LL LTS")}\n` +
-          `**❯ Moderator:** ${data[i].ModeratorName} (${data[i].ModeratorId})`,
-        true
+          `**❯ Moderator:** ${data[i].ModeratorName} (${data[i].ModeratorId})`
       );
     }
     warnsEmbed
