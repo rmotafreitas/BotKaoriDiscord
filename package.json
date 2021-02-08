@@ -1,5 +1,5 @@
 {
-  "name": "bot",
+  "name": "kaori",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -33,6 +33,7 @@
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
     "yt-search": "^2.5.1",
+    "ytdl-core": "^4.4.5",
     "ytdl-core-discord": "^1.2.5"
   },
   "devDependencies": {
