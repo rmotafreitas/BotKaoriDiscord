@@ -3,6 +3,8 @@ const getPrefix = require("../../util/prefix").getPrefix;
 const { MessageEmbed } = require("discord.js");
 const colors = require("../../colors.json");
 const moment = require("moment");
+const getUsers = require("../../util/getNumberOfUsers").getUsers;
+
 const execute = async (bot, msg, args) => {
   const prefix = await getPrefix(msg.member.guild.id);
   const dev = bot.users.cache.get("513113161126248469");
@@ -11,16 +13,19 @@ const execute = async (bot, msg, args) => {
   const kaori = bot.users.cache.get(bot.user.id);
   const kaoriavatar = kaori.displayAvatarURL({ size: 4096, dynamic: true });
 
+  const users = await getUsers(bot);
+
   const sobre = [
-    "**❯Command list:** `" + prefix + "help`\n",
+    "**❯ Command list:** `" + prefix + "help`\n",
     "**Statistics ↗️**",
-    `**❯Servers:** ${bot.guilds.cache.size}`,
-    `**❯Channels:** ${bot.channels.cache.size}\n`,
+    `**❯ Servers:** ${bot.guilds.cache.size}`,
+    `**❯ Channels:** ${bot.channels.cache.size}\n`,
+    `**❯ Users:** ${users}\n`,
     "**Software ⚙️**",
-    `**❯Size:** 150 Mega`,
-    `**❯Library:** Discord.Js`,
-    `**❯Version Discord.Js:** 12.3.1`,
-    `**❯Version Node.Js:** 12.16.3\n`,
+    `**❯ Size:** 150 Mega`,
+    `**❯ Library:** Discord.Js`,
+    `**❯ Version Discord.Js:** 12.3.1`,
+    `**❯ Version Node.Js:** 12.16.3\n`,
     `**❯ Created at:** ${moment(bot.user.createdTimestamp).format(
       "LT"
     )} ${moment(bot.user.createdTimestamp).format("LL")} ${moment(
