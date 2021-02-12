@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const getHelp = require("../../util/helpDoubt.js").helpDoubt;
+const getHelp = require("../../tools/helpDoubt.js").helpDoubt;
 const ms = require('ms');
 const execute = async (bot, msg, args) => {
   const time = args[0];

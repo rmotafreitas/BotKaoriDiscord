@@ -1,6 +1,6 @@
 // MODELS
 const Data = require("../../models/data.js");
-const getHelp = require("../../util/helpDoubt.js").helpDoubt;
+const getHelp = require("../../tools/helpDoubt.js").helpDoubt;
 
 const execute = async (bot, msg, args) => {
   var author = msg.author;

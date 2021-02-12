@@ -2,7 +2,7 @@ const firebase = require("firebase");
 const database = firebase.database();
 const { MessageEmbed } = require("discord.js");
 const colors = require("../../colors.json");
-const getHelp = require("../../util/helpDoubt.js").helpDoubt;
+const getHelp = require("../../tools/helpDoubt.js").helpDoubt;
 const execute = async (bot, msg, args) => {
   if (!msg.member.permissions.has("MANAGE_GUILD"))
     return msg.reply(

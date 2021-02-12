@@ -1,6 +1,6 @@
-const getPrefix = require("../../util/prefix").getPrefix;
+const getPrefix = require("../../tools/prefix").getPrefix;
 const { MessageEmbed } = require("discord.js");
-const getHelp = require("../../util/helpDoubt.js").helpDoubt;
+const getHelp = require("../../tools/helpDoubt.js").helpDoubt;
 
 const execute = async (bot, msg, args) => {
   if (args[0]) return getHelp(msg, bot, args[0]);  

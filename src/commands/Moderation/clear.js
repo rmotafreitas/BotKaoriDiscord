@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const getHelp = require("../../util/helpDoubt.js").helpDoubt;
+const getHelp = require("../../tools/helpDoubt.js").helpDoubt;
 const execute = async (bot, msg, args) => {
   if (!msg.member.permissions.has("MANAGE_MESSAGES"))
     return msg.reply(

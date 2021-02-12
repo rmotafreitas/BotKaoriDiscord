@@ -1,5 +1,5 @@
 
-const getCommands = require("../../src/util/getCommands").getCommands;
+const getCommands = require("../../src/tools/getCommands").getCommands;
 
 const ready = async (bot) => {
   console.log(

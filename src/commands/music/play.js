@@ -1,7 +1,7 @@
 const search = require("yt-search");
 const ytdl = require("ytdl-core-discord");
 const { MessageEmbed } = require("discord.js");
-const getHelp = require("../../util/helpDoubt.js").helpDoubt;
+const getHelp = require("../../tools/helpDoubt.js").helpDoubt;
 const execute = (bot, msg, args) => {
   if (!args[0]) {
     msg.reply("Hey, you forgot to type a music!");

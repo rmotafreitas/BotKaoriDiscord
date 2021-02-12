@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const getHelp = require("../../util/helpDoubt.js").helpDoubt;
+const getHelp = require("../../tools/helpDoubt.js").helpDoubt;
 // MODELS
 const Data = require("../../models/data.js");
 

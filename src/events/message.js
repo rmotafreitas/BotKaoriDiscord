@@ -2,11 +2,11 @@ const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
 const firebase = require("firebase");
 const database = firebase.database();
-
+const getPrefix = require("../tools/prefix.js").getPrefix;
 let cooldown = new Set();
-
+const afks = require("../models/afk.js");
+const moment = require("moment");
 const message = async (bot, msg) => {
-  const getPrefix = require("./../util/prefix.js").getPrefix;
   //? Exceções
   if (msg.channel.type == "DM") return;
   if (msg.author.bot) return;
@@ -74,6 +74,28 @@ const message = async (bot, msg) => {
 
   //? Prefix
   const prefix = await getPrefix(msg.member.guild.id);
+
+  //View if the author is afk
+    afks.findOne({
+      userID: msg.author.id,
+      guildID: msg.guild.id,   
+    }, async (err, data) => {
+      if (err) console.log(err);
+      if (data) {
+        data.delete()
+        msg.reply("Welcome back! I deleted your afk!")
+      };
+    })
+  //View if the mention is afk
+  if (msg.mentions.members.first()) {
+    let afk = await afks.findOne({
+      userID: msg.mentions.members.first().id,
+      guildID: msg.guild.id,
+    });
+    if (afk) {
+      msg.channel.send(`${afk.nickname} Is Afk: ${afk.afk} | ${moment(afk.time).fromNow()}`);
+    }
+  }
   if (
     msg.mentions.has(bot.user) &&
     msg.content.split(" ").length === 1 &&
@@ -100,16 +122,15 @@ const message = async (bot, msg) => {
 
   //? Command execute and cooldown
 
-  let cdseconds = 2;
-
   const args = msg.content.slice(prefix.length).split(" ");
 
   const cmdName = args.shift().toLowerCase();
-  
-  const cmd = bot.commands.get(cmdName)
-    || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(cmdName))
 
-  if(!cmd) return;
+  const cmd =
+    bot.commands.get(cmdName) ||
+    bot.commands.find((cmd) => cmd.aliases && cmd.aliases.includes(cmdName));
+
+  if (!cmd) return;
 
   try {
     if (cooldown.has(msg.author.id)) {
@@ -121,7 +142,7 @@ const message = async (bot, msg) => {
     cooldown.add(msg.author.id);
     setTimeout(() => {
       cooldown.delete(msg.author.id);
-    }, cdseconds * 1000);
+    }, 2 * 1000);
     cmd.execute(bot, msg, args);
   } catch (e) {
     //return msg.reply("Ops! Eu ainda não conheço esse comando!");

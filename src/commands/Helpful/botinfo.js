@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
-const getPrefix = require("../../util/prefix").getPrefix;
+const getPrefix = require("../../tools/prefix").getPrefix;
 const { MessageEmbed } = require("discord.js");
 const colors = require("../../colors.json");
 const moment = require("moment");
-const getUsers = require("../../util/getNumberOfUsers").getUsers;
+const getUsers = require("../../tools/getNumberOfUsers").getUsers;
 
 const execute = async (bot, msg, args) => {
   const prefix = await getPrefix(msg.member.guild.id);
