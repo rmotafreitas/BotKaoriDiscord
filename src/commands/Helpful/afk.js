@@ -1,14 +1,9 @@
 const afks = require("../../models/afk.js");
 const execute = async (bot, msg, args) => {
-    let afk = await afks.findOne({
-        userID: msg.author.id,
-        guildID: msg.guild.id
-    })
-    if (afk) afk.delete()
     let newAfk = new afks({
         userID: msg.author.id,
         guildID: msg.member.guild.id,
-        nickname: msg.member.nickname,
+        nickname: msg.member.nickname ? msg.member.nickname : msg.author.username,
         afk: args.join(" "),
         time: Date.now()
     })
