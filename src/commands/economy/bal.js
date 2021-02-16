@@ -102,8 +102,8 @@ const execute = async (bot, msg, args) => {
 
         const embed = new MessageEmbed()
           .setAuthor(
-            `${msg.author.username} Account`,
-            msg.author.displayAvatarURL({ size: 4096, dynamic: true })
+            `${user.username} Account`,
+            user.displayAvatarURL({ size: 4096, dynamic: true })
           )
           .setDescription(desc)
           .setColor("#FA5000")
