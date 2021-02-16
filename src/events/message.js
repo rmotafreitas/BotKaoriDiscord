@@ -83,7 +83,7 @@ const message = async (bot, msg) => {
       if (err) console.log(err);
       if (data) {
         data.delete()
-        msg.reply("Welcome back! I deleted your afk!")
+        msg.reply("Welcome back! I deleted your afk!").then((msg) => msg.delete({ timeout: 3500 }));
       };
     })
   //View if the mention is afk

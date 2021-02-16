@@ -8,7 +8,7 @@ const execute = async (bot, msg, args) => {
         time: Date.now()
     })
     newAfk.save();
-    msg.channel.send(`<a:GreenOk:809876746672668673> | ${msg.author} I seted your Afk!`)
+    msg.channel.send(`<a:GreenOk:809876746672668673> | ${msg.author} I seted your Afk!`).then((msg) => msg.delete({ timeout: 3500 }));
 };
 
 module.exports = {
