@@ -95,7 +95,7 @@ const fetch = require('node-fetch');
 
 // globals
 const interval = 25*60*1000; // interval in milliseconds - {25mins x 60s x 1000}ms
-const url = 'https://kaori-sub.herokuapp.com/'
+const url = 'https://bot-kaori-node.herokuapp.com/'
 wake();
 function wake() {
 
