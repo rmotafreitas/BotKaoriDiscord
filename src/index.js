@@ -93,20 +93,9 @@ function wake() {
           .catch((err) => console.error(`Error occured: ${err}`))
       );
     }, interval);
-<<<<<<< HEAD
   } catch (err) {
     console.error("Error occured: retrying...");
     clearInterval(handler);
     return setTimeout(() => wake(), 10000);
   }
 }
-=======
-
-  } catch(err) {
-      console.error('Error occured: retrying...');
-      clearInterval(handler);
-      return setTimeout(() => wake(), 10000);
-  };
-
-};
->>>>>>> 6a0b00afaf0acbc41a157857ea6599d401fe107d
