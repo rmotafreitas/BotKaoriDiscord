@@ -30,7 +30,8 @@ const execute = async (bot, msg, args) => {
         help += "`" + prefix + c.name + "`, ";
     }
   }
-
+  help += `\n**Kaori Chat**\n`;
+  help += "Create a channe in your server wiht the name `Kaori-Chat`, to talk with other users of the kaori!"
   var kaori = bot.users.cache.get(bot.user.id);
   let kaoriavatar = kaori.displayAvatarURL({ size: 4096, dynamic: true });
   var dev = bot.users.cache.get("513113161126248469");

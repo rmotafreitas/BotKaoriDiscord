@@ -6,7 +6,7 @@ const getUsers = async (bot) => {
       .sort((a, b) => b.memberCount - a.memberCount)
       .first(bot.guilds.cache.size);
     for (const gen of guilds) {
-      users += gen.memberCount;
+      if (gen.memberCount) users += gen.memberCount;
     }
     return users;
 };

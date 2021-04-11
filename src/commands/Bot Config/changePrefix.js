@@ -6,7 +6,7 @@ const getHelp = require("../../tools/helpDoubt.js").helpDoubt;
 const execute = async (bot, msg, args) => {
   if (!msg.member.permissions.has("MANAGE_GUILD"))
     return msg.reply(
-      "you are weak, you do not have permission to `MANAGE_GUILDs` to use this command"
+      "You are weak, you do not have permission to `MANAGE_GUILDs` to use this command"
     );
 
   if (!args[0]) {
@@ -23,7 +23,7 @@ const execute = async (bot, msg, args) => {
   let Embed = new MessageEmbed()
     .setColor(colors.white)
 
-    .setDescription(`Prefix update: ${prefix}`);
+    .setDescription(`Prefix updated: ${prefix}`);
   msg.channel.send(Embed);
 };
 

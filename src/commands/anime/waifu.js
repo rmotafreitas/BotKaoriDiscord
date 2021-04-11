@@ -37,7 +37,7 @@ const execute = async (bot, msg, args) => {
             userID: author.id,
           },
           async (err, data) => {
-            if (data.rings == 0) return msg.channel.send("You don't have a ring, try buying one at shop");
+            if (data.rings == 0) return msg.channel.send("You don't have a ring, try buying one at the shop");
             data.waifus += "+" + waifu.data.name;
             data.rings -= 1;
             data.save().catch((err) => console.log(err));
@@ -50,7 +50,7 @@ const execute = async (bot, msg, args) => {
 module.exports = {
   name: "waifu",
   section: "🉐 Anime",
-  help: "Shows a waifu, and you can marry with her if you have a ring",
+  help: "Shows an anime waifu, and you can marry with her if you have a ring",
   usage: "waifu",
   example: "waifu",
   aliases: ['w'],

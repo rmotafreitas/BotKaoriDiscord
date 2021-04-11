@@ -14,7 +14,7 @@ const execute = async (bot, msg, args) => {
   try {
     quemTag = msg.mentions.users.first().tag;
   } catch (e) {
-    msg.channel.send(`${sender}, You must mention a user!`);
+    msg.channel.send(await bot.translate(`${sender}, You must mention a user!`), msg);
     getHelp(msg, bot, "kiss");
     return;
   }
@@ -125,7 +125,7 @@ const execute = async (bot, msg, args) => {
 module.exports = {
   name: "kiss",
   section: "🉐 Anime",
-  help: "Kiss the person that you mention",
+  help: "Kiss the person that you have mentioned",
   usage: "kiss [@mention]",
   example: "kiss @mention",
   execute,

@@ -6,11 +6,11 @@ const colors = require("../../colors.json");
 const execute = async (bot, msg, args) => {
   if (!msg.member.permissions.has("MANAGE_GUILD"))
     return msg.reply(
-      "you are weak, you do not have permission to `MANAGE_GUILDs` to use this command"
+      "You are weak, you do not have permission to `MANAGE_GUILDs` to use this command"
     );
 
   msg.reply(
-    "\n**So to turn On the Xp system you need to mention a channel to I send the lvl up msg**\n**Pls type: [Example: `#general`]**"
+    "\n**So to turn On the Xp system you need to mention a channel to I send the level up msg**\n**Please type: [Example: `#general`]**"
   );
   var cha;
   // in your message event, and a command
@@ -29,7 +29,7 @@ const execute = async (bot, msg, args) => {
       cha = cha.substring(0, cha.length - 1);
       cha = cha.substring(2);
       if (!bot.channels.cache.get(cha))
-        return msg.reply("Pls mention a channel!");
+        return msg.reply("Please mention a channel!");
       console.log("collected :" + cha);
       database.ref(`Servidores/Levels/${msg.guild.id}/Config`).update({
         systemXp: "on",

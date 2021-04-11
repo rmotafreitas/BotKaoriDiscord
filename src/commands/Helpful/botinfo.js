@@ -19,7 +19,7 @@ const execute = async (bot, msg, args) => {
     "**❯ Command list:** `" + prefix + "help`\n",
     "**Statistics ↗️**",
     `**❯ Servers:** ${bot.guilds.cache.size}`,
-    `**❯ Channels:** ${bot.channels.cache.size}\n`,
+    `**❯ Channels:** ${bot.channels.cache.size}`,
     `**❯ Users:** ${users}\n`,
     "**Software ⚙️**",
     `**❯ Size:** 150 Mega`,

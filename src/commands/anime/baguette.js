@@ -18,7 +18,7 @@ const execute = async (bot, msg, args) => {
 module.exports = {
   name: "baguette",
   section: "🉐 Anime",
-  help: "Show an anime picture with a baguette xD",
+  help: "Show an anime picture with a baguette",
   usage: "baguette",
   example: "baguette",
   execute,

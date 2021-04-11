@@ -41,7 +41,7 @@ const execute = async (bot, msg, args) => {
               .setImage(
                 "https://cdn.discordapp.com/attachments/764447928420532224/795389467934326854/unknown.png"
               )
-              .setFooter("You Don't have that much to pay")
+              .setFooter("You don't have that much to pay")
               .setTimestamp();
             return msg.channel.send(embed);
           }
@@ -89,7 +89,7 @@ const execute = async (bot, msg, args) => {
 
         if (args[0].toLowerCase() == "ring") {
           if (data.money < 1250)
-            return msg.reply("You Don't have that much to pay"); //
+            return msg.reply("You don't have that much to pay"); //
           const embed = new MessageEmbed()
             .setTitle(`Shop`)
             .setColor("#FF5B5B")
@@ -138,7 +138,7 @@ const execute = async (bot, msg, args) => {
             break;
           }
         }
-        if (!isIn) return msg.reply("That item not found");
+        if (!isIn) return msg.reply("Item not found");
 
         function buySkin(newColor) {
           if (data.money < skinColors[newColor].price) {
@@ -197,7 +197,7 @@ const execute = async (bot, msg, args) => {
 module.exports = {
   name: "buy",
   section: "💸 Economy",
-  help: "To view an item use the command: buy NameOfTheItem | and if you have money and like it you can buy it!",
+  help: "To view an item, and if you have money and like it you can buy it!",
   usage: "buy [Name Of The Item]",
   example: "buy Ring",
   execute,

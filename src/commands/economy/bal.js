@@ -108,7 +108,7 @@ const execute = async (bot, msg, args) => {
           .setDescription(desc)
           .setColor("#FA5000")
           .setImage("attachment://balance.png")
-          .setFooter("ProTip: Use the 'work' command to win money between 12H")
+          .setFooter("Tip: Use the 'work' command to win money between 12H")
           .attachFiles(final);
         return msg.channel.send(embed);
       }

@@ -20,8 +20,7 @@ const helpDoubt = async (msg, bot, command) => {
         `**❯ Example:** ${command.example}\n` +
         `**❯ Aliases:** ${
           command.aliases ? command.aliases : "No Aliases for this command"
-        }`
-    )
+        }`)
     .setFooter(`Dev: ${dev.username}#${dev.discriminator}`, devavatar)
     .setTimestamp();
   return msg.channel.send(Emebed);

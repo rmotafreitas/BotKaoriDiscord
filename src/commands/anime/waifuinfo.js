@@ -1,11 +1,11 @@
-const Discord = require("discord.js");
+/*const Discord = require("discord.js");
 var rp = require("request-promise");
 const waifulist = require("public-waifulist");
 const googleIt = require("google-it");
 const { MessageEmbed } = require("discord.js");
 const execute = async (bot, msg, args) => {
   //?Get my waifu list link of the character
-  /*var link;
+  var link;
   link = await googleIt({
     query: `my waifu list asuna`,
     "only-urls": true,
@@ -24,7 +24,7 @@ const execute = async (bot, msg, args) => {
     .catch((e) => {
       // any possible errors that might have occurred (like no Internet connection)
     });
-  console.log(link);*/
+  console.log(link);
   //?================================================================
 
     //!undefined
@@ -50,7 +50,8 @@ const execute = async (bot, msg, args) => {
   //?==========================================================
 
   let client = new waifulist();
-  const waifu = await client.getCharacter(id);
+  const waifu = await client.searchBeta("Asuna");
+  console.log(waifu);
   const waifuEmbed = new Discord.MessageEmbed()
     .setColor("#BF23FE")
     .setDescription(`**❯ Name:** ${waifu.data.name}\n`
@@ -63,7 +64,7 @@ const execute = async (bot, msg, args) => {
     )
     .setTimestamp();
   return msg.channel.send(waifuEmbed);
-};
+    }
 
 module.exports = {
   name: "waifuinfo",
@@ -71,4 +72,4 @@ module.exports = {
   help: "Shows a info about a waifu",
   usage: "waifuinfo Kaori Miyazono",
   execute,
-};
+};*/
