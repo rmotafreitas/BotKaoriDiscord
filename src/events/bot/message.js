@@ -143,7 +143,7 @@ module.exports = async (bot, msg) => {
 
       let embed = new Discord.MessageEmbed()
         .setTitle("Kaori-Chat")
-        .setColor(colors.gold)
+        .setColor(colors.yellow)
         .setFooter("Server: " + msg.guild.name)
         .setImage("attachment://chat.png")
         .attachFiles(attachment)
