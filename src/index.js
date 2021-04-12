@@ -98,4 +98,21 @@ function wake() {
     clearInterval(handler);
     return setTimeout(() => wake(), 10000);
   }
+} 
+const lavaUrl = process.env.lava
+wakeLavaLink()
+function wakeLavaLink() {
+  try {
+    const handler = setInterval(() => {
+      fetch(url).then((res) =>
+        console
+          .log(`response-ok: ${res.ok}, status: ${res.status}`)
+          .catch((err) => console.error(`Error occured: ${err}`))
+      );
+    }, interval);
+  } catch (err) {
+    console.error("Error occured: retrying...");
+    clearInterval(handler);
+    return setTimeout(() => wake(), 10000);
+  } 
 }
