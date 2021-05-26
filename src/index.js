@@ -82,12 +82,18 @@ const fetch = require("node-fetch");
 
 // globals
 const interval = 25 * 60 * 1000; // interval in milliseconds - {25mins x 60s x 1000}ms
-const url = "https://bot-kaori-node.herokuapp.com/";
+const url = "https://kaori-sub.herokuapp.com/";
+const lavaUrl = process.env.lava;
 wake();
 function wake() {
   try {
     const handler = setInterval(() => {
       fetch(url).then((res) =>
+        console
+          .log(`response-ok: ${res.ok}, status: ${res.status}`)
+          .catch((err) => console.error(`Error occured: ${err}`))
+      );
+       fetch(lavaUrl).then((res) =>
         console
           .log(`response-ok: ${res.ok}, status: ${res.status}`)
           .catch((err) => console.error(`Error occured: ${err}`))
@@ -99,20 +105,4 @@ function wake() {
     return setTimeout(() => wake(), 10000);
   }
 } 
-const lavaUrl = process.env.lava
-wakeLavaLink()
-function wakeLavaLink() {
-  try {
-    const handler = setInterval(() => {
-      fetch(lavaUrl).then((res) =>
-        console
-          .log(`response-ok: ${res.ok}, status: ${res.status}`)
-          .catch((err) => console.error(`Error occured: ${err}`))
-      );
-    }, interval);
-  } catch (err) {
-    console.error("Error occured: retrying...");
-    clearInterval(handler);
-    return setTimeout(() => wake(), 10000);
-  } 
-}
+
