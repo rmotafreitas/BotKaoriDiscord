@@ -14,7 +14,12 @@ const execute = async (bot, msg, args) => {
   function name() {
     const mention = msg.author;
     const sayMessage = args.join(" ");
-    msg.channel.send(`${sayMessage}\n\n💌 *Message sent by: ${mention}*`);
+    if (sayMessage.includes("@everyone") && !(msg.member.hasPermission("MENTION_EVERYONE"))) {
+      msg.reply("You don't have perms to ping everyone!")
+    } else {
+      msg.channel.send(`${sayMessage}\n\n💌 *Message sent by: ${mention}*`);
+    }
+
   }
 
   Data.findOne(
