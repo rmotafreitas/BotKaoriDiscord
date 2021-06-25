@@ -6,7 +6,7 @@ module.exports = async (bot) => {
     `Estou conectado como ${bot.user.username} em ${bot.guilds.cache.size} servidores e users ${bot.users.cache.size}`
   );
 
-  bot.user.setActivity("Today is my birthday, since I was created!", { type: 2 });
+  bot.user.setActivity("$help", { type: 2 });
 
   const botDetails = {
     guilds: bot.guilds.cache.size,

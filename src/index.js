@@ -27,6 +27,7 @@ console.log("FireBase Ok!");
 dotenv.config();
 
 const bot = new Discord.Client();
+bot.snipes = [];
 bot.commands = new Discord.Collection();
 bot.queues = new Map();
 
