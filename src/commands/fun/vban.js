@@ -57,11 +57,11 @@ const execute = async (client, message, args) => {
       ctx.closePath();
       ctx.clip();
 
-      const avatar = await Canvas.loadImage(
+      const avatar2 = await Canvas.loadImage(
         user.displayAvatarURL({ format: "jpg" })
       );
 
-      ctx.drawImage(avatar, 400, 120, 160, 160);
+      ctx.drawImage(avatar2, 400, 120, 160, 160);
 
       const vbanIMG = new MessageAttachment(canvas.toBuffer(), "vban.png");
       const bannedEmbed = new MessageEmbed()
