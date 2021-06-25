@@ -42,7 +42,7 @@ const execute = async (client, message, args) => {
       ctx.clip();
 
       const avatar = await Canvas.loadImage(
-        user.displayAvatarURL({ format: "jpg" })
+        message.author.displayAvatarURL({ format: "jpg" })
       );
 
       ctx.drawImage(avatar, 140, 10, 160, 160);
@@ -57,11 +57,17 @@ const execute = async (client, message, args) => {
       ctx.closePath();
       ctx.clip();
 
-      const vban = new MessageAttachment(canvas.toBuffer(), "vban.png");
+      const avatar = await Canvas.loadImage(
+        user.displayAvatarURL({ format: "jpg" })
+      );
+
+      ctx.drawImage(avatar, 400, 120, 160, 160);
+
+      const vbanIMG = new MessageAttachment(canvas.toBuffer(), "vban.png");
       const bannedEmbed = new MessageEmbed()
         .setColor("RED")
         .setImage("attachment://vban.jpg")
-        .attachFiles(vban)
+        .attachFiles(vbanIMG)
         .setDescription(`<@${user.id}> VALLE Foi Banido ${message.author}`);
       message.channel.send(bannedEmbed);
     })
