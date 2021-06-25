@@ -66,7 +66,7 @@ const execute = async (client, message, args) => {
       const vbanIMG = new MessageAttachment(canvas.toBuffer(), "vban.png");
       const bannedEmbed = new MessageEmbed()
         .setColor("RED")
-        .setImage("attachment://vban.jpg")
+        .setImage("attachment://vban.png")
         .attachFiles(vbanIMG)
         .setDescription(`<@${user.id}> VALLE Foi Banido ${message.author}`);
       message.channel.send(bannedEmbed);
