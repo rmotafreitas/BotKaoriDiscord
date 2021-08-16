@@ -1,0 +1,51 @@
+KAORI V2
+_______
+
+⏲ Things to finish:
+- Upload Imgur
+- "HManga" Reader ❌✅ I need to think about nsfw commands
+- Complete Music System
+    - Filters Music
+    - Note: Lyrics using ksoft API
+- All Kaori commands
+
+📒 Things to improve:
+- Genreal thing's (code, embed's, etc... )
+- Watch List
+- Upload Bin ✅
+- Readme.md
+- Help
+    - Command inputs
+    - And command example
+- Retribute interations (with a function) ✅
+- Warn System, in general
+    - Remove warn
+    
+😐 New thinhs:
+- Nintedo Fc ✅
+- New economy System
+    - Kaori Premium System
+    - Badges
+    - About me
+    - Work Level
+    - ... a lot of stuff
+- Mod commands
+    - Kick ✅
+    - Ban ✅
+    - Mute
+
+📝 Notes:
+- Say with webwook, (but in kaori Premium)
+- Review cooldowns
+- Make a cool about me
+- Chaching states and pfp
+- Intents (User presence)
+    - Spotify Command
+- View if c4 is working ✅
+- Swap this snipe with kaori one, but with Collections
+- Work only using classe's on db stuff (econmoy and Nintedo) ✅
+- Afk with Collections
+- Rmf now playing (bcs the website is dynamic, and express or node fecth dosen't work) [Waiting for email] 📧
+- ⚠ Firebase to mongo ✅
+
+😅 -> Multi Language (Ing | Pt)
