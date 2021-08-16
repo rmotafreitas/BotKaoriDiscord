@@ -1,6 +1,6 @@
 const { Client, Message, MessageEmbed } = require('discord.js');
-const koenie06games = require('koenie06-games');
-const SnakeGame = new koenie06games.SnakeGame();
+const SnakeGame = require('../../tools/classes/snake').SnakeGame;
+const Game = new SnakeGame();
 
 module.exports = {
     name: 'snake',
@@ -11,6 +11,6 @@ module.exports = {
      * @param {String[]} args 
      */
     run: async(client, message, args) => {
-        SnakeGame.newGame(message);
+        Game.newGame(message);
     }
 }
