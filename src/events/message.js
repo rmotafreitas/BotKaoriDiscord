@@ -4,10 +4,6 @@ const getPrefix = require("../tools/getPrefix").getPrefix;
 const Timeout = new Collection();
 const ms = require("ms");
 client.on("message", async (message) => {
-  if (
-    message.author.id == "513113161126248469" ||
-    message.author.id == "404383511156621312"
-  ) {
     if (message.author.bot) return;
     const prefix = await getPrefix(message.guild.id);
     client.prefix = prefix;
@@ -40,5 +36,4 @@ client.on("message", async (message) => {
         }, command.cooldown);
       } else command.run(client, message, args);
     }
-  }
 });
