@@ -39,7 +39,6 @@
         "pokedex-promise-v2": "^3.3.2",
         "request": "^2.88.2",
         "request-promise": "^4.2.6",
-        "sourcebin": "^4.2.5",
         "table": "^6.7.1",
         "ytdl-core": "^4.9.1"
     }
