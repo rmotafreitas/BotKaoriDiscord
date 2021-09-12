@@ -1,6 +1,5 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
 const watchlists = require("../../models/watchlist");
-const getUser = require("../../tools/getUser.js").getUser;
 
 module.exports = {
   name: "watchlist",
@@ -11,9 +10,15 @@ module.exports = {
    * @param {String[]} args
    */
   run: async (client, message, args) => {
-    const user = await getUser(client, message, args);
-    if (user == undefined) return message.inlineReply("I din't find that user!");
-    
+    var user = null;
+    if (!args[0]) {
+      user = message.author;
+    } else {
+      user = message.mentions.users.first() || client.users.cache.get(args[0]);
+    }
+    if (user == undefined)
+      return message.inlineReply("I din't find that user!");
+
     let data = await watchlists.findOne({
       userID: user.id,
     });
