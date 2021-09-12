@@ -1,6 +1,6 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
 const watchlists = require("../../models/watchlist");
-const getUser = require("../../tools/getUser.js").getUser;
+const getUser = require("./../../tools/getUser.js").getUser;
 
 module.exports = {
   name: "watchlist",
