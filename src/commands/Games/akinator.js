@@ -65,7 +65,7 @@ module.exports = {
               return message.channel.send(
                 new MessageEmbed()
                   .setColor(10181046)
-                  .setTitle("Uh. you are win")
+                  .setTitle("Uh. You win!")
                   .setDescription("I enjoyed playing with you!")
               );
           });

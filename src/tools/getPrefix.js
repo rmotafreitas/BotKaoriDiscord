@@ -4,7 +4,11 @@ const getPrefix = async (id) => {
   let guild = await prefixs.findOne({
     guildID: id,
   });
-  return guild.prefix;
+  if (guild) {
+    return guild.prefix;
+  } else {
+    return "$";
+  }
 };
 
 module.exports = {

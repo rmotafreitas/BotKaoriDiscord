@@ -6,7 +6,7 @@ const colors = require("../../json/colors.json");
 
 module.exports = {
   name: "radio",
-  cooldown: 3*60*1000,
+  cooldown: 0,
   /**
    * @param {Client} client
    * @param {Message} message

@@ -17,8 +17,10 @@ module.exports = {
       );
     const emebedBug = new MessageEmbed()
       .setTitle("Bug encontrado!")
+      .setFooter(message.author.id)
+      .setTimestamp()
       .setDescription(bug)
-      .setColor(`RANDOM`)
+      .setColor(`RED`)
       .setFooter(
         `De: ${message.author.tag}`,
         message.author.displayAvatarURL()

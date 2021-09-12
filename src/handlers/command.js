@@ -1,6 +1,6 @@
 const { readdirSync } = require("fs");
 const ascii = require("ascii-table");
-const path = require('path')
+const path = require("path");
 let table = new ascii("Commands");
 table.setHeading("Command", " Load status");
 
@@ -36,21 +36,6 @@ module.exports = (client, player) => {
       let pull = require(path.resolve(`src/events/${file}`));
       if (pull.name) {
         client.events.set(pull.name, pull);
-      } else {
-        continue;
-      }
-    }
-  });
-
-  readdirSync("./src/distube-events/").forEach((file) => {
-    const events = readdirSync("./src/distube-events/").filter((file) =>
-      file.endsWith(".js")
-    );
-  
-    for (let file of events) {
-      let pull = require(path.resolve(`src/distube-events/${file}`));
-      if (pull.name) {
-        player.events.set(pull.name, pull);
       } else {
         continue;
       }

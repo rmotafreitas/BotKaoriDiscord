@@ -1,6 +1,7 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
 const getTuneInData = require("./../../tools/getTuneInData").getTuneInData;
-const getOnlineRadioBoxData = require("./../../tools/getOnlineRadioBoxData").getOnlineRadioBoxData;
+const getOnlineRadioBoxData =
+  require("./../../tools/getTodayFMData").getOnlineRadioBoxData;
 const { radios } = require("../../Collection");
 
 module.exports = {
@@ -16,7 +17,7 @@ module.exports = {
     const radio = radios.get(message.guild.id);
 
     if (!radio) return message.inlineReply("There's nothing playing!");
-    
+
     let embed = Object.create(radio.radioEmbed);
     let description =
       radio.radioEmbed.description +
@@ -30,16 +31,18 @@ module.exports = {
         break;
       case "Music Radio":
         const dataRadioBox = await getOnlineRadioBoxData(radio.url);
-        description += `🎵 __Playing:__ *${dataRadioBox.songName}*` +
-        "\n" +
-        `🎙 __From:__ *${dataRadioBox.author}*`;
-        embed.setThumbnail(dataRadioBox.albumImg);
+        description +=
+          `🎵 __Playing:__ *${dataRadioBox.music}*` +
+          "\n" +
+          `🎙 __From:__ *${dataRadioBox.from}*`;
+        embed.setThumbnail(dataRadioBox.album);
         break;
       default:
         const data = await getTuneInData(radio.url);
-        description += `🎵 __Playing:__ *${data.music}*` +
-        "\n" +
-        `🎙 __From:__ *${data.from}*`;
+        description +=
+          `🎵 __Playing:__ *${data.music}*` +
+          "\n" +
+          `🎙 __From:__ *${data.from}*`;
         break;
     }
     embed.setDescription(description);

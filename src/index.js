@@ -5,7 +5,6 @@ const { Collection, Client, Discord, Message } = require("discord.js");
 const client = new Client({
   disableMention: "everyone",
 });
-const { DiscordTogether } = require("discord-together");
 
 require("./tools/ExtendedMessage");
 
@@ -13,19 +12,14 @@ const fs = require("fs");
 
 const path = require("path");
 
-const distube = require("distube");
-const player = new distube(client);
-
-module.exports = { client, player };
+module.exports = { client };
 client.bumps = new Collection();
 client.commands = new Collection();
 client.aliases = new Collection();
 client.categories = fs.readdirSync(path.resolve("src/commands"));
 ["command"].forEach((handler) => {
-  require(path.resolve(`src/handlers/${handler}`))(client, player);
+  require(path.resolve(`src/handlers/${handler}`))(client);
 });
-client.discordTogether = new DiscordTogether(client);
-client.player = player;
 
 client.login(process.env.token);
 

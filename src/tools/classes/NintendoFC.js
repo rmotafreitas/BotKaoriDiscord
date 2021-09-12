@@ -2,8 +2,8 @@ const nintedo = require("../../models/nintedo");
 
 class NintedoFC {
   constructor(id) {
-    this.ndsFC = "value";
-    this.swFC = "value";
+    this.ndsFC = null;
+    this.swFC = null;
     this.userID = id;
   }
 
@@ -18,7 +18,7 @@ class NintedoFC {
         ndsFC: null,
         swFC: null,
       });
-      newProfile.save().catch((err) => console.log(err));
+      await newProfile.save().catch((err) => console.log(err));
       this.ndsFC = null;
       this.swFC = null;
     } else {
@@ -28,6 +28,7 @@ class NintedoFC {
   }
 
   async setndsFC(code) {
+    this.ndsFC = code;
     let data = await nintedo.findOne({
       userID: this.userID,
     });
@@ -36,6 +37,7 @@ class NintedoFC {
   }
 
   async setswFC(code) {
+    this.swFC = code;
     let data = await nintedo.findOne({
       userID: this.userID,
     });

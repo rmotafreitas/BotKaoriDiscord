@@ -19,18 +19,19 @@ module.exports = {
       }
       return true;
     }
-
-    const NintedoProfile = new NintedoFC(message.author.id);
-    await NintedoProfile.init();
     const code = args[0];
     const Embeds = await embeds();
     if (!isValid(code)) {
-      return message.inlineReply( 
+      return message.inlineReply(
         await Embeds.error("You need to input like this: `xxxx-xxxx-xxxx`")
       );
-    } else {
-      await NintedoProfile.setndsFC(code);
-      return message.inlineReply(await Embeds.completed("Now your Ninetdo 3Ds code is:\n`" + code + "`"));
     }
+    const NintedoProfile = new NintedoFC(message.author.id);
+    await NintedoProfile.init();
+    await NintedoProfile.setndsFC(code);
+    return message.inlineReply(
+      await Embeds.completed("Now your Ninetdo 3Ds code is:\n`" + code + "`")
+    );
+
   },
 };

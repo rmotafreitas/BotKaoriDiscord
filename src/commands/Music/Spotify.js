@@ -16,7 +16,6 @@ module.exports = {
    * @param {String[]} args
    */
   run: async (client, message, args) => {
-    return message.inlineReply("Sorry but this command is disable until discord give me premission to look at user's presence.")
     
     if (!args[0]) {
       var user = message.author;

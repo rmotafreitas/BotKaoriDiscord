@@ -35,6 +35,7 @@ module.exports = {
           Info: "📃",
           Math: "📌",
           Misc: "👀",
+          Economy: "💰",
         }
   
         readdirSync("./src/commands/").forEach((dir) => {
@@ -42,9 +43,12 @@ module.exports = {
             file.endsWith(".js")
           );
       
-          const cmds = commands.map((command) => {
+          const cmds = commands.filter((command) => {
             let file = require(`../../commands/${dir}/${command}`);
-  
+            return !file.hidden;
+          }).map((command) => {
+            let file = require(`../../commands/${dir}/${command}`);
+
             if (!file.name) return "No command name.";
   
             let name = file.name.replace(".js", "");

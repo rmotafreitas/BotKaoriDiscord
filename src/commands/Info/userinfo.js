@@ -106,8 +106,8 @@ module.exports = {
         `\u200b`,
       ])
       .setFooter(
-        `• Requested by: ${member.user.tag}`,
-        member.user.displayAvatarURL({ format: "png" })
+        `• Requested by: ${message.author.tag}`,
+        message.author.displayAvatarURL({ format: "png" })
       )
       .setTimestamp();
     return message.channel.send(embed);

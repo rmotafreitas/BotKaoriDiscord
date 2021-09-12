@@ -1,8 +1,7 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
 const colors = require("../json/colors.json");
 const { radios } = require("../Collection");
-const getOnlineRadioBoxData = require("./../tools/getOnlineRadioBoxData")
-  .getOnlineRadioBoxData;
+const getRadioData = require("../tools/getTodayFMData").getOnlineRadioBoxData;
 
 module.exports = {
   name: "music",
@@ -17,11 +16,9 @@ module.exports = {
     if (!message.member.voice.channel)
       return message.inlineReply("You need to be on a voice channel");
 
-    const url =
-      "https://onlineradiobox.com/us/977todayshits/playlist/?cs=us.977todayshits";
+    const url = "https://irishradiolive.com/today-fms";
 
-    const data = await getOnlineRadioBoxData(url);
-
+    const data = await getRadioData(url);
     const embed = new MessageEmbed()
       .setTitle("Playing Radio Music!")
       .setColor(colors.blue)
@@ -31,20 +28,16 @@ module.exports = {
           "`" +
           message.member.voice.channel.name +
           "`\n" +
-          `🎵 __Playing:__ *${data.songName}*` +
+          `🎵 __Playing:__ *${data.music}*` +
           "\n" +
-          `🎙 __From:__ *${data.author}*`
+          `🎙 __From:__ *${data.from}*`
       )
       .setTimestamp()
       .setFooter(
         `Session started by: ${message.author.tag}`,
         message.author.displayAvatarURL({ dynamic: true, size: 1024 })
       )
-      .setThumbnail(
-        data.albumImg != ""
-          ? data.albumImg
-          : "https://media0.giphy.com/media/lqSDx8SI1916ysr4eq/giphy.gif"
-      );
+      .setThumbnail(data.album);
 
     const radioEmbed = new MessageEmbed()
       .setTitle("Playing Radio Music!")
@@ -60,10 +53,13 @@ module.exports = {
       );
 
     message.member.voice.channel.join().then((connection) => {
-      require("https").get("https://16803.live.streamtheworld.com/977_HITSAAC_SC", (res) => {
-        connection.play(res);
-        message.channel.send(embed);
-      });
+      require("https").get(
+        "https://edge7.audioxi.com/TDAAC?aw_0_1st.playerId=CGLWebPlayer",
+        (res) => {
+          connection.play(res);
+          message.channel.send(embed);
+        }
+      );
     });
 
     radios.set(message.guild.id, {

@@ -1,7 +1,8 @@
 const { Client, Message, MessageEmbed } = require('discord.js');
+const { discordTogether } = require('../../client/DiscordTogether');
 
 module.exports = {
-    name: 'watch-yt',
+    name: 'fish',
     cooldown: 0,
     /** 
      * @param {Client} client 
@@ -10,9 +11,9 @@ module.exports = {
      */
     run: async(client, message, args) => {
         if (!message.member.voice.channel) {
-            return message.inlineReply("You need to be in a voice chat, in order to watch youtube with your friends!");
+           return message.inlineReply("You need to be in a voice chat, in order to play fishing!");
         }
-        client.discordTogether.createTogetherCode(message.member.voice.channelID, 'youtube').then(async invite => {
+        discordTogether.createTogetherCode(message.member.voice.channelID, 'fishing').then(async invite => {
             return message.channel.send(`${invite.code}`);
         });
         
