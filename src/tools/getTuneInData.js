@@ -5,7 +5,7 @@ const getTuneInData = async (url) => {
       return htmlString;
     })
     .catch(function (err) {});
-  const location = page.search("YOY");
+  const location = page.search("H-m");
   var songData = "";
   var trySongName = page.substring(location + 10, location + 100);
   for (i = 0; i < trySongName.length; i++) {
@@ -15,7 +15,7 @@ const getTuneInData = async (url) => {
   songData = songData.split(" - ");
 
   const data = {
-    music: songData[1],
+    music: songData[1] != undefined ? songData[1] : "Music",
     from: songData[0],
   };
   return data;
