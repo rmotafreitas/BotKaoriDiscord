@@ -21,7 +21,7 @@ module.exports = {
         const dirEmojis = {
           Nintendo: "<:3ds:875025197848211508>",
           Bot: "🤖",
-          "Anime List": "<:mal:830006665709486100>",
+          "AnimeList": "<:mal:830006665709486100>",
           Nsfw: "⛔",
           Games: "🕹️",
           Interactions: "<:reactions:830080726514139148>",
@@ -31,7 +31,7 @@ module.exports = {
           Music: "🎵",
           Anime: "<a:anime:831476172294324225>",
           Pokemon: "<:pokebola:829671918290468864>",
-          Fun: "🥳",
+          "Fun": "🥳",
           Info: "📃",
           Math: "📌",
           Misc: "👀",

@@ -3,14 +3,12 @@ _______
 
 ⏲ Things to finish:
 - Upload Imgur
-- "HManga" Reader ❌✅ I need to think about nsfw commands
 - Note: Lyrics using ksoft API
 - All Kaori commands
 
 📒 Things to improve:
 - Genreal thing's (code, embed's, etc... ) ✅
 - Watch List
-- Upload Bin ✅
 - Readme.md
 - Help
     - Command inputs
@@ -24,9 +22,8 @@ _______
 - New economy System
     - Kaori Premium System
     - Badges
-    - Bio
+    - Bio ✅
     - Work Level
-    - ... a lot of stuff
 - Mod commands
     - Kick ✅
     - Ban ✅

@@ -16,19 +16,12 @@ module.exports = {
             .sort([["money", "descending"]])
             .exec((err, res) => {
               if (err) console.log(err);
-        
-              var users = 0;
-              for (i = 0; i < res.length; i++) {
-        
-                if(res.money != -1) {
-                  users++;
-                }
-              }
-        
-              var page = Math.ceil(users / 10);
+      
+              var page = Math.ceil(res.length / 10);
         
               let embed = new MessageEmbed();
               embed.setTitle("LEADERBOARD");
+              embed.setColor("GREEN");
               embed.setThumbnail(
                 "https://i.pinimg.com/originals/37/f6/e3/37f6e3c43e554757633ae8aff2b4c917.png"
               );
@@ -47,25 +40,18 @@ module.exports = {
                 embed.setFooter(`page ${pg} of ${page}`);
         
                 for (i = start; i < res.length; i++) {
-                  
-                  if (res[i].money == -1) {
-                  } else {
                     embed.addField(
                       `${i + 1}. ${!client.users.cache.get(res[i].id) ? res[i].name : client.users.cache.get(res[i].id).username}`,
                       `$${res[i].money.toLocaleString()}`
                     );
-                  }
                 }
               } else {
                 embed.setFooter(`page ${pg} of ${page}`);
                 for (i = start; i < end; i++) {
-                  if (res[i].money == -1) {
-                  } else {
                     embed.addField(
                       `${i + 1}. ${!client.users.cache.get(res[i].id) ? res[i].name : client.users.cache.get(res[i].id).username}`,
                       `$${res[i].money.toLocaleString()}`
                     );
-                  }
                 }
               }
         

@@ -1,5 +1,6 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
-const embeds = require("../../tools/embeds").embeds;
+const { embed } = require('../../tools/classes/fastEmbed');
+
 module.exports = {
   name: "report",
   cooldown: 1000,
@@ -10,10 +11,9 @@ module.exports = {
    */
   run: async (client, message, args) => {
     const bug = args.join(" ");
-    const Embeds = await embeds();
     if (!bug)
       return message.inlineReply(
-        Embeds.error("You need to write the bug that you found 👀")
+        embed.error("You need to write the bug that you found 👀")
       );
     const emebedBug = new MessageEmbed()
       .setTitle("Bug encontrado!")
@@ -27,7 +27,7 @@ module.exports = {
       );
     client.users.cache.get("513113161126248469").send(emebedBug);
     return message.inlineReply(
-      Embeds.completed(`__Bug reported to my Developer__\n>${bug}`)
+      embed.completed(`__Bug reported to my Developer__\n>${bug}`)
     );
   },
 };

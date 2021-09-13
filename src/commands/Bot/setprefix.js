@@ -1,5 +1,5 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
-const embeds = require("../../tools/embeds").embeds;
+const { embed } = require('../../tools/classes/fastEmbed');
 const prefixs = require("../../models/prefixs");
 module.exports = {
   name: "setprefix",
@@ -10,16 +10,15 @@ module.exports = {
    * @param {String[]} args
    */
   run: async (client, message, args) => {
-    const Embeds = await embeds();
     const newPrefix = args[0];
     if (!message.member.hasPermission("MANAGE_GUILD")) {
       return message.inlineReply(
-        Embeds.error("You need to have the `MANAGE_GUILD` permission.")
+        embed.error("You need to have the `MANAGE_GUILD` permission.")
       );
     }
     if (!newPrefix) {
       return message.inlineReply(
-        Embeds.error("You need to input a new prefix in the command.")
+        embed.error("You need to input a new prefix in the command.")
       );
     }
     let guild = await prefixs.findOne({
@@ -36,7 +35,7 @@ module.exports = {
       guild.prefix = newPrefix;
       guild.save().catch((err) => console.log(err));
       return message.inlineReply(
-        Embeds.completed("My new prefix for this guild is `" + newPrefix + "`")
+        embed.completed("My new prefix for this guild is `" + newPrefix + "`")
       );
     }
   },

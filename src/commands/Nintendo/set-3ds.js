@@ -1,6 +1,6 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
 const NintedoFC = require("../../tools/classes/NintendoFC").NintedoFC;
-const embeds = require("../../tools/embeds").embeds;
+const { embed } = require('../../tools/classes/fastEmbed');
 
 module.exports = {
   name: "set-3ds",
@@ -20,18 +20,16 @@ module.exports = {
       return true;
     }
     const code = args[0];
-    const Embeds = await embeds();
     if (!isValid(code)) {
       return message.inlineReply(
-        await Embeds.error("You need to input like this: `xxxx-xxxx-xxxx`")
+        embed.error("You need to input like this: `xxxx-xxxx-xxxx`")
       );
     }
     const NintedoProfile = new NintedoFC(message.author.id);
     await NintedoProfile.init();
     await NintedoProfile.setndsFC(code);
     return message.inlineReply(
-      await Embeds.completed("Now your Ninetdo 3Ds code is:\n`" + code + "`")
+      embed.completed("Now your Ninetdo 3Ds code is:\n`" + code + "`")
     );
-
   },
 };
