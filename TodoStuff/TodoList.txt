@@ -10,7 +10,7 @@ _______
 - Genreal thing's (code, embed's, etc... ) ✅
 - Watch List
 - Readme.md
-- Help
+- Help (All commands) ✅
     - Command inputs
     - Add command example
 - Retribute interations (with a function) ✅
@@ -18,7 +18,7 @@ _______
     
 😐 New thinhs:
 - Nintedo Fc ✅
-- New economy System
+- New economy System    
     - Kaori Premium System
     - Badges
     - Bio ✅

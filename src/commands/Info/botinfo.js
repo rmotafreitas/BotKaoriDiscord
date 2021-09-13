@@ -53,7 +53,7 @@ module.exports = {
 				'\u200b'
 			])
 			.addField('Support me 👇', [	
-				`💌 [Invite me to your server!](${`https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot`})`,
+				`💌 [Invite me to your server!](${`https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot%20applications.commands`})`,
 				`⭐ [Like my github!](${`https://github.com/rmotafreitas/BotKaoriDiscord`})`,
 				`<:kaori:830880374396551219> [Join my server!](${`https://discord.gg/wD7T6Ty`})`,
 				`<:topggbot:760960068589060106> [Vote me on TopGG!](${`https://top.gg/bot/730092279326441574`})`,

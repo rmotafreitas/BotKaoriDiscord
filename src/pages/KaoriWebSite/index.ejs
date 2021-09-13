@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html style="background-color: #eaeaea; overflow-y: auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Kaori | A simple and modern Discord bot that provides fun and searching features to any Discord server, it also comes with a large selection of moderation tools. Kaori is built on Node.js and uses the Discord.js framework."
+    />
+    <meta
+      name="keywords"
+      content="Discord, Discord bots, Discord bot, Kaori, Kaori Discord"
+    />
+    <meta name="author" content="Kaori" />
+    <title>Kaori - Discord</title>
+    <link rel="icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" href="/css/bulma.css" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="A simple and modern Discord bot." />
+    <meta
+      property="og:description"
+      content="Kaori provides fun and searching features to any Discord server, it also comes with a large selection of moderation tools. Kaori is built on Node.js and uses the Discord.js framework."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=0.8" />
+    <style></style>
+  </head>
+  <body>
+    <section
+      class="hero is-info is-fullheight"
+      style="
+        background-image: url('assets/background_dark.jpg');
+        background-size: cover;
+        background-color: #e0c10d;
+      "
+    >
+      <!-- Hero header: will stick at the top -->
+      <div class="hero-head">
+        <header class="nav">
+          <div class="container">
+            <a class="nav-item" href="/">
+              <img
+                src="/assets/discord-logo.svg"
+                class="hideme"
+                style="width: 6em"
+              />
+            </a>
+            <div class="nav-right">
+              <a href="/" class="nav-item is-active"> Home </a>
+              <a href="commands" class="nav-item"> Commands </a>
+              <a href="https://discord.gg/wD7T6Ty" class="nav-item">
+                Community
+              </a>
+              <a
+                href="https://discord.com/api/oauth2/authorize?client_id=730092279326441574&permissions=8&scope=bot%20applications.commands"
+                class="nav-item"
+                style="color: #ffffff"
+              >
+                <span>Invite Kaori To Your Server</span>
+              </a>
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <!-- Hero content: will be in the middle -->
+      <div id="particles-js"></div>
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title">
+            <img src="/assets/logo.png" />
+          </h1>
+          <h2 class="subtitle" style="margin-top: 1em">
+            A simple and modern
+            <img
+              src="/assets/discord-logo.svg"
+              style="width: 5em; vertical-align: middle; margin-bottom: 0.2em"
+            />
+            bot.
+            <div class="info">
+              <nav class="level" style="margin-top: 2em">
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Guilds</p>
+                    <p class="title"><%= clientDetails.guilds %></p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Channels</p>
+                    <p class="title"><%= clientDetails.channels %></p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Users</p>
+                    <p class="title"><%= clientDetails.users %></p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Uptime</p>
+                    <p class="title">99.99%</p>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </h2>
+          <form>
+            <button
+              class="btn"
+              onclick="window.open('https://discord.com/api/oauth2/authorize?client_id=730092279326441574&permissions=8&scope=bot%20applications.commands')"
+            >
+              Invite Kaori To Your Server
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

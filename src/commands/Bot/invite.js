@@ -1,7 +1,7 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
 const { MessageButton, MessageActionRow } = require("discord-buttons");
 module.exports = {
-  name: "Bot",
+  name: "invite",
   category : 'Bot',
   description : 'Get the bot invite link',
   /**
