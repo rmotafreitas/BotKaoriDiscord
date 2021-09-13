@@ -4,7 +4,9 @@ const HMfull = require("hmfull");
 
 module.exports = {
   name: "kiss",
-  cooldown: 3 * 1000,
+  cooldown: 1000,
+  category: "Interactions",
+  description: "Leave your memories in one action >:3",
   /**
    * @param {Client} client
    * @param {Message} message

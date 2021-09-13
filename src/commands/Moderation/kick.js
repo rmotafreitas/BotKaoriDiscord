@@ -3,7 +3,8 @@ const { Client, Message, MessageEmbed } = require("discord.js");
 module.exports = {
   name: "kick",
   description: "Kick a user",
-  cooldown: 0,
+  cooldown: 1000,
+  category: "Moderation",
   /**
    * @param {Client} client
    * @param {Message} message

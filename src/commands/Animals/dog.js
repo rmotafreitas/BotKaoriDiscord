@@ -3,15 +3,17 @@ const axios = require("axios");
 const colors = require("../../json/colors.json");
 
 module.exports = {
-  name: "bird",
-  cooldown: 3,
+  name: "dog",
+  cooldown: 2000,
+  category : 'Animals',
+  description : 'Shows a dog picture and a fact',
   /**
    * @param {Client} client
    * @param {Message} message
    * @param {String[]} args
    */
   run: async (client, message, args) => {
-    let url = "https://some-random-api.ml/img/birb";
+    let url = "https://some-random-api.ml/img/dog";
 
     let responseImg, dataImg;
     try {
@@ -21,7 +23,7 @@ module.exports = {
       return message.channel.send(`An error occured!`);
     }
 
-    url = "https://some-random-api.ml/facts/bird";
+    url = "https://some-random-api.ml/facts/dog";
     let responseFact, dataFact;
     try {
         responseFact = await axios.get(url);
@@ -34,7 +36,7 @@ module.exports = {
       .setTimestamp()
       .setColor(colors.blue)
       .setTitle(
-        "Bird 🐦"
+        "Dog 🐕‍🦺"
       )
       .setDescription(dataFact.fact)
       .setImage(dataImg.link);

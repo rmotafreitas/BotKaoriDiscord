@@ -5,7 +5,10 @@ const colors = require("../../json/colors.json");
 
 module.exports = {
   name: "remove",
-  cooldown: 2,
+  aliases: ["rmv"],
+  cooldown: 2000,
+  category : 'AnimeList',
+  description : 'Remove an anime from your kaori watch list',
   /**
    * @param {Client} client
    * @param {Message} message

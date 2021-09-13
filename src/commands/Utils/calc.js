@@ -2,10 +2,13 @@ const { Client, Message, MessageEmbed } = require("discord.js");
 const mathjs = require("mathjs");
 const colors = require("../../json/colors.json");
 const replaceAll = require("../../tools/replaceAll.js").replaceAll;
+const { embed } = require('../../tools/classes/fastEmbed');
 
 module.exports = {
   name: "calc",
-  cooldown: 1,
+  category: "Utils",
+  cooldown: 1000,
+  description: "Make a math calc.",
   /**
    * @param {Client} client
    * @param {Message} message
@@ -23,6 +26,8 @@ module.exports = {
           .addField("Question", query)
           .addField("Solution", mathjs.evaluate(query))
       );
-    } catch (err) {}
+    } catch (err) {
+      return message.inlineReply(embed.error("Something wrong was occured!"))
+    }
   },
 };

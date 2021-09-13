@@ -4,6 +4,8 @@ const { embed } = require('../../tools/classes/fastEmbed');
 module.exports = {
   name: "report",
   cooldown: 1000,
+  category : 'Bot',
+  description : 'Report a but to my developer',
   /**
    * @param {Client} client
    * @param {Message} message

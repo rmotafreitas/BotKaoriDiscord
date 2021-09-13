@@ -1,11 +1,13 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
 const { profile } = require("@freezegold/anime.js");
 const watchlists = require("../../models/watchlist");
-const { accessSync } = require("fs");
 
 module.exports = {
   name: "link-list",
-  cooldown: 2,
+  aliases: ["ll"],
+  cooldown: 2000,
+  category : 'AnimeList',
+  description : 'Try to link your MAL',
   /**
    * @param {Client} client
    * @param {Message} message

@@ -9,7 +9,7 @@ module.exports = {
   category: "Pokemon",
   description: "Returns a summary from a pokemon",  
   aliases: ["pokedex"],
-  cooldown: 2,
+  cooldown: 2000,
   /**
    * @param {Client} client
    * @param {Message} message

@@ -3,7 +3,9 @@ const Data = require("../../models/economy");
 
 module.exports = {
     name: 'leaderboard',
-    cooldown: 0,
+    cooldown: 1000,
+    category : 'Economy',
+    description : 'View the people with more money on kaori',
     /** 
      * @param {Client} client 
      * @param {Message} message 

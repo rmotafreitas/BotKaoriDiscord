@@ -4,8 +4,9 @@ const colors = require("../../json/colors.json");
 
 module.exports = {
   name: "pat",
-  description: "hug someone!",
-  cooldown: 3,
+  cooldown: 1000,
+  category: "Interactions",
+  description: "For those with soft hands UωU",
   run: async (client, message, args) => {
     const member = message.mentions.members.first();
     if (!member)

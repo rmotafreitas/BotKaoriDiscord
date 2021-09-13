@@ -3,6 +3,8 @@ const badges = require("../../json/emojis.json");
 
 module.exports = {
     name: 'badges',
+    category : 'Economy',
+    description : 'How to get the badges',
     /** 
      * @param {Client} client 
      * @param {Message} message 

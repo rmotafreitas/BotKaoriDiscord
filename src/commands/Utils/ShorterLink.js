@@ -3,7 +3,9 @@ const { shorten } = require("isgd");
 module.exports = {
   name: "short-link",
   aliases: ["sl"],
-  cooldown: 2,
+  category: "Utils",
+  cooldown: 2000,
+  description: "Short a given link",
   /**
    * @param {Client} client
    * @param {Message} message

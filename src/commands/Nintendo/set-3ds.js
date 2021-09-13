@@ -4,7 +4,9 @@ const { embed } = require('../../tools/classes/fastEmbed');
 
 module.exports = {
   name: "set-3ds",
-  cooldown: 0,
+  category: "Nintendo",
+  cooldown: 2000,
+  description: "Setup your 3ds friend-code",
   /**
    * @param {Client} client
    * @param {Message} message

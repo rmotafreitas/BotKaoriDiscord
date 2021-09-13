@@ -14,8 +14,7 @@ _______
     - Command inputs
     - Add command example
 - Retribute interations (with a function) ✅
-- Warn System, in general
-    - Remove warn
+- Warn System, in general (Remove warn, etc...)
     
 😐 New thinhs:
 - Nintedo Fc ✅

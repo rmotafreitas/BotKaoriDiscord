@@ -21,7 +21,8 @@ module.exports = {
   name: "userinfo",
   category: "Utilities",
   description: "Displays information about the user mentioned",
-  cooldown: 0,
+  cooldown: 1000,
+  aliases: ['whois', 'hack'],
   /**
    * @param {Client} client
    * @param {Message} message

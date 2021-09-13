@@ -3,8 +3,9 @@ const { Client, Message, MessageEmbed } = require("discord.js");
 module.exports = {
   name: "bans",
   aliases: ["allbans"],
-  cooldown: 0,
-  description: "displays the bans in a server!",
+  cooldown: 1000,
+  description: "Displays the bans in a server!",
+  category: "Moderation",
   run: async (client, message, args) => {
     var amount = 1;
     const fetchBans = message.guild.fetchBans();

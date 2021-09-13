@@ -5,7 +5,10 @@ const colors = require("../../json/colors.json");
 
 module.exports = {
   name: "anime-wallpaper",
-  cooldown: 3*1000,
+  cooldown: 2000,
+  category : 'Anime',
+  description : 'Give an anime wallpaper about a query',
+  aliases: ['aw'],
   /**
    * @param {Client} client
    * @param {Message} message

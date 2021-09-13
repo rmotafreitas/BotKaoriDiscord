@@ -7,7 +7,9 @@ const nums = [':one:', ':two:', ':three:', ':four:', ':five:', ':six:', ':seven:
 module.exports = {
     name: 'connect4',
     aliases: ['c4'],
-    cooldown: 5,
+    cooldown: 5000,
+    category: "Games",
+    description: "Tag an user to play an insane connect4 game in discord",
     /** 
     * @param {Client} client 
     * @param {Message} message 

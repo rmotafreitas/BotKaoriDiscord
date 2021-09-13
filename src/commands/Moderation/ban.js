@@ -2,8 +2,9 @@ const { Client, Message, MessageEmbed } = require("discord.js");
 
 module.exports = {
   name: "ban",
-  description: "Ban a user",
-  cooldown: 0,
+  cooldown: 2000,
+  category: "Moderation",
+  description: "Ban a member from your server",
   /**
    * @param {Client} client
    * @param {Message} message

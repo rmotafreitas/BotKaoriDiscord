@@ -4,7 +4,9 @@ const Game = new SnakeGame();
 
 module.exports = {
     name: 'snake',
-    cooldown: 3,
+    cooldown: 5*60*1000,
+    category: "Games",
+    description: "Play snake on discord",
     /** 
      * @param {Client} client 
      * @param {Message} message 

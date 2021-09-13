@@ -4,8 +4,9 @@ const colors = require("../../json/colors.json");
 
 module.exports = {
   name: "wink",
-  description: "wink",
-  cooldown: 3,
+  cooldown: 1000,
+  category: "Interactions",
+  description: "You wink ;)",
   run: async (client, message, args) => {
     const url = "https://some-random-api.ml/animu/wink";
 

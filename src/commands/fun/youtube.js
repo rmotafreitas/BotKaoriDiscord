@@ -8,7 +8,10 @@ const canvacord = require("canvacord");
 
 module.exports = {
   name: "youtube",
-  cooldown: 2,
+  cooldown: 2000,
+  category: "Fun",
+  description:
+    "Type something to do a youtube comment",
   /**
    * @param {Client} client
    * @param {Message} message

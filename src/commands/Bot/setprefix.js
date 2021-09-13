@@ -4,6 +4,8 @@ const prefixs = require("../../models/prefixs");
 module.exports = {
   name: "setprefix",
   cooldown: 1000,
+  category : 'Bot',
+  description : 'Change the bot prefix to current server',
   /**
    * @param {Client} client
    * @param {Message} message

@@ -5,6 +5,9 @@ const { embed } = require('../../tools/classes/fastEmbed');
 module.exports = {
   name: "gamble",
   cooldown: 4000,
+  category : 'Economy',
+  description : 'Gamble your money away',
+  aliases: ['bet'],
   /**
    * @param {Client} client
    * @param {Message} message

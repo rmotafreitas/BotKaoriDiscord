@@ -3,7 +3,10 @@ const watchlists = require("../../models/watchlist");
 
 module.exports = {
   name: "watchlist",
-  cooldown: 1,
+  aliases: ["add-d"],
+  cooldown: 2000,
+  category : 'AnimeList',
+  description : 'Get an user watchlist',
   /**
    * @param {Client} client
    * @param {Message} message

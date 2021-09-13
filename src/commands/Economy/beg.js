@@ -5,7 +5,9 @@ const ms = require("parse-ms");
 
 module.exports = {
   name: "beg",
-  cooldown: 0,
+  cooldown: 1000,
+  category : 'Economy',
+  description : 'Win money begging (100$)[3 hours timeout]',
   /**
    * @param {Client} client
    * @param {Message} message

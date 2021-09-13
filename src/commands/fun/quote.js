@@ -2,7 +2,9 @@ const { Client, Message, MessageEmbed, MessageAttachment } = require("discord.js
 const canvacord = require("canvacord");
 module.exports = {
   name: "quote",
-  cooldown: 2,
+  cooldown: 2000,
+  category: "Fun",
+  description: "Tag a user and type some words to make a quote",
   /**
    * @param {Client} client
    * @param {Message} message

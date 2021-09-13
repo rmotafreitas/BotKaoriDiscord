@@ -4,7 +4,9 @@ const getUser = require("../../tools/getUSer").getUser;
 
 module.exports = {
   name: "3dscode",
-  cooldown: 0,
+  category: "Nintendo",
+  cooldown: 2000,
+  description: "Get a nintendo 3ds Friend-Code from a mentioned user",
   /**
    * @param {Client} client
    * @param {Message} message

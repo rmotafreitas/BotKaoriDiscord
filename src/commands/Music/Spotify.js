@@ -9,7 +9,9 @@ const canvacord = require("canvacord");
 
 module.exports = {
   name: "spotify",
-  cooldown: 2,
+  category: "Music",
+  cooldown: 2000,
+  description: "Tag a user to see what is he listening on spotify",
   /**
    * @param {Client} client
    * @param {Message} message

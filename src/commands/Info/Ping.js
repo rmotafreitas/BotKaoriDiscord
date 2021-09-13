@@ -3,7 +3,7 @@ module.exports = {
     name : 'ping',
     category : 'Info',
     description : 'Returns latency and API ping',
-
+    cooldown: 1000,
     /**
      * @param {Client} client
      * @param {Message} message

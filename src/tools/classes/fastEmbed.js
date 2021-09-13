@@ -29,7 +29,7 @@ class fastEmbed {
   }
   lose(message) {
     const winEmbed = new MessageEmbed()
-      .setColor(colors.yellow)
+      .setColor(colors.red)
       .setTitle("You lost")
       .setDescription(message)
       .setThumbnail("https://c.tenor.com/uCkIVqpPddUAAAAM/loser.gif")

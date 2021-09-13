@@ -4,7 +4,9 @@ const { embed } = require('../../tools/classes/fastEmbed');
 
 module.exports = {
   name: "set-sw",
-  cooldown: 0,
+  category: "Nintendo",
+  cooldown: 2000,
+  description: "Setup your Nintendo Switch friend-code",
   /**
    * @param {Client} client
    * @param {Message} message

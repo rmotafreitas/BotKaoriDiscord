@@ -4,6 +4,9 @@ const minesweeperGame = require('../../tools/classes/minesweeper').minesweeper;
 module.exports = {
     name: 'minesweeper',
     cooldown: 5*60*1000,
+    category: "Games",
+    description: "Play minesweeper on discord",
+    aliases: ['mnsw'],
     /** 
     * @param {Client} client 
     * @param {Message} message 

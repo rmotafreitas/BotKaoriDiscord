@@ -4,7 +4,9 @@ const heart = "<:barra:858105660498247691>";
 
 module.exports = {
   name: "ship",
-  cooldown: 10000,
+  cooldown: 5000,
+  category: "Fun",
+  description: "Tag a user to ship with you or other user",
   /**
    * @param {Client} client
    * @param {Message} message

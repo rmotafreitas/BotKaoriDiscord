@@ -3,7 +3,9 @@ const { snipes } = require('../../Collection');
 
 module.exports = {
   name: "snipe",
-  cooldown: 0,
+  cooldown: 1000,
+  category: "Fun",
+  description: "View the last message deleted on the chat",
   /**
    * @param {Client} client
    * @param {Message} message

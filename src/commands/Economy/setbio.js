@@ -6,6 +6,8 @@ const badWords = require("../../json/badWords.json");
 module.exports = {
   name: "setbio",
   cooldown: 3000,
+  category : 'Economy',
+  description : 'Change your economy account bio',
   /**
    * @param {Client} client
    * @param {Message} message

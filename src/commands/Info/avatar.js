@@ -3,7 +3,9 @@ const colors = require("../../json/colors.json");
 
 module.exports = {
   name: "avatar",
-  cooldown: 0,
+  category: "Utilities",
+  cooldown: 1000,
+  description: "Tag a user to get the avatar",
   /**
    * @param {Client} client
    * @param {Message} message

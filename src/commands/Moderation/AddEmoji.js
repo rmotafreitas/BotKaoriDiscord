@@ -2,7 +2,9 @@ const { Client, Message, MessageEmbed, Util, MessageAttachment } = require("disc
 const converter = require("./../../tools/converte").convert;
 module.exports = {
   name: "addemoji",
-  cooldown: 2,
+  cooldown: 2000,
+  category: "Moderation",
+  description: "Add a emoji to your server",
   /**
    * @param {Client} client
    * @param {Message} message

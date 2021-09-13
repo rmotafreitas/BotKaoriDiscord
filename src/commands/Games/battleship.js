@@ -2,7 +2,9 @@ const { Client, Message, MessageEmbed } = require('discord.js');
 const { DiscordBattleShip } = require("discord-battleship");
 module.exports = {
     name: 'battleship',
-    cooldown: 5,
+    cooldown: 5000,
+    category: "Games",
+    description: "Tag an user to play an insane battleship game in discord",
     /** 
      * @param {Client} client 
      * @param {Message} message 

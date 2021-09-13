@@ -6,8 +6,10 @@ const { radios } = require("../../Collection");
 
 module.exports = {
   name: "now-playing",
-  cooldown: 5 * 1000,
+  cooldown: 3000,
   aliases: ["np"],
+  category: "Music",
+  description: "Show's what is playing now",
   /**
    * @param {Client} client
    * @param {Message} message

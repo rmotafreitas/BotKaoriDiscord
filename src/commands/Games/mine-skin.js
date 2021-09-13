@@ -2,6 +2,9 @@ const { Client, Message, MessageEmbed } = require('discord.js');
 const colors = require("./../../json/colors.json");
 module.exports = {
     name: 'skin',
+    cooldown: 1000,
+    category: "Games",
+    description: "Search a minecraft skin",
     /** 
      * @param {Client} client 
      * @param {Message} message 

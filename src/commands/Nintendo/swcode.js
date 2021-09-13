@@ -4,7 +4,9 @@ const getUser = require("../../tools/getUSer").getUser;
 
 module.exports = {
   name: "swcode",
-  cooldown: 0,
+  category: "Nintendo",
+  cooldown: 2000,
+  description: "Get a nintendo switch Friend-Code from a mentioned user",
   /**
    * @param {Client} client
    * @param {Message} message

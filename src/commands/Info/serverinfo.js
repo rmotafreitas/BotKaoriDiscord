@@ -35,7 +35,7 @@ module.exports = {
     name: 'serverinfo',
     category: "Utils",
     description: "Displays information about the server that said message was run in.",
-    cooldown: 1,
+    cooldown: 1000,
     /** 
     * @param {Client} client 
     * @param {Message} message 

@@ -6,7 +6,9 @@ const colors = require("../../json/colors.json");
 module.exports = {
   name: "add-completed",
   aliases: ["add-c"],
-  cooldown: 2,
+  cooldown: 2000,
+  category : 'AnimeList',
+  description : 'Add a completed anime to your kaori watch list',
   /**
    * @param {Client} client
    * @param {Message} message

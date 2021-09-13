@@ -3,7 +3,9 @@ const colors = require("../../json/colors.json");
 
 module.exports = {
   name: "google",
-  cooldown: 3,
+  category: "Utils",
+  cooldown: 1000,
+  description: "Make a seacrh in Google",
   /**
    * @param {Client} client
    * @param {Message} message

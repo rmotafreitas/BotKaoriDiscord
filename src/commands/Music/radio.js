@@ -6,7 +6,9 @@ const colors = require("../../json/colors.json");
 
 module.exports = {
   name: "radio",
-  cooldown: 0,
+  category: "Music",
+  cooldown: 10000,
+  description: "Plays a music radio in a voice call",
   /**
    * @param {Client} client
    * @param {Message} message

@@ -4,8 +4,10 @@ const { MessageEmbed } = require("discord.js"),
   Started = new Set();
 module.exports = {
   name: "akinator",
+  cooldown: 5000,
+  category: "Games",
+  description: "Play akinator in discord",
   aliases: ["aki"],
-  description: "akinator cmd",
   async run(client, message, args) {
     const sendMsg = await message.channel.send("⚙ Loading...");
     const aki = new Aki("en");

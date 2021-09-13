@@ -3,7 +3,9 @@ const { discordTogether } = require('../../client/DiscordTogether');
 
 module.exports = {
     name: 'poker',
-    cooldown: 0,
+    cooldown: 1000,
+    category: "Games",
+    description: "Play poker in a voice call with your friends",
     /** 
      * @param {Client} client 
      * @param {Message} message 

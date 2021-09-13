@@ -6,7 +6,7 @@ module.exports = {
     name: 'help',
     category : 'Info',
     description : 'Returns the help menu of the bot',
-    cooldown: 0,
+    cooldown: 1000,
     /** 
      * @param {Client} client 
      * @param {Message} message 

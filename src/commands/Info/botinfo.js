@@ -8,7 +8,7 @@ module.exports = {
     name: 'botinfo',
     category: "Utilities",
     description: "Displays information about the bot.",
-    cooldown: 0,
+    cooldown: 1000,
     /** 
      * @param {Client} client 
      * @param {Message} message 

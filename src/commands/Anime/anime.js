@@ -4,7 +4,9 @@ const colors = require("../../json/colors.json");
 
 module.exports = {
   name: "anime",
-  cooldown: 3,
+  cooldown: 2000,
+  category : 'Anime',
+  description : 'Get an anime descrption about a query',
   /**
    * @param {Client} client
    * @param {Message} message
