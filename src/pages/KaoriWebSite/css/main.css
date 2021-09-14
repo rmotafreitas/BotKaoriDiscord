@@ -16,11 +16,6 @@
   }
 }
 
-#videoBG {
-  position:fixed;
-  z-index: -1;
-}
-
 form button {
   color: black;
   background: black;

@@ -57,7 +57,7 @@ module.exports = {
 				`⭐ [Like my github!](${`https://github.com/rmotafreitas/BotKaoriDiscord`})`,
 				`<:kaori:830880374396551219> [Join my server!](${`https://discord.gg/wD7T6Ty`})`,
 				`<:topggbot:760960068589060106> [Vote me on TopGG!](${`https://top.gg/bot/730092279326441574`})`,
-				`<:yay:764881220773216297> [Visti my wensite!](${`https://bot-kaori-node.herokuapp.com`})`
+				`<:yay:764881220773216297> [Visit my Website!](${`https://bot-kaori-node.herokuapp.com`})`
 			])
 
             .setFooter(
