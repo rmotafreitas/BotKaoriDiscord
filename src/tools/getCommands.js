@@ -14,16 +14,16 @@ function getCommands() {
       value.push({
         name: pull.name ? pull.name : "no command name",
         description: pull.description ? pull.description : "no description",
-        usage: pull.usage ? file.usage : "no usage",
+        usage: pull.usage ? pull.usage : "no usage",
         aliases: pull.aliases ? pull.aliases : "no aliases",
       });
+      console.log(value);
     }
     let data = new Object();
     data = {
       name: dir.toUpperCase(),
       value,
     };
-    categories.push(data);
   });
   return categories;
 }
