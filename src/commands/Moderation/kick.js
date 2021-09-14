@@ -49,7 +49,7 @@ module.exports = {
       return;
     }
 
-    if (member.id === message.author.id || client.user.id) {
+    if (member.id == message.author.id || member.id == client.user.id) {
       message.channel.send({
         embed: {
           color: "RED",
@@ -64,7 +64,7 @@ module.exports = {
         new MessageEmbed()
           .setColor("GREEN")
           .setDescription(
-            `:white_check_mark: Successfully kicked ${member.tag}`
+            `:white_check_mark: Successfully kicked ${member.user.tag}`
           )
       );
     });
