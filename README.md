@@ -1,20 +1,22 @@
-# Kaori Bot for Discord
+# **Kaori Miyazono Discord Bot**
 
-## Discord.Js
+![](./src/assets/KaoriBanner.jpg)
 
-Made by: "Ness.js#3153" (513113161126248469)
+## 📝 **How you can use me:** 
+**I have very cool functions that can for sure entertrain your discord server!**
 
-![Preview](https://github.com/BestNessPT/BotKaoriDiscord/blob/master/readme.gif)
+### Anime
+> I can give you info. and other cool stuff about anime or manga, and make an anime list
+### Economy
+> My economy system is not the best, but I am sure that you can have a good time playing it
+### Games
+> You can play a lot of games like akinator, minesweeper, etc...
+### Moderation
+> I don't a lot of moderation commands, but I have the most important ones
+### Music
+> I can play Anime Radio, Uk Radio, Lofi Radio, etc...
+### Utils & Fun
+> Search on google, make memes, translate things, etc...
 
-### Discord bot focusing on:
- 
- * Anime
- * Music
- * Management
- * Information
- * Fun
- * Economy
 
-#### Invite the Bot:
-
-[💌 Invite](https://discord.com/api/oauth2/authorize?client_id=730092279326441574&permissions=8&scope=bot)
+[💌 Invite me to your server](https://discord.com/api/oauth2/authorize?client_id=730092279326441574&permissions=8&scope=bot%20applications.commands)
