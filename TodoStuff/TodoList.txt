@@ -11,8 +11,8 @@ _______
 - Watch List
 - Readme.md
 - Help (All commands) ✅
-    - Command inputs
-    - Add command example
+    - Command inputs ✅
+    - Add command example ✅
 - Retribute interations (with a function) ✅
 - Warn System, in general (Remove warn, etc...)
     
