@@ -10,6 +10,7 @@ module.exports = {
   name: "triggered",
   cooldown: 5000,
   category: "Fun",
+  usage: "triggered {@mention}",
   description:
     "You seem triggered!",
   /**

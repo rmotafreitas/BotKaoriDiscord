@@ -23,6 +23,7 @@ module.exports = {
   description: "Displays information about the user mentioned",
   cooldown: 1000,
   aliases: ['whois', 'hack'],
+  usage: "userinfo {@mention}",
   /**
    * @param {Client} client
    * @param {Message} message

@@ -7,6 +7,7 @@ module.exports = {
   category: "Nintendo",
   cooldown: 2000,
   description: "Get a nintendo 3ds Friend-Code from a mentioned user",
+  usage: "3dscode {@mention}",
   /**
    * @param {Client} client
    * @param {Message} message

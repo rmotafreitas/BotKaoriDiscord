@@ -5,6 +5,7 @@ module.exports = {
   cooldown: 2000,
   category: "Moderation",
   description: "Ban a member from your server",
+  usage: "ban [@mention]",
   /**
    * @param {Client} client
    * @param {Message} message

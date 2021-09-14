@@ -7,6 +7,7 @@ module.exports = {
   category: "Nintendo",
   cooldown: 2000,
   description: "Setup your Nintendo Switch friend-code",
+  usage: "set-sw [xxxx-xxxx-xxxx]",
   /**
    * @param {Client} client
    * @param {Message} message

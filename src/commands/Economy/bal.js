@@ -7,6 +7,7 @@ module.exports = {
   cooldown: 1000,
   aliases: ["bal"],
   category : 'Economy',
+  usage: "account {@mention}",
   description : 'View your economy account',
   /**
    * @param {Client} client

@@ -7,6 +7,7 @@ module.exports = {
   cooldown: 1000,
   category: "Utils",
   description: "Make a search on the urban dictionary, about a word given",
+  usage: "urban [The word that you want to search]",
   /**
    * @param {Client} client
    * @param {Message} message

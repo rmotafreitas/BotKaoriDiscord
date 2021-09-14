@@ -9,6 +9,7 @@ module.exports = {
   name: "trash",
   cooldown: 2000,
   category: "Fun",
+  usage: "trash [@mention]",
   description: 'Tag a user to "delete"',
   /**
    * @param {Client} client

@@ -7,6 +7,7 @@ module.exports = {
   cooldown: 1000,
   category: "Interactions",
   description: "Leave your memories in one action >:3",
+  usage: "kiss [@mention]",
   /**
    * @param {Client} client
    * @param {Message} message

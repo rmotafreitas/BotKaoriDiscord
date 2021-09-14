@@ -5,6 +5,8 @@ module.exports = {
   name: "avatar",
   category: "Utilities",
   cooldown: 1000,
+  usage: "avatar {@mention}",
+  aliases: ['av'],
   description: "Tag a user to get the avatar",
   /**
    * @param {Client} client

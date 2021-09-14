@@ -6,6 +6,7 @@ module.exports = {
   category: "Utils",
   cooldown: 1000,
   description: "Make a seacrh in Google",
+  usage: "google [What do you want to search]",
   /**
    * @param {Client} client
    * @param {Message} message

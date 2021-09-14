@@ -4,6 +4,7 @@ module.exports = {
     name: 'skin',
     cooldown: 1000,
     category: "Games",
+    usage: "skin [Minecraft skin name]",
     description: "Search a minecraft skin",
     /** 
      * @param {Client} client 

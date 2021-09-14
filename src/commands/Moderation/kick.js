@@ -5,6 +5,7 @@ module.exports = {
   description: "Kick a user",
   cooldown: 1000,
   category: "Moderation",
+  usage: "kick @mention",
   /**
    * @param {Client} client
    * @param {Message} message

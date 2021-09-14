@@ -6,6 +6,7 @@ module.exports = {
   category: "Utils",
   cooldown: 2000,
   description: "Short a given link",
+  usage: "short-link [Link to short]",
   /**
    * @param {Client} client
    * @param {Message} message

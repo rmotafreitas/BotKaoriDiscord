@@ -6,6 +6,7 @@ module.exports = {
   name: "anime",
   cooldown: 2000,
   category : 'Anime',
+  usage: "anime [anime name]",
   description : 'Get an anime descrption about a query',
   /**
    * @param {Client} client

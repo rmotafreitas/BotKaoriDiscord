@@ -7,6 +7,7 @@ module.exports = {
   category: "Nintendo",
   cooldown: 2000,
   description: "Get a nintendo switch Friend-Code from a mentioned user",
+  usage: "swcode {@mention}",
   /**
    * @param {Client} client
    * @param {Message} message

@@ -7,6 +7,7 @@ module.exports = {
   cooldown: 1000,
   category: "Interactions",
   description: "For those with soft hands UωU",
+  usage: "pat [@mention]",
   run: async (client, message, args) => {
     const member = message.mentions.members.first();
     if (!member)

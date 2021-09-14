@@ -4,6 +4,7 @@ module.exports = {
   name: "quote",
   cooldown: 2000,
   category: "Fun",
+  usage: "quote [@mention] [Some text]",
   description: "Tag a user and type some words to make a quote",
   /**
    * @param {Client} client

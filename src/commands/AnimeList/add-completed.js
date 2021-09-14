@@ -8,6 +8,7 @@ module.exports = {
   aliases: ["add-c"],
   cooldown: 2000,
   category : 'AnimeList',
+  usage: "add-completed [Anime name]",
   description : 'Add a completed anime to your kaori watch list',
   /**
    * @param {Client} client

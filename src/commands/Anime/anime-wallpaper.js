@@ -8,6 +8,7 @@ module.exports = {
   cooldown: 2000,
   category : 'Anime',
   description : 'Give an anime wallpaper about a query',
+  usage: "anime-wallpaper [anime name]",
   aliases: ['aw'],
   /**
    * @param {Client} client

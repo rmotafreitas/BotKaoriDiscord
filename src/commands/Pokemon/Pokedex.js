@@ -1,8 +1,6 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
 const colors = require("../../json/colors.json");
-
-var Pokedex = require("pokedex-promise-v2"),
-  pokedex = new Pokedex();
+const { pokedex } = require("../../client/Pokedex");
 
 module.exports = {
   name: "pokemon",
@@ -10,6 +8,7 @@ module.exports = {
   description: "Returns a summary from a pokemon",  
   aliases: ["pokedex"],
   cooldown: 2000,
+  usage: "pokedex [Pokémon name]",
   /**
    * @param {Client} client
    * @param {Message} message

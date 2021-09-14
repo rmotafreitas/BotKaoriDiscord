@@ -4,7 +4,8 @@ module.exports = {
   name: "translate",
   category: "Utils",
   cooldown: 1000,
-  description: "Translate something: translate `language` `query`",
+  description: "Translate something",
+  usage: "translate [language] [query]",
   /**
    * @param {Client} client
    * @param {Message} message

@@ -7,6 +7,7 @@ module.exports = {
   category: "Nintendo",
   cooldown: 2000,
   description: "Setup your 3ds friend-code",
+  usage: "set-3ds [xxxx-xxxx-xxxx]",
   /**
    * @param {Client} client
    * @param {Message} message

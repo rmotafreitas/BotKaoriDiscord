@@ -9,6 +9,7 @@ module.exports = {
   name: "ohno",
   cooldown: 2000,
   category: "Fun",
+  usage: "ohno [Some text]",
   description: "Type some words to do a meme (It's cute | Oh no it's stupid)",
   /**
    * @param {Client} client

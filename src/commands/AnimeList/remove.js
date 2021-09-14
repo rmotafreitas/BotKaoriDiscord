@@ -8,6 +8,7 @@ module.exports = {
   aliases: ["rmv"],
   cooldown: 2000,
   category : 'AnimeList',
+  usage: "remove [Anime name]",
   description : 'Remove an anime from your kaori watch list',
   /**
    * @param {Client} client

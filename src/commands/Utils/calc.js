@@ -9,6 +9,7 @@ module.exports = {
   category: "Utils",
   cooldown: 1000,
   description: "Make a math calc.",
+  usage: "calc [calc]",
   /**
    * @param {Client} client
    * @param {Message} message

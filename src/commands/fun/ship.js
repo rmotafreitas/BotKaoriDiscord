@@ -6,6 +6,7 @@ module.exports = {
   name: "ship",
   cooldown: 5000,
   category: "Fun",
+  usage: "ship [@mention]",
   description: "Tag a user to ship with you or other user",
   /**
    * @param {Client} client

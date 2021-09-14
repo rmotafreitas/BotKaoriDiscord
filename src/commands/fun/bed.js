@@ -10,6 +10,7 @@ module.exports = {
   name: "bed",
   cooldown: 2000,
   category: "Fun",
+  usage: "bed [@mention]",
   description: "Tag a user to do a funny meme (there is a monster on my bed...)",
   /**
    * @param {Client} client

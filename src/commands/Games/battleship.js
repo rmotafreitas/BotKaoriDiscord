@@ -4,6 +4,7 @@ module.exports = {
     name: 'battleship',
     cooldown: 5000,
     category: "Games",
+    usage: 'battleship [@mention]',
     description: "Tag an user to play an insane battleship game in discord",
     /** 
      * @param {Client} client 

@@ -6,6 +6,7 @@ module.exports = {
   aliases: ["add-d"],
   cooldown: 2000,
   category : 'AnimeList',
+  usage: "watchlist {@mention}",
   description : 'Get an user watchlist',
   /**
    * @param {Client} client

@@ -5,6 +5,7 @@ module.exports = {
   name: "report",
   cooldown: 1000,
   category : 'Bot',
+  usage: "report [Your bug]",
   description : 'Report a but to my developer',
   /**
    * @param {Client} client

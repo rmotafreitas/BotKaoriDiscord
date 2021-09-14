@@ -7,6 +7,7 @@ module.exports = {
   cooldown: 1000,
   category: "Interactions",
   description: "All your love in one picture !(´ * ω * `)!",
+  usage: "hug [@mention]",
   run: async (client, message, args) => {
     const member = message.mentions.members.first();
     if (!member)

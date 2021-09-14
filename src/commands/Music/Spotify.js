@@ -12,6 +12,7 @@ module.exports = {
   category: "Music",
   cooldown: 2000,
   description: "Tag a user to see what is he listening on spotify",
+  usage: "spotify {@mention}",
   /**
    * @param {Client} client
    * @param {Message} message

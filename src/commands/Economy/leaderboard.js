@@ -5,6 +5,7 @@ module.exports = {
     name: 'leaderboard',
     cooldown: 1000,
     category : 'Economy',
+    aliases: ['lead', 'top'],
     description : 'View the people with more money on kaori',
     /** 
      * @param {Client} client 

@@ -7,6 +7,7 @@ module.exports = {
   aliases: ["ll"],
   cooldown: 2000,
   category : 'AnimeList',
+  usage: "link-list [Your MAL Profile name]",
   description : 'Try to link your MAL',
   /**
    * @param {Client} client

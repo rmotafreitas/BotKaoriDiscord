@@ -5,6 +5,7 @@ module.exports = {
   name: "setprefix",
   cooldown: 1000,
   category : 'Bot',
+  usage: "setprefix [New prefix]",
   description : 'Change the bot prefix to current server',
   /**
    * @param {Client} client

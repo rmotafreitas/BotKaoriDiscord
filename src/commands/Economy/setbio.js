@@ -7,6 +7,7 @@ module.exports = {
   name: "setbio",
   cooldown: 3000,
   category : 'Economy',
+  usage: "setbio [New bio to your profile]",
   description : 'Change your economy account bio',
   /**
    * @param {Client} client

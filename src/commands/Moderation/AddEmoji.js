@@ -5,6 +5,7 @@ module.exports = {
   cooldown: 2000,
   category: "Moderation",
   description: "Add a emoji to your server",
+  usage: "addemoji [emoji name] [emoji] / [link] / [attachment]",
   /**
    * @param {Client} client
    * @param {Message} message

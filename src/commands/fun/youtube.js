@@ -10,6 +10,7 @@ module.exports = {
   name: "youtube",
   cooldown: 2000,
   category: "Fun",
+  usage: "youtube [@mention] [Some text]",
   description:
     "Type something to do a youtube comment",
   /**

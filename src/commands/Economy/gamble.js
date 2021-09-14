@@ -7,6 +7,7 @@ module.exports = {
   cooldown: 4000,
   category : 'Economy',
   description : 'Gamble your money away',
+  usage: "gamble [money]",
   aliases: ['bet'],
   /**
    * @param {Client} client
