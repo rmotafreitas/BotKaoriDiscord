@@ -4,8 +4,10 @@ const { radios } = require("../Collection");
 const getRadioData = require("../tools/getTodayFMData").getOnlineRadioBoxData;
 
 module.exports = {
-  name: "music",
-  description: "A us pop music\nradio!",
+  name: "us-music",
+  fullname: "Today FM",
+  description: "Ireland's most popular independent radio station.",
+  link: "https://www.todayfm.com",
   emoji: "🎙",
   /**
    * @param {Client} client

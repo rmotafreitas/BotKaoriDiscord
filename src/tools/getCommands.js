@@ -14,7 +14,7 @@ function getCommands() {
       value.push({
         name: pull.name ? pull.name : "no command name",
         description: pull.description ? pull.description : "no description",
-        usage: pull.usage ? pull.usage : "no usage",
+        usage: pull.usage ? pull.usage : pull.name,
         aliases: pull.aliases ? pull.aliases : "no aliases",
       });
       console.log(value);

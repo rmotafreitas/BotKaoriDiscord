@@ -6,7 +6,9 @@ const getTuneInData = require("./../tools/getTuneInData").getTuneInData;
 module.exports = {
   name: "lofi",
   emoji: "👩‍🎓",
-  description: "A relaxing radio\nwith lofi music!",
+  fullname: "Chillhop Radio - Lofi Hiphop Beats - Chillsky",
+  link: "http://www.chillsky.com",
+  description: "A relaxing radio with lofi music!",
   /**
    * @param {Client} client
    * @param {Message} message

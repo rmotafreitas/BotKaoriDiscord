@@ -5,8 +5,10 @@ const { radios } = require('../Collection');
 
 module.exports = {
   name: "anime",
+  fullname: "Radio Forever Anime",
+  link: "https://twitter.com/Radio4everAnime",
   emoji: "🍙",
-  description: "An anime radio!",
+  description: "The New Anime Music, Remixes and Videogame Music.",
   /**
    * @param {Client} client
    * @param {Message} message
