@@ -22,7 +22,8 @@ module.exports = {
             `${badges.KaoriModBadge} - My mod's have this badge\n` +
             `${badges.MarryBadge} - You have this badge if you are married\n` +
             `${badges.PremiumBadge} - Buy kaori premium\n` +
-            `${badges.SnakeBadge} - Have the top snake score`);
+            `${badges.SnakeBadge} - Have the top snake score\n` + 
+            `${badges.TopBadge} - Be in #1 in Kaori Economy`);
         message.inlineReply(embed);
     }
 }

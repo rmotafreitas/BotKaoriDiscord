@@ -5,6 +5,7 @@ const colors = require("../../json/colors.json");
 module.exports = {
   name: "disconnect",
   category: "Music",
+  aliases: ['stop', 'leave'],
   cooldown: 1000,
   description: "Disconnect the bot from the call",
   /**
