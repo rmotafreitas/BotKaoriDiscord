@@ -51,9 +51,9 @@ module.exports = {
       .setDescription(
         `📝 __Text Channel:__ ${message.channel}\n` +
           "🔊 __Voice Channel:__ " +
-          "`" +
-          message.member.voice.channel.name +
-          "`\n" +
+          "<#" +
+          message.member.voice.channel.id +
+          ">\n" +
           `🎵 __Playing:__ *${data.title}*` +
           "\n" +
           `🎙 __From:__ *${data.artist}*\n` +

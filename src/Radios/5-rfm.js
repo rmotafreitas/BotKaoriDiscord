@@ -22,9 +22,9 @@ module.exports = {
       .setDescription(
           `📝 __Text Channel:__ ${message.channel}\n` +
           "🔊 __Voice Channel:__ " +
-          "`" +
-          message.member.voice.channel.name +
-          "`\n" + 
+          "<#" +
+          message.member.voice.channel.id +
+          ">\n" + 
           `\n • Só grandes músicas!`
       )
       .setThumbnail("https://images.rfm.sapo.pt/img_rfm_partilha29260980.jpg")

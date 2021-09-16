@@ -27,9 +27,9 @@ module.exports = {
     let description =
       radio.radioEmbed.description +
       "🔊 __Voice Channel:__ " +
-      "`" +
-      message.guild.me.voice.channel.name +
-      "`\n";
+      "<#" +
+      message.guild.me.voice.channel.id +
+      ">\n";
 
     let progress;
     let calcul;
