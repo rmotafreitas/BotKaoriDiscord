@@ -8,7 +8,7 @@ module.exports = {
   fullname: "Today FM",
   description: "Ireland's most popular independent radio station.",
   link: "https://www.todayfm.com",
-  emoji: "🎙",
+  emoji: "<:TodayFM:888100669318389760>",
   /**
    * @param {Client} client
    * @param {Message} message

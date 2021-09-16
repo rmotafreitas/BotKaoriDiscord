@@ -5,7 +5,7 @@ const { radios } = require('../Collection');
 module.exports = {
   name: "pt",
   fullname: "RFM",
-  emoji: ":flag_pt:",
+  emoji: "<:RFM:888101461668532224>",
   description: "RFM is a Portuguese radio station, which is the most listened to in Portugal",
   link: "https://rfm.sapo.pt",
   /**

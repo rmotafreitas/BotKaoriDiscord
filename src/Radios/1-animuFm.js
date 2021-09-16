@@ -1,14 +1,14 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
 const { radios } = require("../Collection");
-const { getStereo_animeData } = require("../tools/getStereo_animeData");
+const { getAnimuFmData } = require("../tools/getAnimuFmData");
 const ms = require("parse-ms");
 
 module.exports = {
-  name: "anime-s",
-  fullname: "Stereo Anime Radio",
-  link: "https://stereo-anime.blogspot.com",
-  emoji: "🎴",
-  description: "The best anime radio station on the internet",
+  name: "animu",
+  fullname: "Animu FM Radio",
+  link: "https://www.animu.com.br",
+  emoji: "<:AnimuFM:888099769656963072>",
+  description: "The most MOE Radio of Brazil",
   /**
    * @param {Client} client
    * @param {Message} message
@@ -18,9 +18,9 @@ module.exports = {
     if (!message.member.voice.channel)
       return message.inlineReply("You need to be on a voice channel");
 
-    const data = await getStereo_animeData();
-    const progress = ms(data.progress);
-    const total = ms(data.length);
+    const data = await getAnimuFmData();
+    const progress = ms(Date.now() - data.timestart);
+    const total = ms(data.duration);
 
     const progressBar = [
       "▬",
@@ -40,13 +40,14 @@ module.exports = {
       "▬",
       "▬",
     ];
+    const progressNow = Date.now() - data.timestart;
     const calcul = Math.round(
-      progressBar.length * (data.progress / data.length)
+      progressBar.length * (progressNow / data.duration)
     );
     progressBar[calcul] = "🔘";
     const embed = new MessageEmbed()
-      .setTitle("Playing Anime Stereo!")
-      .setColor("BLUE")
+      .setTitle("Playing Animu FM!")
+      .setColor("PURPLE")
       .setDescription(
         `📝 __Text Channel:__ ${message.channel}\n` +
           "🔊 __Voice Channel:__ " +
@@ -55,30 +56,37 @@ module.exports = {
           "`\n" +
           `🎵 __Playing:__ *${data.title}*` +
           "\n" +
-          `🎙 __From:__ *${data.author}*\n` +
+          `🎙 __From:__ *${data.artist}*\n` +
           `0${progress.minutes}:${
             progress.seconds.toString().length == 1
               ? `0${progress.seconds}`
               : progress.seconds
-          } ${progressBar.join("")} ${total.minutes}:${total.seconds}`
+          } ${progressBar.join("")} 0${total.minutes}:${
+            total.seconds.toString().length == 1
+              ? `0${total.seconds}`
+              : total.seconds
+          }`
       )
       .setTimestamp()
       .setFooter(
         `Session started by: ${message.author.tag}`,
         message.author.displayAvatarURL({ dynamic: true, size: 1024 })
       )
-      .setThumbnail(data.img);
+      .setThumbnail(data.artworks.large);
 
     message.member.voice.channel.join().then((connection) => {
-      require("https").get("https://evcast.mediacp.eu/stereoanime/", (res) => {
-        connection.play(res);
-        message.channel.send(embed);
-      });
+      require("https").get(
+        "https://cast.animu.com.br:9006/stream?0.9715900745894794",
+        (res) => {
+          connection.play(res);
+          message.channel.send(embed);
+        }
+      );
     });
 
     const radioEmbed = new MessageEmbed()
-      .setTitle("Playing Anime Stereo!")
-      .setColor("BLUE")
+      .setTitle("Playing Animu FM!")
+      .setColor("PURPLE")
       .setDescription(`📝 __Text Channel:__ ${message.channel}\n`) //
       .setTimestamp()
       .setFooter(
@@ -87,7 +95,7 @@ module.exports = {
       );
 
     radios.set(message.guild.id, {
-      name: "Anime Stereo",
+      name: "Animu",
       radioEmbed,
       textChannel: message.channel,
     });

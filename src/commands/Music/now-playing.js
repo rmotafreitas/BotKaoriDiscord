@@ -4,6 +4,7 @@ const getOnlineRadioBoxData =
   require("./../../tools/getTodayFMData").getOnlineRadioBoxData;
 const { radios } = require("../../Collection");
 const { getStereo_animeData } = require("../../tools/getStereo_animeData");
+const { getAnimuFmData } = require("../../tools/getAnimuFmData");
 const ms = require("parse-ms");
 
 module.exports = {
@@ -29,6 +30,11 @@ module.exports = {
       "`" +
       message.guild.me.voice.channel.name +
       "`\n";
+
+    let progress;
+    let calcul;
+    let total;
+    let progressBar;
     switch (radio.name) {
       case "Rfm Radio":
         description += "\n Só grandes músicas!";
@@ -44,10 +50,10 @@ module.exports = {
       case "Anime Stereo":
         const data = await getStereo_animeData();
 
-        const progress = ms(data.progress);
-        const total = ms(data.length);
+        progress = ms(data.progress);
+        total = ms(data.length);
 
-        const progressBar = [
+        progressBar = [
           "▬",
           "▬",
           "▬",
@@ -65,7 +71,7 @@ module.exports = {
           "▬",
           "▬",
         ];
-        const calcul = Math.round(
+        calcul = Math.round(
           progressBar.length * (data.progress / data.length)
         );
         progressBar[calcul] = "🔘";
@@ -73,13 +79,62 @@ module.exports = {
         description +=
           `🎵 __Playing:__ *${data.title}*` +
           "\n" +
-          `🎙 __From:__ *${data.author}*\n` +
+          `🎙 __From:__ *${data.artist}*\n` +
           `0${progress.minutes}:${
             progress.seconds.toString().length == 1
               ? `0${progress.seconds}`
               : progress.seconds
-          } ${progressBar.join("")} ${total.minutes}:${total.seconds}`;
+          } ${progressBar.join("")} 0${total.minutes}:${
+            total.seconds.toString().length == 1
+              ? `0${total.seconds}`
+              : total.seconds
+          }`;
         embed.setThumbnail(data.img);
+        break;
+      case "Animu":
+        const AnimuData = await getAnimuFmData();
+        progress = ms(Date.now() - AnimuData.timestart);
+        total = ms(AnimuData.duration);
+
+        progressBar = [
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+        ];
+        const progressNow = Date.now() - AnimuData.timestart;
+        calcul = Math.round(
+          progressBar.length * (progressNow / AnimuData.duration)
+        );
+        progressBar[calcul] = "🔘";
+
+        description +=
+          `🎵 __Playing:__ *${AnimuData.title}*` +
+          "\n" +
+          `🎙 __From:__ *${AnimuData.artist}*\n` +
+          `0${progress.minutes}:${
+            progress.seconds.toString().length == 1
+              ? `0${progress.seconds}`
+              : progress.seconds
+          } ${progressBar.join("")} 0${total.minutes}:${
+            total.seconds.toString().length == 1
+              ? `0${total.seconds}`
+              : total.seconds
+          }`;
+        embed.setThumbnail(AnimuData.artworks.large);
+
         break;
       default:
         const dataTuneIN = await getTuneInData(radio.url);

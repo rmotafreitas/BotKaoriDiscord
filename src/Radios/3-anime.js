@@ -7,7 +7,7 @@ module.exports = {
   name: "anime-forever",
   fullname: "Radio Forever Anime",
   link: "https://twitter.com/Radio4everAnime",
-  emoji: "🍙",
+  emoji: "<:AnimeForever:888100501755953203>",
   description: "The New Anime Music, Remixes and Videogame Music.",
   /**
    * @param {Client} client
