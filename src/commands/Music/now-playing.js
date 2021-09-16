@@ -3,6 +3,8 @@ const getTuneInData = require("./../../tools/getTuneInData").getTuneInData;
 const getOnlineRadioBoxData =
   require("./../../tools/getTodayFMData").getOnlineRadioBoxData;
 const { radios } = require("../../Collection");
+const { getStereo_animeData } = require("../../tools/getStereo_animeData");
+const ms = require("parse-ms");
 
 module.exports = {
   name: "now-playing",
@@ -39,12 +41,52 @@ module.exports = {
           `🎙 __From:__ *${dataRadioBox.from}*`;
         embed.setThumbnail(dataRadioBox.album);
         break;
-      default:
-        const data = await getTuneInData(radio.url);
+      case "Anime Stereo":
+        const data = await getStereo_animeData();
+
+        const progress = ms(data.progress);
+        const total = ms(data.length);
+
+        const progressBar = [
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+          "▬",
+        ];
+        const calcul = Math.round(
+          progressBar.length * (data.progress / data.length)
+        );
+        progressBar[calcul] = "🔘";
+
         description +=
-          `🎵 __Playing:__ *${data.music}*` +
+          `🎵 __Playing:__ *${data.title}*` +
           "\n" +
-          `🎙 __From:__ *${data.from}*`;
+          `🎙 __From:__ *${data.author}*\n` +
+          `0${progress.minutes}:${
+            progress.seconds.toString().length == 1
+              ? `0${progress.seconds}`
+              : progress.seconds
+          } ${progressBar.join("")} ${total.minutes}:${total.seconds}`;
+        embed.setThumbnail(data.img);
+        break;
+      default:
+        const dataTuneIN = await getTuneInData(radio.url);
+        description +=
+          `🎵 __Playing:__ *${dataTuneIN.music}*` +
+          "\n" +
+          `🎙 __From:__ *${dataTuneIN.from}*`;
         break;
     }
     embed.setDescription(description);

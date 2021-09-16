@@ -17,7 +17,6 @@ function getCommands() {
         usage: pull.usage ? pull.usage : pull.name,
         aliases: pull.aliases ? pull.aliases : "no aliases",
       });
-      console.log(value);
     }
     let data = new Object();
     data = {

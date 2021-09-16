@@ -1,10 +1,10 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
-const colors = require("./../json/colors.json");
-const getTuneInData = require("./../tools/getTuneInData").getTuneInData;
+const colors = require("../json/colors.json");
+const getTuneInData = require("../tools/getTuneInData").getTuneInData;
 const { radios } = require('../Collection');
 
 module.exports = {
-  name: "anime",
+  name: "anime-forever",
   fullname: "Radio Forever Anime",
   link: "https://twitter.com/Radio4everAnime",
   emoji: "🍙",

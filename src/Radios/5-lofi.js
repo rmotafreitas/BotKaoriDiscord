@@ -1,7 +1,7 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
 const colors = require("../json/colors.json");
 const { radios } = require('../Collection');
-const getTuneInData = require("./../tools/getTuneInData").getTuneInData;
+const getTuneInData = require("../tools/getTuneInData").getTuneInData;
 
 module.exports = {
   name: "lofi",

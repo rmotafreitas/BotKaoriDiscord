@@ -16,7 +16,6 @@ module.exports = {
   run: async (client, message, args) => {
     if(!message.member.voice.channel) return message.inlineReply("You need to be on a voice channel");
 
-    const url = "https://tunein.com/radio/RFM-932-s18720/";
     const embed = new MessageEmbed()
       .setTitle("Playing Portuguese Radio!")
       .setColor(colors.red)
@@ -56,7 +55,6 @@ module.exports = {
 
     radios.set(message.guild.id, {
       name: "Rfm Radio",
-      url,
       textChannel: message.channel,
       radioEmbed
     });

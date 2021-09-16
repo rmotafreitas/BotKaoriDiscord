@@ -1,7 +1,6 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
 const fs = require("fs");
 const path = require("path");
-const capitalize = require("../../tools/capitalize").capitalize;
 const colors = require("../../json/colors.json");
 
 module.exports = {
@@ -32,16 +31,15 @@ module.exports = {
         .setTimestamp()
         .setColor(colors.blue)
         .setTitle("Radios: ");
-
+      let description = "";
       for (var filename of radioFiles) {
         const radio = require(`./../../Radios/${filename}`);
         //console.log(radio);
-        embed.addField(
-          `${radio.emoji} ${await capitalize(radio.name)}`,
-          radio.description,
-          true
-        );
+        description += `${radio.emoji} __[${radio.fullname}](${radio.link})__\n` +
+        `> Command: ${'`'}${client.prefix}radio ${radio.name}${'`'}\n` +
+        `> Description: ${radio.description}\n\n`
       }
+      embed.setDescription(description);
 
       return message.inlineReply(
         "You need to choose a radio: `radio radio-name`",
