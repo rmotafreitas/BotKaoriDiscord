@@ -35,7 +35,7 @@ module.exports = {
       );
     }
     if (profile.canDaily()) {
-      description.push(`> Daily: ✅`);
+      description.push(`Daily: ✅`);
     } else {
       description.push(
         `Daily: ${daily.hours}h ${daily.minutes}m ${daily.seconds}s`
@@ -45,7 +45,7 @@ module.exports = {
       description.push(`Weekly: ✅`);
     } else {
       description.push(
-        `Daily: ${weekly.hours}h ${weekly.minutes}m ${weekly.seconds}s`
+        `Weekly: ${weekly.hours}h ${weekly.minutes}m ${weekly.seconds}s`
       );
     }
 
