@@ -49,7 +49,11 @@ module.exports = {
 
     //Bio
     ctx.font = "bold 35px Arial";
-    ctx.fillText(profile.bio, 110, 575);
+    ctx.fillText(
+      profile.bio != null ? profile.bio : "Too lazy to put a bio",
+      110,
+      575
+    );
 
     //Username
     ctx.font = "bold 50px Arial";
