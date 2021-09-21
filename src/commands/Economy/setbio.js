@@ -1,14 +1,14 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
 const econmyDB = require("../../tools/classes/economy").economyDB;
-const { embed } = require('../../tools/classes/fastEmbed');
+const { embed } = require("../../tools/classes/fastEmbed");
 const badWords = require("../../json/badWords.json");
 
 module.exports = {
   name: "setbio",
   cooldown: 3000,
-  category : 'Economy',
+  category: "Economy",
   usage: "setbio [New bio to your profile]",
-  description : 'Change your economy account bio',
+  description: "Change your economy account bio",
   /**
    * @param {Client} client
    * @param {Message} message
@@ -18,16 +18,14 @@ module.exports = {
     const profile = new econmyDB(message.author.id);
     await profile.init();
     const bio = args.join(" ");
-    
+
     if (!bio) {
-      return message.inlineReply(
-        embed.error("You forget to type the bio? xD")
-      );
+      return message.inlineReply(embed.error("You forget to type the bio? xD"));
     } else {
-      if (bio.length > 75) {
+      if (bio.length > 40) {
         return message.inlineReply(
           await embed.error(
-            `The char limit is 75, you have wrote ${bio.length} chars!`
+            `The char limit is 40, you have wrote ${bio.length} chars!`
           )
         );
       }
@@ -39,9 +37,7 @@ module.exports = {
         }
       }
       await profile.setBio(bio);
-      return message.inlineReply(
-        embed.completed(`Your new bio is: ${bio}`)
-      );
+      return message.inlineReply(embed.completed(`Your new bio is: ${bio}`));
     }
   },
 };

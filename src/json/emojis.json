@@ -1,11 +1,38 @@
 {
-    "BugHunter": "<:BugHunter:881677659392860250>",
-    "DeveloperBadge": "<:DeveloperBadge:882059192595279963>",
-    "FanartBadge": "<:FanartBadge:881678722372108369>",
-    "IdeiasBadge": "<:IdeiasBadge:881677444111798272>",
-    "KaoriModBadge": "<:KaoriModBadge:882059026899279962>",
-    "MarryBadge": "<:MarryBadge:881678017049538580>",
-    "PremiumBadge": "<:PremiumBadge:881679514705461271>",
-    "SnakeBadge": "<:SnakeBadge:881678324357804102>",
-    "TopBadge": "😎"
+  "BugHunter": {
+    "emoji": "<:BugHunter:889975932180377622>",
+    "link": "https://cdn.discordapp.com/emojis/889975932180377622.png?v=1"
+  },
+  "DeveloperBadge": {
+    "emoji": "<:DeveloperBadge:889975932314587196>",
+    "link": "https://cdn.discordapp.com/emojis/889975932314587196.png?v=1"
+  },
+  "FanartBadge": {
+    "emoji": "<:FanartBadge:889975932381720587>",
+    "link": "https://cdn.discordapp.com/emojis/889975932381720587.png?v=1"
+  },
+  "IdeiasBadge": {
+    "emoji": "<:IdeiasBadge:889975932507553882>",
+    "link": "https://cdn.discordapp.com/emojis/889975932507553882.png?v=1"
+  },
+  "KaoriModBadge": {
+    "emoji": "<:KaoriModBadge:889975931995824170>",
+    "link": "https://cdn.discordapp.com/emojis/889975931995824170.png?v=1"
+  },
+  "MarryBadge": {
+    "emoji": "<:MarryBadge:889975932390105139>",
+    "link": "https://cdn.discordapp.com/emojis/889975932390105139.png?v=1"
+  },
+  "PremiumBadge": {
+    "emoji": "<:PremiumBadge:889975932310417518>",
+    "link": "https://cdn.discordapp.com/emojis/889975932310417518.png?v=1"
+  },
+  "SnakeBadge": {
+    "emoji": "<:SnakeBadge:889975932318793779>",
+    "link": "https://cdn.discordapp.com/emojis/889975932318793779.png?v=1"
+  },
+  "TopBadge": {
+    "emoji": "<:TopBadge:889975932067135559>",
+    "link": "https://cdn.discordapp.com/emojis/889975932067135559.png?v=1"
+  }
 }

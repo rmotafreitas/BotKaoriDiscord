@@ -13,6 +13,7 @@
         "@discordjs/opus": "^0.5.3",
         "@freezegold/anime.js": "^2.0.6-beta",
         "@iamtraction/google-translate": "^1.1.2",
+        "ajax-request": "^1.2.3",
         "aki-api": "^5.2.1",
         "anime-wallpaper": "^1.0.2",
         "ascii-table": "0.0.9",

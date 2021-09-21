@@ -45,12 +45,12 @@ module.exports = {
       description.push(`Weekly: ✅`);
     } else {
       description.push(
-        `Weekly: ${weekly.hours}h ${weekly.minutes}m ${weekly.seconds}s`
+        `Weekly: ${weekly.days}d ${weekly.hours}h ${weekly.minutes}m ${weekly.seconds}s`
       );
     }
 
     const embed = new MessageEmbed()
-      .setTitle("Action times")
+      .setTitle("Action times ⏱")
       .setDescription(description)
       .setColor("BLUE");
     return message.inlineReply(embed);
