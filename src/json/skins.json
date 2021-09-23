@@ -20,11 +20,18 @@
     "url": "https://i.imgur.com/bHUAQeH.png",
     "price": "20000"
   },
-  "windows-xp": {
-    "name": "windows-xp",
-    "emoji": "🌄",
+  "nezuko": {
+    "name": "nezuko",
+    "emoji": "<:nezuko:890701198628384768>",
     "active": false,
-    "url": "https://i.imgur.com/pFJgsup.png",
-    "price": "9000"
+    "url": "https://i.imgur.com/mfS7czu.png",
+    "price": "20000"
+  },
+  "cirno": {
+    "name": "cirno",
+    "emoji": "<:cirnos:890704551630504006>",
+    "active": false,
+    "url": "https://i.imgur.com/zBDgqeF.png",
+    "price": "2500"
   }
 }

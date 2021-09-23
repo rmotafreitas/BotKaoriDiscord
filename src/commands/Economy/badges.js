@@ -26,7 +26,8 @@ module.exports = {
           `${badges.MarryBadge.emoji} - You have this badge if you are married\n` +
           `${badges.PremiumBadge.emoji} - Buy kaori premium\n` +
           `${badges.SnakeBadge.emoji} - Have the top snake score\n` +
-          `${badges.TopBadge.emoji} - Be in #1 in Kaori Economy`
+          `${badges.TopBadge.emoji} - Be in #1 in Kaori Economy\n` +
+          `${badges.SkinMakerBadge.emoji} - Make a skin for Economy, __[more details](https://discord.gg/wD7T6Ty)__`
       );
     message.inlineReply(embed);
   },

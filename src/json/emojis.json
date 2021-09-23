@@ -34,5 +34,9 @@
   "TopBadge": {
     "emoji": "<:TopBadge:889975932067135559>",
     "link": "https://cdn.discordapp.com/emojis/889975932067135559.png?v=1"
+  },
+  "SkinMakerBadge": {
+    "emoji": "<:SkinMakerBadge:890702788902924288>",
+    "link": "https://cdn.discordapp.com/emojis/890702788902924288.png?v=1"
   }
 }
