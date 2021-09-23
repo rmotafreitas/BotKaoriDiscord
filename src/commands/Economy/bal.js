@@ -23,6 +23,9 @@ module.exports = {
    */
   run: async (client, message, args) => {
     message.channel.startTyping();
+    const skinColors = JSON.parse(
+      JSON.stringify(require("../../json/skins.json"))
+    );
     const target =
       message.mentions.users.last() ||
       client.users.cache.get(args[0]) ||
@@ -34,7 +37,7 @@ module.exports = {
     const ctx = canvas.getContext("2d");
 
     //Skin
-    var skin = await Canvas.loadImage("https://i.imgur.com/pbOKPwF.png"); //1200x365
+    var skin = await Canvas.loadImage(skinColors[profile.skins[0]].url); //1200x365
     ctx.drawImage(skin, 0, 0, canvas.width, 365);
 
     //Base

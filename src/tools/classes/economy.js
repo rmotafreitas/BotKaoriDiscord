@@ -192,6 +192,28 @@ class economyDB {
     data.bio = bio;
     data.save().catch((err) => console.log(err));
   }
+
+  async addSkin(skin) {
+    const id = this.userID;
+    let data = await economy.findOne({
+      userID: id,
+    });
+    data.skins.push(skin);
+    data.save().catch((err) => console.log(err));
+  }
+
+  async selectSkin(newColor) {
+    let i = this.skins.findIndex((v) => v === newColor);
+    const id = this.userID;
+    let data = await economy.findOne({
+      userID: id,
+    });
+    data.skins[i] = data.skins[0];
+    data.skins[0] = newColor;
+    this.skins[i] = this.skins[0];
+    this.skins[0] = newColor;
+    data.save().catch((err) => console.log(err));
+  }
 }
 
 module.exports = {

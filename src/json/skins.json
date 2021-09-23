@@ -1,0 +1,30 @@
+{
+  "default": {
+    "name": "default",
+    "emoji": "😒",
+    "active": true,
+    "url": "https://i.imgur.com/pbOKPwF.png",
+    "price": "0"
+  },
+  "your-name": {
+    "name": "your-name",
+    "emoji": "☄",
+    "active": false,
+    "url": "https://i.imgur.com/vknA2qM.png",
+    "price": "15000"
+  },
+  "angels-death": {
+    "name": "angels-death",
+    "emoji": "🔪",
+    "active": false,
+    "url": "https://i.imgur.com/bHUAQeH.png",
+    "price": "20000"
+  },
+  "windows-xp": {
+    "name": "windows-xp",
+    "emoji": "🌄",
+    "active": false,
+    "url": "https://i.imgur.com/pFJgsup.png",
+    "price": "90000"
+  }
+}
