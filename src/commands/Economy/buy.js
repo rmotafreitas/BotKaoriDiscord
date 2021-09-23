@@ -74,7 +74,7 @@ module.exports = {
 
           yes.on("collect", async (r) => {
             if (profile.money < skinColors[newColor].price) {
-              return message.inlineReply(embed.error("You don't have money"));
+              return message.inlineReply("❌ - You don't have money");
             }
             await profile.addSkin(skinColors[newColor].name);
             await profile.addMoney(-skinColors[newColor].price);
