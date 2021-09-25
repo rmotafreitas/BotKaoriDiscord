@@ -82,5 +82,12 @@
     "active": false,
     "url": "https://i.imgur.com/ETtmrX2.png",
     "price": "15000"
+  },
+  "terraria": {
+    "name": "terraria",
+    "emoji": "<:terraria:891334960550649896>",
+    "active": false,
+    "url": "https://i.imgur.com/yuGigw0.png",
+    "price": "10000"
   }
 }
