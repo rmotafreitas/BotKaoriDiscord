@@ -11,14 +11,14 @@
     "emoji": "☄",
     "active": false,
     "url": "https://i.imgur.com/vknA2qM.png",
-    "price": "15000"
+    "price": "10000"
   },
   "angels-death": {
     "name": "angels-death",
     "emoji": "🔪",
     "active": false,
     "url": "https://i.imgur.com/bHUAQeH.png",
-    "price": "20000"
+    "price": "10000"
   },
   "nezuko": {
     "name": "nezuko",
@@ -32,6 +32,55 @@
     "emoji": "<:cirnos:890704551630504006>",
     "active": false,
     "url": "https://i.imgur.com/zBDgqeF.png",
-    "price": "2500"
+    "price": "5000"
+  },
+  "houshou-marine": {
+    "name": "marine",
+    "emoji": "<:Marine:891281344963944448>",
+    "active": false,
+    "url": "https://i.imgur.com/QFT0y2j.png",
+    "price": "15000"
+  },
+  "gawr-gura": {
+    "name": "gawr-gura",
+    "emoji": "<:GawrGura:891283297508941864>",
+    "active": false,
+    "url": "https://i.imgur.com/m8VXubt.jpeg",
+    "price": "15000"
+  },
+  "amelia-watson": {
+    "name": "amelia-watson",
+    "emoji": "<:AmeliaWatson:891285062245552158>",
+    "active": false,
+    "url": "https://i.imgur.com/BSCu6R8.png",
+    "price": "15000"
+  },
+  "mori-calliope": {
+    "name": "mori-calliop",
+    "emoji": "<:Calliope:891287880339693578>",
+    "active": false,
+    "url": "https://i.imgur.com/qlgrHUA.jpeg",
+    "price": "15000"
+  },
+  "takanashi-kiara": {
+    "name": "takanashi-kiara",
+    "emoji": "<:kiara:891288819293360138>",
+    "active": false,
+    "url": "https://i.imgur.com/eZyDE6f.png",
+    "price": "15000"
+  },
+  "moona-hoshinova": {
+    "name": "moona-hoshinova",
+    "emoji": "<:moona:891289901151166475>",
+    "active": false,
+    "url": "https://i.imgur.com/5fqW1LP.png",
+    "price": "15000"
+  },
+  "usada-pekora": {
+    "name": "usada-pekora",
+    "emoji": "<:pekora:891290400210423818>",
+    "active": false,
+    "url": "https://i.imgur.com/ETtmrX2.png",
+    "price": "15000"
   }
 }

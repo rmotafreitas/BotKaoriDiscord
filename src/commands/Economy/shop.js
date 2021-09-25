@@ -21,11 +21,11 @@ module.exports = {
       skinColors[skins[index]].active = true;
     });
 
-    const desc = ["**BALANCE SKINS**"];
+    const desc = ["__Skins__"];
     for (const key in skinColors) {
       if (!skinColors[key].active) {
         desc.push(
-          `> ${skinColors[key].emoji} ${key} - ${skinColors[key].price}$`
+          `• ${skinColors[key].emoji} ${key} - ${skinColors[key].price}$`
         );
       }
     }
