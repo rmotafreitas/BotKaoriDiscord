@@ -23,6 +23,7 @@ function getCommands() {
       name: dir.toUpperCase(),
       value,
     };
+    categories.push(data);
   });
   return categories;
 }

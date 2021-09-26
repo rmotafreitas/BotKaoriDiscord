@@ -21,6 +21,7 @@ client.on("ready", async () => {
   });
 
   const commands = getCommands();
+  console.log(commands);
   app.get("/commands", (req, res) => {
     res.status(200).render("commands", { commands });
   });
