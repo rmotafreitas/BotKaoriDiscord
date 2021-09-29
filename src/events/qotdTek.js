@@ -20,7 +20,7 @@ client.on("ready", async () => {
     data.save().catch((err) => console.log(err));
   }
   const questions = [
-    "What have you created that you are most proud of?",
+    "What have you creahted that you are most proud of?",
     "What's the best thing you got from one of your parents?",
     "What bends your mind every time you think about it?",
     "In your group of friends, what role do you play?",
@@ -29,7 +29,7 @@ client.on("ready", async () => {
     "What fictional place would you most like to go to?",
     "What's one place you've travelled that you never want to go back to?",
     "When people come to you for help, what do they usually want help with?",
-    "What are you interested in that most people haven't heard of?",
+    "What are you interested in tat most people haven't heard of?",
     "Mountains or ocean?",
     "What was your best birthday?",
     "Pizza or tacos?",
@@ -81,7 +81,7 @@ client.on("ready", async () => {
     "What talent would you show off in a talent show?",
   ];
   const qotdChannel = client.channels.cache.get("807300492463833209");
-  const question = "1 0 * * *";
+  const question = "10 0 * * *";
   cron.schedule(
     question,
     () => {
