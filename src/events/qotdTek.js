@@ -11,10 +11,13 @@ client.on("ready", async () => {
   var n = data ? data.n : 0;
   if (!data) {
     const newQ = new question({
-      n: 0,
+      n: 1,
       i: 0,
     });
     newQ.save().catch((err) => console.log(err));
+  } else {
+    data.n += 1;
+    data.save().catch((err) => console.log(err));
   }
   const questions = [
     "What have you created that you are most proud of?",
