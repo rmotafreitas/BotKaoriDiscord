@@ -2,7 +2,7 @@ const { Client, Message, MessageEmbed } = require("discord.js");
 const mathjs = require("mathjs");
 const colors = require("../../json/colors.json");
 const replaceAll = require("../../tools/replaceAll.js").replaceAll;
-const { embed } = require('../../tools/classes/fastEmbed');
+const { embed } = require("../../tools/classes/fastEmbed");
 
 module.exports = {
   name: "calc",
@@ -23,12 +23,12 @@ module.exports = {
         new MessageEmbed()
           .setTitle("Calculator")
           .setTimestamp()
-          .setColor(colors.cream)
+          .setColor("BLUE")
           .addField("Question", query)
           .addField("Solution", mathjs.evaluate(query))
       );
     } catch (err) {
-      return message.inlineReply(embed.error("Something wrong was occured!"))
+      return message.inlineReply(embed.error("Something wrong was occured!"));
     }
   },
 };
