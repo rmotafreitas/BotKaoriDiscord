@@ -34,10 +34,10 @@ module.exports = {
       let description = "";
       for (var filename of radioFiles) {
         const radio = require(`./../../Radios/${filename}`);
-        //console.log(radio);
-        description += `${radio.emoji} __[${radio.fullname}](${radio.link})__\n` +
-        `> Command: ${'`'}${client.prefix}radio ${radio.name}${'`'}\n` +
-        `> Description: ${radio.description}\n\n`
+        description +=
+          `${radio.emoji} __[${radio.fullname}](${radio.link})__\n` +
+          `> Command: ${"`"}${client.prefix}radio ${radio.name}${"`"}\n` +
+          `> Description: ${radio.description}\n\n`;
       }
       embed.setDescription(description);
 
