@@ -1,118 +1,127 @@
 <!DOCTYPE html>
-<html long="en">
+<html style="background-color: #f5f5f5">
   <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Kaori | A simple and modern Discord bot that provides fun and searching features to any Discord server, it also comes with a large selection of moderation tools. Kaori is built on Node.js and uses the Discord.js framework."
+    />
+    <meta
+      name="keywords"
+      content="Discord, Discord bots, Discord bot, Kaori, Kaori Discord"
+    />
+    <meta name="author" content="Kaori" />
+    <title>Kaori - Discord</title>
+    <script src="js/commands.js"></script>
     <link rel="icon" href="/assets/favicon.ico" />
-    <title>Kaori Miyazono Cmd's</title>
+    <link rel="stylesheet" href="css/commands.css">
+    <link rel="stylesheet" href="css/bulma.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <meta property="og:url" content="https://https://bot-kaori-node.herokuapp.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="A simple and modern Discord bot." />
+    <meta
+      property="og:description"
+      content="Kaori provides fun and searching features to any Discord server, it also comes with a large selection of moderation tools. Kaori is built on Node.js and uses the Discord.js framework."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=0.8" />
   </head>
   <body>
-    <a href="/"
-      ><img
-        class="avatar"
-        src="https://cdn.discordapp.com/avatars/739928085226455070/3aee642d1ac2656d92bb77f72fecc261.jpg?size=256"
-        alt="Kaori's avatar!"
-    /></a>
-    <section class="main-content">  
-      <p>
-        To get a look of the commands in discord, use help command to view the commands!<br /><a style="color:rgb(87, 87, 87);">Remove brackets when typing commands</a>
-        <br /><a style="color:rgb(201, 84, 84);">[] = required</a>
-        <br /><a style="color:rgb(44, 233, 85);">{} = optional</a>
-      </p>
-      <% commands.forEach(({ name, value }) =>{ %>
-      <table style="width: 100%">
-        <h1 style="text-align: center"><%=name %></h1>
-        <tr>
-          <th>Command Name</th>
-          <th>Description</th>
-          <th>Usage</th>
-          <th>Aliases</th>
-        </tr>
-        <% value.forEach(({ name, description, usage, aliases}) => { %>
-        <tr>
-          <td><%= name%></td>
-          <td><%= description%></td>
-          <td><%= usage%></td>
-          <td><%= aliases%></td>
-        </tr>
-        <% }) %>
-      </table>
-      <% }) %>
-    </section>
+    <div class="hero-head hero is-info" style="background-color: #998969">
+      <header class="nav">
+        <div class="container">
+          <a class="nav-item" href="/">
+            <img
+              src="/assets/discord-logo.svg"
+              class="hideme"
+              style="width: 6em"
+            />
+          </a>
+          <div class="nav-right">
+            <a href="/" class="nav-item is-active"> Home </a>
+              <a href="commands" class="nav-item"> Commands </a>
+              <a href="https://discord.gg/wD7T6Ty" class="nav-item">
+                Community
+              </a>
+              <a
+                href="https://discord.com/api/oauth2/authorize?client_id=730092279326441574&permissions=8&scope=bot%20applications.commands"
+                class="nav-item"
+                style="color: #ffffff"
+              >
+                <span>Invite Kaori To Your Server</span>
+              </a>
+          </div>
+        </div>
+      </header>
+    </div>
+    <div class="main">
+      <div class="columns">
+        <div class="column is-one-quarter" style="opacity: 0.8">
+          <div
+            class="card"
+            style="
+              padding: 1em 1em 1em 1em;
+              width: 100%;
+              position: sticky;
+              top: 10px;
+            "
+          >
+            <aside class="menu">
+              <p class="menu-label">Commands</p>
+              <ul class="menu-list">
+                <li>
+                  <a
+                    class="tablinks is-active"
+                    onclick="show(event, '<%- commands[0].name %>');""
+                    ><%= commands[0].name %></a
+                  >
+                </li>
+                <% commands.slice(1, commands.length).forEach(({ name, value }) => { %>
+                <li>
+                  <a
+                    class="tablinks"
+                    onclick="show(event, '<%- name %>');""
+                    ><%= name %></a
+                  >
+                </li>
+                <% }); %>
+              </ul>
+            </aside>
+          </div>
+        </div>
+        <div class="column is-one-half" style="opacity: 0.8">
+          <div id="<%- commands[0].name %>" class="tabcontent" style="display: block">
+            <% commands[0].value.forEach(({ name, description, usage, aliases}) => { %>
+            <div class="card card-command">
+              <header class="card-header">
+                <p class="card-header-title">
+                  <code><%= name %></code>
+                </p>
+              </header>
+              <div class="card-content card-content-command">
+                <div class="content"><%= description %></div>
+              </div>
+            </div>
+            <% }) %>
+          </div>
+          <% commands.slice(1, commands.length).forEach(({ name, value }) =>{ %>
+          <div id="<%- name %>" class="tabcontent" style="display: none">
+            <% value.forEach(({ name, description, usage, aliases}) => { %>
+            <div class="card card-command">
+              <header class="card-header">
+                <p class="card-header-title">
+                  <code><%= name %></code>
+                </p>
+              </header>
+              <div class="card-content card-content-command">
+                <div class="content"><%= description %></div>
+              </div>
+            </div>
+            <% }) %>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </div>
   </body>
-  <style>
-    table {
-      border-collapse: collapse;
-      border-spacing: 0;
-    }
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      padding: 0;
-      margin: 0;
-      font-family: "Open Sans";
-      font-size: 16px;
-      color: cornflowerblue;
-    }
-
-    .main-content {
-      word-wrap: break-word;
-    }
-
-    @media screen and (min-width: 64em) {
-      .main-content {
-        max-width: 64rem;
-        padding: 2rem 6rem;
-        margin: 0 auto;
-        font-size: 1.1rem;
-      }
-    }
-
-    @media screen and (min-width: 42em) and (min-width: 64em) {
-      .main-content {
-        padding: 2rem 4rem;
-        font-size: 1.1rem;
-      }
-    }
-
-    @media screen and (min-width: 42em) {
-      .main-content {
-        padding: 2rem 1rem;
-        font-size: 1rem;
-      }
-    }
-
-    .main-content h1,
-    .main-content h2,
-    .main-content h3,
-    .main-content h4,
-    .main-content h5,
-    .main-content h6 {
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      font-weight: normal;
-      color: cornflowerblue;
-    }
-
-    .main-content table th,
-    .main-content table td {
-      padding: 0.5rem 1rem;
-      border: 1px solid gray;
-    }
-
-    .avatar {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      border: 4px solid cornflowerblue;
-      border-radius: 100%;
-      -webkit-transform: -webkit-transform 0.8s ease-in-out;
-      transition: transform 0.8s ease-in-out;
-    }
-
-    .avatar:hover {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  </style>
 </html>
