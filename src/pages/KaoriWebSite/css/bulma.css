@@ -2802,10 +2802,10 @@ input[type="submit"].button {
 }
 .menu-list a:hover {
   background-color: #f5f5f5;
-  color: #00d1b2;
+  color: #998969;
 }
 .menu-list a.is-active {
-  background-color: #00d1b2;
+  background-color: #998969;
   color: #fff;
 }
 .menu-list li ul {
