@@ -89,5 +89,12 @@
     "active": false,
     "url": "https://i.imgur.com/yuGigw0.png",
     "price": "10000"
+  },
+  "zero-two": {
+    "name": "zero-two",
+    "emoji": "🦕",
+    "active": false,
+    "url": "https://i.imgur.com/VQbt8SY.jpeg",
+    "price": "15000"
   }
 }
