@@ -21,7 +21,6 @@
         "canvacord": "^5.2.3",
         "canvas": "^2.8.0",
         "discord-battleship": "^1.0.4",
-        "discord-buttons": "^4.0.0",
         "discord-together": "^1.1.53",
         "discord.js": "^12.5.3",
         "dotenv": "^10.0.0",
