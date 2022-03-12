@@ -1,0 +1,34 @@
+const rp = require("request-promise");
+var { XMLParser } = require("fast-xml-parser");
+const getRfmData = async () => {
+  var page = await rp(
+    "https://configsa01.blob.core.windows.net/rfm/rfmOnAir.xml?_=1640110808349"
+  )
+    .then(function (htmlString) {
+      return htmlString;
+    })
+    .catch(function (err) {});
+
+  function removeFirstLine(str) {
+    const lines = str.split("\n");
+    // remove one line, starting at the first position
+    lines.splice(0, 1);
+    // join the array back into a single string
+    const newtext = lines.join("\n");
+
+    return newtext;
+  }
+  page = removeFirstLine(page);
+  page = page.replace("\ufeff", "").replace(/ /g, "");
+
+  // convert XML to JSON
+  const parser = new XMLParser();
+  var jsonData = parser.parse(page, null, true);
+
+  console.log(jsonData);
+  return page;
+};
+
+module.exports = {
+  getRfmData,
+};
