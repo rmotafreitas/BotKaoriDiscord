@@ -1,5 +1,4 @@
 const rp = require("request-promise");
-const replaceAll = require("./replaceAll").replaceAll;
 
 const getOnlineRadioBoxData = async (url) => {
   var page = await rp(url)

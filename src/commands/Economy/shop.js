@@ -16,7 +16,6 @@ module.exports = {
     const profile = new econmyDB(message.author.id);
     await profile.init();
     const skins = profile.skins;
-
     skins.forEach(function (item, index, array) {
       skinColors[skins[index]].active = true;
     });

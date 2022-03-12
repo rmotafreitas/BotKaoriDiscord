@@ -71,9 +71,7 @@ module.exports = {
           "▬",
           "▬",
         ];
-        calcul = Math.round(
-          progressBar.length * (data.progress / data.length)
-        );
+        calcul = Math.round(progressBar.length * (data.progress / data.length));
         progressBar[calcul] = "🔘";
 
         description +=

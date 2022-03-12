@@ -34,7 +34,7 @@
     "url": "https://i.imgur.com/zBDgqeF.png",
     "price": "5000"
   },
-  "houshou-marine": {
+  "marine": {
     "name": "marine",
     "emoji": "<:Marine:891281344963944448>",
     "active": false,
@@ -96,5 +96,12 @@
     "active": false,
     "url": "https://i.imgur.com/zHGJAZi.jpeg",
     "price": "15000"
+  },
+  "christmas": {
+    "name": "christmas",
+    "emoji": "🎅",
+    "active": false,
+    "url": "https://imgur.com/KRaZOUe.jpeg",
+    "price": "1000"
   }
 }
