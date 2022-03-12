@@ -1,6 +1,7 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
 const mathjs = require("mathjs");
 const colors = require("../../json/colors.json");
+const replaceAll = require("../../tools/replaceAll.js").replaceAll;
 const { embed } = require("../../tools/classes/fastEmbed");
 
 module.exports = {
@@ -16,7 +17,7 @@ module.exports = {
    */
   run: async (client, message, args) => {
     let query = args.join(" ");
-    query = query.replaceAll("x", "*");
+    query = await replaceAll(query, "x", "*");
     try {
       message.inlineReply(
         new MessageEmbed()

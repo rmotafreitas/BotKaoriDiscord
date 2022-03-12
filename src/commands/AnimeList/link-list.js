@@ -1,5 +1,5 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
-const { profile } = require("@freezegold/anime.js");
+const { profile } = require("../../tools/modules/anime.js");
 const watchlists = require("../../models/watchlist");
 
 module.exports = {

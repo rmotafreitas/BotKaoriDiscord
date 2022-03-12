@@ -1,5 +1,5 @@
 const { Client, Message, MessageEmbed } = require('discord.js');
-const { searchManga } = require("@freezegold/anime.js");
+const { searchManga } = require("../../tools/modules/anime.js");
 const colors = require("../../json/colors.json");
 
 module.exports = {
