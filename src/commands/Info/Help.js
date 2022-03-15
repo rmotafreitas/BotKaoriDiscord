@@ -31,7 +31,7 @@ module.exports = {
         Music: "🎵",
         Anime: "<a:anime:831476172294324225>",
         Pokemon: "<:pokebola:829671918290468864>",
-        fun: "🥳",
+        Fun: "🥳",
         Info: "📃",
         Math: "📌",
         Misc: "👀",
