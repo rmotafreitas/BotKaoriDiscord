@@ -5,7 +5,7 @@ async function verification(msg, id) {
     return [emoji].includes(reaction.emoji.name) && user.id === id;
   };
 
-  const flag = messageEmbed
+  const flag = msg
     .awaitReactions(filter, { max: 1, time: 60000, errors: ["time"] })
     .then((collected) => {
       const reaction = collected.first();
