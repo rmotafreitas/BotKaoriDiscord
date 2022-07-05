@@ -10,7 +10,7 @@
     "author": "rmotafreitas",
     "license": "MIT",
     "dependencies": {
-        "@discordjs/opus": "^0.5.3",
+        "@discordjs/opus": "^0.8.0",
         "@iamtraction/google-translate": "^1.1.2",
         "aki-api": "^5.2.1",
         "anime-wallpaper": "^1.0.2",
